@@ -1,0 +1,6 @@
+`define GAMEMODE ZestyModTO
+
+DefaultProperties
+{
+    MinimumRespawnTime = 10.0
+}

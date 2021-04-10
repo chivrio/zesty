@@ -1,0 +1,29 @@
+[ChatMessages]
+Welcome=Welcome to Comp Mod!
+
+[ZestyModWeapon_Warbow]
+WeaponName=Warbow
+
+[ZestyModWeapon_Longbow]
+WeaponName=Longbow
+
+[ZestyModWeapon_Shortbow]
+WeaponName=Shortbow
+
+[ZestyModWeapon_HeavyCrossbow]
+WeaponName=Heavy Crossbow
+
+[ZestyModWeapon_LightCrossbow]
+WeaponName=Light Crossbow
+
+[ZestyModWeapon_Crossbow]
+WeaponName=Crossbow
+
+[ZestyModWeapon_HeavyCrossbow]
+WeaponName=Heavy Crossbow
+
+[ZestyModWeapon_Sling]
+WeaponName=Sling
+
+[ZestyModWeapon_ProjWarbowArrow]
+WeaponName=Warbow Arrow
