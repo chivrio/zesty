@@ -560,6 +560,17 @@ exec function PerformAim() {
 }
 
 
+// Deprecated
+exec function AdminTournamentMode(optional bool bEnable = true)
+{
+    ClientDisplayConsoleMessage("Deprecated: use 'Admin TournamentMode' instead");
+    ClientDisplayConsoleMessage("Disable: Admin TournamentMode 0");
+    ClientDisplayConsoleMessage("Enable: Admin TournamentMode 1");
+}
+
+reliable server function S_AdminTournamentMode(bool bEnable) {}
+
+
 DefaultProperties
 {
     suicideDelay = 1.0f

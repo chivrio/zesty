@@ -43,6 +43,30 @@ reliable server function S_BroadcastServerMessage(string Message) {
 }
 
 
+// Deprecated
+function AdminTournamentMode(bool bEnable){}
+
+reliable server function ConfigureTournamentMode(bool bEnable)
+{
+    bTournamentMode = bEnable;
+    SaveConfig();
+
+    class'AOCGame'.default.bTournamentMode = bEnable;
+    class'AOCGame'.static.StaticSaveConfig();
+}
+
+exec function TournamentMode(bool bEnable)
+{
+    if (bTournamentMode == bEnable)
+        return;
+
+    S_BroadcastServerMessage("Admin TournamentMode");
+
+    ConfigureTournamentMode(bEnable);
+    WorldInfo.ServerTravel("?restart", false);
+}
+
+
 DefaultProperties
 {
     PlayerControllerClass=class'`{GAMEMODE}PlayerController'
