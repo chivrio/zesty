@@ -358,9 +358,9 @@ DefaultProperties
     bRequiresComboAnimFix = false;
 
     fStaminaGainOnHit = 6.0;
-    fStaminaGainOnRiposteParry = 27.0;
-    fMissAdditionalStaminaCost = 9.0;
-    fComboMinimumStamina = 1.0;
+    fStaminaGainOnRiposteParry = 24.0;
+    fMissAdditionalStaminaCost = 6.0;
+    fComboMinimumStamina = 9.0;
 
     bParryWasDuringRiposte = false;
     bFeintCostWasRefunded = false;

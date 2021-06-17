@@ -48,8 +48,8 @@ KickOffset=(X=50, Y=0, Z=-65)
 
 	WeaponStaticMeshScale=1
 
-	AttackTypeInfo(0)=(fBaseDamage=87.0, fForce=34000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=94.0, fForce=34000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=84.0, fForce=34000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=96.0, fForce=34000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(2)=(fBaseDamage=69.0, fForce=35000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=100.0, fForce=65000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=35500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)

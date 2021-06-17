@@ -135,7 +135,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Saber]
      */
-	iFeintStaminaCost=9
+	iFeintStaminaCost=12
 	FeintTime=0.369
 	TertiaryFeintTime=0.45
 	fParryNegation=13
@@ -151,7 +151,7 @@ DefaultProperties
 	AttackHorizRotateSpeed=70000.0
 	SprintAttackHorizRotateSpeed=25000.0
 	SprintAttackVerticalRotateSpeed=20000.0
-	WindupAnimations(0)=(AnimationName=3p_1hsharp_slash01downtoup,ComboAnimation=3p_1hsharp_slash011downtoup,AlternateAnimation=3p_1hsharp_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.shortsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.414,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
+	WindupAnimations(0)=(AnimationName=3p_1hsharp_slash01downtoup,ComboAnimation=3p_1hsharp_slash011downtoup,AlternateAnimation=3p_1hsharp_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.shortsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.432,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(1)=(AnimationName=3p_1hsharp_slash02downtoup,ComboAnimation=3p_1hsharp_slash021downtoup,AlternateAnimation=3p_1hsharp_slash021altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.shortsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.453,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(2)=(AnimationName=3p_1hsharp_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.shortsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.501,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(3)=(AnimationName=3p_1hsharp_sattackdowntoup_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Footsteps.Archer_Dirt_Jump',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true,bUseRMM=true)

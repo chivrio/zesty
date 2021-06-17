@@ -136,14 +136,14 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_PoleHammer]
      */
-	iFeintStaminaCost=11
+	iFeintStaminaCost=15
 	FeintTime=0.291
 	TertiaryFeintTime=0.45
 	ComboFeintTime=0.55
 	fParryNegation=15
-	ParryDrain(0)=27
-	ParryDrain(1)=28
-	ParryDrain(2)=26
+	ParryDrain(0)=28
+	ParryDrain(1)=29
+	ParryDrain(2)=27
 	WeaponFontSymbol="-"
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_polehammer"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_polehammer_png"

@@ -137,12 +137,12 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Halberd]
      */
-	iFeintStaminaCost=12
+	iFeintStaminaCost=15
 	FeintTime=0.252
 	TertiaryFeintTime=0.4
 	fParryNegation=15
 	ParryDrain(0)=26
-	ParryDrain(1)=28
+	ParryDrain(1)=29
 	ParryDrain(2)=27
 	WeaponFontSymbol="o"
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_halberd"

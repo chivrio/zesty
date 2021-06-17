@@ -136,7 +136,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Longsword1H]
      */
-	iFeintStaminaCost=10
+	iFeintStaminaCost=15
 	FeintTime=0.36
 	TertiaryFeintTime=0.45
 	fParryNegation=14

@@ -25,8 +25,8 @@ KickOffset=(X=50, Y=0, Z=-65)
 	WeaponClass=class'ZestyModWeapon_Cudgel'
 	WeaponSocket=wep1hpoint
 
-	AttackTypeInfo(0)=(fBaseDamage=48.0, fForce=12500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=51.0, fForce=12500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=51.0, fForce=12500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=54.0, fForce=12500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(2)=(fBaseDamage=21.0, fForce=11500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=100.0, fForce=42500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)

@@ -133,7 +133,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Falchion]
      */
-	iFeintStaminaCost=10
+	iFeintStaminaCost=15
 	FeintTime=0.342
 	TertiaryFeintTime=0.45
 	fParryNegation=13

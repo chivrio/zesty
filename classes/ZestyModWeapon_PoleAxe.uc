@@ -132,13 +132,13 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_PoleAxe]
      */
-	iFeintStaminaCost=11
+	iFeintStaminaCost=15
 	FeintTime=0.228
 	TertiaryFeintTime=0.4
 	fParryNegation=16
-	ParryDrain(0)=27
-	ParryDrain(1)=28
-	ParryDrain(2)=26
+	ParryDrain(0)=28
+	ParryDrain(1)=29
+	ParryDrain(2)=27
 	WeaponFontSymbol="<"
 	WeaponReach=100
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_pollaxe"
@@ -158,8 +158,8 @@ DefaultProperties
 	WindupAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(8)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(9)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	ReleaseAnimations(0)=(AnimationName=3p_doubleaxe_slash01release,ComboAnimation=3p_doubleaxe_slash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.558,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	ReleaseAnimations(1)=(AnimationName=3p_doubleaxe_slash02release,ComboAnimation=3p_doubleaxe_slash021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.552,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	ReleaseAnimations(0)=(AnimationName=3p_doubleaxe_slash01release,ComboAnimation=3p_doubleaxe_slash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.561,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	ReleaseAnimations(1)=(AnimationName=3p_doubleaxe_slash02release,ComboAnimation=3p_doubleaxe_slash021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.555,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(2)=(AnimationName=3p_doubleaxe_stabrelease,ComboAnimation=3p_doubleaxe_stabrelease,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_03',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.429,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(3)=(AnimationName=3p_doubleaxe_sattackrelease,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_sprint_attack',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)
 	ReleaseAnimations(4)=(AnimationName=3p_doubleaxe_parryup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)

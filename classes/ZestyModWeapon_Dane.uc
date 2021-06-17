@@ -129,8 +129,8 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Dane]
      */
-	iFeintStaminaCost=11
-	FeintTime=0.35
+	iFeintStaminaCost=15
+	FeintTime=0.36
 	TertiaryFeintTime=0.45
 	fParryNegation=14
 	ParryDrain(0)=26

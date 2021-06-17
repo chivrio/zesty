@@ -137,13 +137,13 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_GrandMace]
      */
-	iFeintStaminaCost=11
+	iFeintStaminaCost=15
 	FeintTime=0.258
 	TertiaryFeintTime=0.4
 	fParryNegation=16
-	ParryDrain(0)=27
-	ParryDrain(1)=28
-	ParryDrain(2)=26
+	ParryDrain(0)=28
+	ParryDrain(1)=29
+	ParryDrain(2)=27
 	WeaponFontSymbol="0"
 	WeaponLargePortrait="UI_CustWeaponImages_SWF.skin_grand_mace_png"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_grandmace_png"

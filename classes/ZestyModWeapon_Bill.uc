@@ -137,14 +137,14 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Bill]
      */
-	iFeintStaminaCost=11
+	iFeintStaminaCost=15
 	FeintTime=0.258
 	TertiaryFeintTime=0.45
 	ComboFeintTime=0.55
 	fParryNegation=15
-	ParryDrain(0)=26
-	ParryDrain(1)=27
-	ParryDrain(2)=27
+	ParryDrain(0)=27
+	ParryDrain(1)=28
+	ParryDrain(2)=26
 	WeaponFontSymbol="c"
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_billhook"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_billhook_png"
@@ -158,8 +158,8 @@ DefaultProperties
 	DirParryHitAnimations(1)=(AnimationName=3p_halberd_parryhitR,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true,bUseAltNode=true)
 	DirParryHitAnimations(2)=(AnimationName=3p_halberd_parryhitH,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true,bUseAltNode=true)
 	DirParryHitAnimations(3)=(AnimationName=3p_halberd_parryhitS,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true,bUseAltNode=true)
-	WindupAnimations(0)=(AnimationName=3p_halberd_slash01downtoup,ComboAnimation=3p_halberd_slash011downtoup,AlternateAnimation=3p_halberd_slash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.555,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
-	WindupAnimations(1)=(AnimationName=3p_halberd_slash02downtoup,ComboAnimation=3p_halberd_slash021downtoup,AlternateAnimation=3p_halberd_slash021altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.567,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
+	WindupAnimations(0)=(AnimationName=3p_halberd_slash01downtoup,ComboAnimation=3p_halberd_slash011downtoup,AlternateAnimation=3p_halberd_slash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.561,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
+	WindupAnimations(1)=(AnimationName=3p_halberd_slash02downtoup,ComboAnimation=3p_halberd_slash021downtoup,AlternateAnimation=3p_halberd_slash021altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.57,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(2)=(AnimationName=3p_halberd_stabdowntoup,ComboAnimation=,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.651,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(3)=(AnimationName=3p_halberd_sattackdowntoup_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Footsteps.Paladin_Dirt_Jump',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true,bUseRMM=true)
 	WindupAnimations(4)=(AnimationName=3p_halberd_parryib,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
@@ -168,7 +168,7 @@ DefaultProperties
 	WindupAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(8)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(9)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	ReleaseAnimations(0)=(AnimationName=3p_halberd_slash01release,ComboAnimation=3p_halberd_slash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.558,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	ReleaseAnimations(0)=(AnimationName=3p_halberd_slash01release,ComboAnimation=3p_halberd_slash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.555,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(1)=(AnimationName=3p_halberd_slash02release,ComboAnimation=3p_halberd_slash021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.552,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(2)=(AnimationName=3p_halberd_stabrelease,ComboAnimation=3p_halberd_stabrelease,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Attack_03',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.402,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(3)=(AnimationName=3p_halberd_sattackrelease_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_sprint_attack',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)

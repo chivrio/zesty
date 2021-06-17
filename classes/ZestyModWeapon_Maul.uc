@@ -134,10 +134,10 @@ DefaultProperties
      */
 	FeintTime=0.228
 	TertiaryFeintTime=0.4
-	iFeintStaminaCost=11
+	iFeintStaminaCost=15
 	fParryNegation=16
-	ParryDrain(0)=28
-	ParryDrain(1)=29
+	ParryDrain(0)=29
+	ParryDrain(1)=30
 	ParryDrain(2)=27
 	WeaponFontSymbol="F"
 	WeaponLargePortrait="UI_CustWeaponImages_SWF.skin_maul_png"

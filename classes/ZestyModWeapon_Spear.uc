@@ -141,12 +141,12 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Spear]
      */
-	iFeintStaminaCost=10
+	iFeintStaminaCost=15
 	FeintTime=0.336
 	TertiaryFeintTime=0.4
 	fParryNegation=15
-	ParryDrain(0)=25
-	ParryDrain(1)=27
+	ParryDrain(0)=26
+	ParryDrain(1)=28
 	ParryDrain(2)=26
 	WeaponFontSymbol="P"//this used to be a '$' but was switched in the death font file...the javelinmelee now is the $
 	WeaponReach=100
@@ -168,7 +168,7 @@ DefaultProperties
 	WindupAnimations(8)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(9)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(0)=(AnimationName=3p_spear_smashrelease,ComboAnimation=3p_spear_smash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.351,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
-	ReleaseAnimations(1)=(AnimationName=3p_spear_stab02release,ComboAnimation=3p_spear_stab021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.39,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
+	ReleaseAnimations(1)=(AnimationName=3p_spear_stab02release,ComboAnimation=3p_spear_stab021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.396,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	ReleaseAnimations(2)=(AnimationName=3p_spear_stab01release,ComboAnimation=3p_spear_smashrelease,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Attack_03',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.36,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	ReleaseAnimations(3)=(AnimationName=3p_spear_sattackrelease_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_sprint_attack',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)
 	ReleaseAnimations(4)=(AnimationName=3p_spear_parryup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
