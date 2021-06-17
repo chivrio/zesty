@@ -34,6 +34,15 @@ static event class<GameInfo> SetGameType(string MapName, string Options, string 
 }
 
 
+reliable server function S_BroadcastServerMessage(string Message) {
+    local AOCPlayerController PC;
+    foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
+    {
+        PC.ReceiveChatMessage(Message, EFAC_ALL, false, false, , false);
+    }
+}
+
+
 DefaultProperties
 {
     PlayerControllerClass=class'`{GAMEMODE}PlayerController'
