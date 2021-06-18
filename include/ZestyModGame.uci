@@ -1,8 +1,21 @@
+// Ranked Mode
+var globalconfig bool bRankedMode;
+var globalconfig int iRankedTeamSize;
+var float fRankedModeMatchMakeInterval;
+var bool bRankedModeMatchMade;
+var bool bRankedModeReadyToStartMatch;
+var string sRankedModeMatchResponseData;
+var RankedAPI RankedAPI;
+
+var bool bLockedTeams;
+var array<string> LockedAgathaPlayerSteamIDs, LockedMasonPlayerSteamIDs;
+
 //SetGameType returns which game mode should be used for which map prefix
 //You can do whatever you want with this. You can even use Options
 // (options => the ?blah=blah things added after the map name when launching a server or in the map list)
 //to add even more variety. See the ParseOption function in Src\Engine\Classes\GameInfo.uc
-var config array<GameTypePrefix>	SDKPrefixes;
+var config array<GameTypePrefix> SDKPrefixes;
+
 
 static event class<GameInfo> SetGameType(string MapName, string Options, string Portal)
 {
@@ -22,7 +35,7 @@ static event class<GameInfo> SetGameType(string MapName, string Options, string 
     {
         if (default.SDKPrefixes[i].Prefix ~= ThisMapPrefix)
         {
-            NewGameType = class<GameInfo>(DynamicLoadObject(default.SDKPrefixes[i].GameType,class'Class'));
+            NewGameType = class<GameInfo>(DynamicLoadObject(default.SDKPrefixes[i].GameType, class'Class'));
             if ( NewGameType != None )
             {
                 return NewGameType;
@@ -33,8 +46,259 @@ static event class<GameInfo> SetGameType(string MapName, string Options, string 
     return super.SetGameType(MapName, Options, Portal);
 }
 
+event InitGame(string Options, out string ErrorMessage)
+{
+    super.InitGame(Options, ErrorMessage);
 
-reliable server function S_BroadcastServerMessage(string Message) {
+    RankedAPI = new class'RankedAPI';
+
+    UnlockTeams();
+
+    if ((bTournamentMode && bRankedMode) || (default.bTournamentMode && default.bRankedMode))
+    {
+        ConfigureTournamentMode(false);
+        ConfigureRankedMode(false);
+        WorldInfo.ServerTravel("?restart", false);
+        return;
+    }
+
+    if (bRankedMode)
+    {
+        // Autobalance
+        bAutoBalance = false;
+        bDeathBasedAutoBalance = false;
+        AOCGRI(GameReplicationInfo).bBalanceTeams = false;
+
+        bUseMaxPingLimit = false;
+        bDisableTeamDamagePenalty = true;
+        bAdminCanPause = true;
+        bAnyUserCanGetSteamID = true;
+    }
+}
+
+
+function GenericPlayerInitialization(Controller C)
+{
+    super.GenericPlayerInitialization(C);
+
+    if (bRankedMode)
+        RankedAPI.OnUserConnect(OnlineSubsystemSteamworks(PlayerController(C).OnlineSub).UniqueNetIdToInt64(C.PlayerReplicationInfo.UniqueId), OnUserConnectOnComplete);
+}
+
+function Logout(Controller Exiting)
+{
+    super.Logout(Exiting);
+
+    if (bRankedMode)
+        RankedAPI.OnUserDisconnect(OnlineSubsystemSteamworks(PlayerController(Exiting).OnlineSub).UniqueNetIdToInt64(Exiting.PlayerReplicationInfo.UniqueId));
+}
+
+function bool ShouldCountDown()
+{
+    local int AgathaSize, MasonSize;
+    local int AgathaMod, MasonMod;
+    local int AgathiansReady, MasonsReady;
+    local int CorrectedAgathaSize, CorrectedMasonSize;
+    local bool bCanSpawn;
+    local bool bEachTeamHasAtleastOnePlayer;
+
+    local Controller C;
+    local AOCPlayerController PC;
+
+    AgathaMod = 0;
+    MasonMod = 0;
+    foreach WorldInfo.AllControllers(class'Controller', C)
+    {
+        PC = AOCPlayerController(C);
+        bCanSpawn = (PC != none && PC.CurrentFamilyInfo != none && PC.bReady) || AOCAIController(C) != none;
+
+        if(CMWTO2GRI(GameReplicationInfo) != none && AOCAIController(C) != none)
+        {
+            //bots cannot trigger countdown in TO2 (is breaking horde-type maps)
+            continue;
+        }
+        
+        if(!bCanSpawn)
+        {
+            continue;
+        }
+
+        if (AOCPRI(C.PlayerReplicationInfo).IsOnTeam(EAOCFaction(Teams[0].TeamIndex)))
+        {
+            AgathaSize += 1;
+
+            if(PC.IsVoluntarySpectator())
+            {
+                AgathaMod += 1;
+            }
+            else if(PC.bTournamentReady)
+            {
+                AgathiansReady += 1;
+            }
+        }
+        else if (AOCPRI(C.PlayerReplicationInfo).IsOnTeam(EAOCFaction(Teams[1].TeamIndex)))
+        {
+            MasonSize += 1;
+
+            if(PC.IsVoluntarySpectator())
+            {
+                MasonMod += 1;
+            }
+            else if(PC.bTournamentReady)
+            {
+                MasonsReady += 1;
+            }
+        }
+    }
+
+    CorrectedAgathaSize = AgathaSize - AgathaMod;
+    CorrectedMasonSize = MasonSize - MasonMod;
+
+    bEachTeamHasAtleastOnePlayer = (CorrectedAgathaSize > 0 && CorrectedMasonSize > 0);
+
+    if (bTournamentMode)
+    {
+        return
+        (
+            bEachTeamHasAtleastOnePlayer &&
+            (
+                // each team has more than the minimum tolerable amount of 'ready' players
+                (
+                    (AgathiansReady / float(CorrectedAgathaSize)) >= TournamentTeamReadyThreshold &&
+                    (MasonsReady / float(CorrectedMasonSize)) >= TournamentTeamReadyThreshold
+                )
+
+                // or an admin forced the match to start
+                || bAdminForcedTournamentReady
+            )
+        );
+    }
+    else if (bRankedMode)
+    {
+        return (bEachTeamHasAtleastOnePlayer && bRankedModeReadyToStartMatch);
+    }
+    else
+    {
+        return (bEachTeamHasAtleastOnePlayer || !bWaitForTeams);
+    }
+}
+
+function EndGame(PlayerReplicationInfo Winner, string Reason)
+{
+    super.EndGame(Winner, Reason);
+
+    if (bRankedMode && bRankedModeMatchMade && sRankedModeMatchResponseData != "")
+        RankedAPI.CalculateNewElos(sRankedModeMatchResponseData, GetWinningTeam(), CalculateNewElosOnComplete);
+}
+
+function bool RequestJoinTeam(AOCPlayerController inController, EAOCFaction inTeam, optional bool bForce = false)
+{
+    local string ControllerSteamID, RequirementSteamID;
+    local array<string> TargetTeamSteamIDs;
+
+
+    // If not using locked teams via steamIDs, use vanilla autobalance if applicable
+    if (!bLockedTeams)
+        return super.RequestJoinTeam(inController, inTeam, bForce);
+
+
+    ControllerSteamID = OnlineSubsystemSteamworks(inController.OnlineSub).UniqueNetIdToInt64(inController.PlayerReplicationInfo.UniqueId);
+
+    // Resolve which team's locked-in steamIDs to check
+    if (inTeam == EFAC_AGATHA)
+        TargetTeamSteamIDs = LockedAgathaPlayerSteamIDs;
+    else if (inTeam == EFAC_MASON)
+        TargetTeamSteamIDs = LockedMasonPlayerSteamIDs;
+    else
+    {
+        // Reject
+        if (!bForce)
+            inController.Response_JoinTeam(inTeam, false);
+        return false;
+    }
+
+    foreach TargetTeamSteamIDs(RequirementSteamID)
+    {
+        if (ControllerSteamID == RequirementSteamID)
+        {
+            // Accept
+            if (!bForce)
+                inController.Response_JoinTeam(inTeam, true);
+
+            AOCPRI(inController.PlayerReplicationInfo).SetNextTeam(inTeam);
+            return true;
+        }
+    }
+
+    // Reject
+    if (!bForce)
+        inController.Response_JoinTeam(inTeam, false);
+    return false;
+}
+
+function RequestJoinClass(AOCPlayerController inController, EAOCFaction inTeam, byte inClass, optional bool bForce = false, optional bool bSetClass = false)
+{
+    local string ControllerSteamID, RequirementSteamID;
+    local array<string> TargetTeamSteamIDs;
+
+
+    // If not using locked teams via steamIDs, use vanilla
+    if (!bLockedTeams)
+        super.RequestJoinClass(inController, inTeam, inClass, bForce, bSetClass);
+
+
+    ControllerSteamID = OnlineSubsystemSteamworks(inController.OnlineSub).UniqueNetIdToInt64(inController.PlayerReplicationInfo.UniqueId);
+
+    // Resolve which team's locked-in steamIDs to check
+    if (inTeam == EFAC_AGATHA)
+        TargetTeamSteamIDs = LockedAgathaPlayerSteamIDs;
+    else if (inTeam == EFAC_MASON)
+        TargetTeamSteamIDs = LockedMasonPlayerSteamIDs;
+    else
+    {
+        // Reject
+        if (!bForce)
+            inController.Response_JoinClass(inClass, false);
+        return;
+    }
+
+    foreach TargetTeamSteamIDs(RequirementSteamID)
+    {
+        if (ControllerSteamID == RequirementSteamID)
+        {
+            // Accept
+            if (!bForce)
+            {
+                inController.Response_JoinClass(inClass, true);
+                AOCPRI(inController.PlayerReplicationInfo).SetNextClass(EAOCClass(inClass));
+                return;
+            }
+        }
+    }
+
+    // Reject
+    if (!bForce)
+        inController.Response_JoinClass(inClass, false);
+}
+
+
+Auto State AOCPreRound
+{
+    function BeginState(Name PreviousStateName)
+    {
+        super.BeginState(PreviousStateName);
+
+        if (bRankedMode && !bRankedModeMatchMade && !bRankedModeReadyToStartMatch)
+        {
+            ClearTimer('RequestMatchMake');
+            SetTimer(fRankedModeMatchMakeInterval, true, 'RequestMatchMake');
+        }
+    }
+}
+
+
+reliable server function S_BroadcastServerMessage(string Message)
+{
     local AOCPlayerController PC;
     foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
     {
@@ -42,9 +306,234 @@ reliable server function S_BroadcastServerMessage(string Message) {
     }
 }
 
+function int GetActualPlayersCount()
+{
+    local AOCPlayerController PC;
+    local int PlayerCount;
+
+    foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
+    {
+        if (!PC.IsVoluntarySpectator() && PC.CurrentFamilyInfo != none && PC.bReady)
+            PlayerCount += 1;
+    }
+
+    return PlayerCount;
+}
+
+function Array<String> GetActualPlayersSteamIDs()
+{
+    local AOCPlayerController PC;
+    local Array<String> PlayerSteamIDs;
+
+    foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
+    {
+        if (!PC.IsVoluntarySpectator() && PC.CurrentFamilyInfo != none && PC.bReady)
+            PlayerSteamIDs.AddItem(OnlineSubsystemSteamworks(PC.OnlineSub).UniqueNetIdToInt64(PC.PlayerReplicationInfo.UniqueId));
+    }
+
+    return PlayerSteamIDs;
+}
+
+function ForceTeams(Array<String> AgathaPlayersSteamIDs, Array<String> MasonPlayersSteamIDs)
+{
+    local AOCPlayerController PC;
+    local bool Handled;
+    local EAOCFaction CurrentTeam;
+    local AOCFamilyInfo CurrentClass, NewClass;
+    local string ControllerSteam64ID, RequirementSteam64ID;
+    local int i, NewClassIndex;
+
+
+    if ((AgathaPlayersSteamIDs.length == 0 && MasonPlayersSteamIDs.length == 0) ||
+        AOCFFAGRI(GameReplicationInfo) != none ||
+        AOCDuelGRI(GameReplicationInfo) != none ||
+        CDWDuelGRI(GameReplicationInfo) != none
+    )
+        return;
+
+
+    // For all players on the server
+    foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
+    {
+        Handled = false;
+
+        // Get their current team, class and steam64ID
+        CurrentTeam = AOCPRI(PC.PlayerReplicationInfo).GetCurrentTeam();
+        CurrentClass = PC.CurrentFamilyInfo;
+        ControllerSteam64ID = OnlineSubsystemSteamworks(PC.OnlineSub).UniqueNetIdToInt64(PC.PlayerReplicationInfo.UniqueId);
+
+        // Check if they should be on Agatha
+        foreach AgathaPlayersSteamIDs(RequirementSteam64ID)
+        {
+            // They should be on this team!
+            if (ControllerSteam64ID == RequirementSteam64ID)
+            {
+                Handled = true;
+
+                // If they're already on the correct team just exit
+                if (CurrentTeam == EFAC_AGATHA)
+                    break;
+
+                // If they're spectating then make them join the game
+                if (CurrentTeam == EFAC_NONE)
+                {
+                    PC.GenericSwitchToObs(false);
+                    PC.SetReady(true);
+                }
+
+                // If they have previously selected a class, get the equivalent from the opposing team
+                if (CurrentClass != none)
+                {
+
+                    // Get the index of CurrentClass and resolve the index for the equivalent class in the opposing team
+                    for (i = 0; i < ArrayCount(AOCGRI(GameReplicationInfo).FamilyInfos); ++i)
+                    {
+                        if (AOCGRI(GameReplicationInfo).FamilyInfos[i] == CurrentClass)
+                        {
+                            NewClassIndex = i - 5;  // Mason to Agatha
+                            break;
+                        }
+                    }
+
+                    NewClass = AOCGRI(GameReplicationInfo).FamilyInfos[NewClassIndex];
+
+                }
+                // Otherwise set them to Agatha Vanguard
+                else
+                    NewClass = AOCGRI(GameReplicationInfo).FamilyInfos[2];
+
+                // Force them to the correct team
+                PC.SetNewClass(NewClass);
+                PC.SetReady(true);
+
+                break;
+            }
+        }
+
+        if (Handled)
+            continue;
+
+        // Check if they should be on Mason
+        foreach MasonPlayersSteamIDs(RequirementSteam64ID)
+        {
+            if (ControllerSteam64ID == RequirementSteam64ID)
+            {
+                Handled = true;
+
+                if (CurrentTeam == EFAC_MASON)
+                    break;
+
+                if (CurrentTeam == EFAC_NONE)
+                {
+                    PC.GenericSwitchToObs(false);
+                    PC.SetReady(true);
+                }
+
+                if (CurrentClass != none)
+                {
+
+                    for (i = 0; i < ArrayCount(AOCGRI(GameReplicationInfo).FamilyInfos); ++i)
+                    {
+                        if (AOCGRI(GameReplicationInfo).FamilyInfos[i] == CurrentClass)
+                        {
+                            NewClassIndex = i + 5;  // Agatha to Mason
+                            break;
+                        }
+                    }
+
+                    NewClass = AOCGRI(GameReplicationInfo).FamilyInfos[NewClassIndex];
+
+                }
+                // Otherwise set them to Mason Vanguard
+                else
+                    NewClass = AOCGRI(GameReplicationInfo).FamilyInfos[7];
+
+                PC.SetNewClass(NewClass);
+                PC.SetReady(true);
+
+                break;
+            }
+        }
+
+        if (Handled)
+            continue;
+
+        // Those who shouldn't be on Agatha or Mason should be Spectators
+        PC.JoinSpectatorTeam();
+    }
+}
+
+function LockTeams(Array<String> AgathaPlayersSteamIDs, Array<String> MasonPlayersSteamIDs)
+{
+    local string SteamID;
+
+    if ((AgathaPlayersSteamIDs.length == 0 && MasonPlayersSteamIDs.length == 0) ||
+        AOCFFAGRI(GameReplicationInfo) != none ||
+        AOCDuelGRI(GameReplicationInfo) != none ||
+        CDWDuelGRI(GameReplicationInfo) != none
+    )
+        return;
+
+    // Clear any previous requirements just in case
+    LockedAgathaPlayerSteamIDs.Remove(0, LockedAgathaPlayerSteamIDs.length);
+    LockedMasonPlayerSteamIDs.Remove(0, LockedMasonPlayerSteamIDs.length);
+
+    bLockedTeams = true;
+
+    // Add each new requirement (I tried doing it a more normal way but it didn't compile...)
+    foreach AgathaPlayersSteamIDs(SteamID)
+    {
+        LockedAgathaPlayerSteamIDs.AddItem(SteamID);
+    }
+    SteamID = "";
+    foreach MasonPlayersSteamIDs(SteamID)
+    {
+        LockedMasonPlayerSteamIDs.AddItem(SteamID);
+    }
+
+    ForceTeams(AgathaPlayersSteamIDs, MasonPlayersSteamIDs);
+}
+
+function UnlockTeams()
+{
+    bLockedTeams = false;
+    LockedAgathaPlayerSteamIDs.Remove(0, LockedAgathaPlayerSteamIDs.length);
+    LockedMasonPlayerSteamIDs.Remove(0, LockedMasonPlayerSteamIDs.length);
+}
+
+function RenamePlayer(string steam64ID, string name)
+{
+    local AOCPlayerController PC;
+
+    // Find the relevant controller by steam64ID
+    foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
+    {
+        // If the IDs match then rename and exit early
+        if (OnlineSubsystemSteamworks(PC.OnlineSub).UniqueNetIdToInt64(PC.PlayerReplicationInfo.UniqueId) == steam64ID)
+        {
+            ChangeName(PC, name, true);
+            break;
+        }
+    }
+}
+
 
 // Deprecated
 function AdminTournamentMode(bool bEnable){}
+
+exec function TournamentMode(bool bEnable)
+{
+    if (default.bTournamentMode == bEnable)
+        return;
+
+    S_BroadcastServerMessage("Admin TournamentMode");
+
+    if (bEnable)
+        ConfigureRankedMode(false);
+
+    ConfigureTournamentMode(bEnable);
+    WorldInfo.ServerTravel("?restart", false);
+}
 
 reliable server function ConfigureTournamentMode(bool bEnable)
 {
@@ -55,15 +544,192 @@ reliable server function ConfigureTournamentMode(bool bEnable)
     class'AOCGame'.static.StaticSaveConfig();
 }
 
-exec function TournamentMode(bool bEnable)
+// Ranked Mode
+exec function RankedMode(bool bEnable)
 {
-    if (bTournamentMode == bEnable)
+    if (default.bRankedMode == bEnable)
         return;
 
-    S_BroadcastServerMessage("Admin TournamentMode");
+    S_BroadcastServerMessage("Admin RankedMode");
 
-    ConfigureTournamentMode(bEnable);
+    if (bEnable)
+        ConfigureTournamentMode(false);
+
+    ConfigureRankedMode(bEnable);
     WorldInfo.ServerTravel("?restart", false);
+}
+
+reliable server function ConfigureRankedMode(bool bEnable)
+{
+    bRankedMode = bEnable;
+    SaveConfig();
+
+    class'`{GAMEMODE}'.default.bRankedMode = bEnable;
+    class'`{GAMEMODE}'.static.StaticSaveConfig();
+}
+
+exec function RankedTeamSize(int Size)
+{
+    S_RankedTeamSize(Size);
+}
+
+reliable server function S_RankedTeamSize(int Size)
+{
+    if (Size <= 0 || Size > (MaxPlayersAllowed / 2))
+        return;
+
+    iRankedTeamSize = Size;
+    SaveConfig();
+
+    class'`{GAMEMODE}'.default.iRankedTeamSize = Size;
+    class'`{GAMEMODE}'.static.StaticSaveConfig();
+
+    RankedAPI.BroadcastMessageToAll("Admin RankedTeamSize" @ Size);
+}
+
+function OnUserConnectOnComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed)
+{
+    local JsonObject data;
+    local string id;
+    local int elo;
+    local string name;
+
+    // Request failed spectacularly
+    if (Response == none || !bDidSucceed)
+        return;
+
+    // Request succeeded; Get the payload
+    data = class'JsonObject'.static.DecodeJson(Response.GetContentAsString())
+                                   .GetObject("response");
+
+    // Response payload probably isn't what we're expecting
+    if (data == none || data.GetBoolValue("success") == false)
+        return;
+
+    // Complete success :)
+    data = data
+        .GetObject("items")
+        .ObjectArray[0];
+
+    id = data.GetStringValue("_id");
+    elo = data.GetIntValue("elo");
+    name = data.GetStringValue("name");
+
+    RenamePlayer(id, "[" $ elo $ "]" @ name);
+}
+
+function RequestMatchMake()
+{
+    local int PlayerCount;
+
+    PlayerCount = GetActualPlayersCount();
+
+    // Cases to not bother POSTing remote service and to not bother sending notifications
+    if (!bRankedMode ||
+        PlayerCount == 0 ||
+        bRankedModeMatchMade ||
+        bRankedModeReadyToStartMatch
+    )
+        return;
+
+    // Cases to not bother POSTing remote service and to notify players why
+    // Unsupported gamemodes
+    if (AOCFFAGRI(GameReplicationInfo) != none ||
+        AOCDuelGRI(GameReplicationInfo) != none ||
+        CDWDuelGRI(GameReplicationInfo) != none
+    )
+    {
+        RankedAPI.BroadcastMessageToAll("");
+        RankedAPI.BroadcastMessageToAll("Unsupported gamemode.");
+        RankedAPI.BroadcastMessageToAll("Disable ranked mode for this gamemode!");
+        RankedAPI.BroadcastMessageToAll("");
+        return;
+    }
+    // Team Objective
+    if (AOCTOGRI(GameReplicationInfo) != none)
+    {
+        RankedAPI.BroadcastMessageToAll("");
+        RankedAPI.BroadcastMessageToAll("Team Objective has been disabled until the usual format of playing two halves is supported.");
+        RankedAPI.BroadcastMessageToAll("Disable ranked mode for now!");
+        RankedAPI.BroadcastMessageToAll("");
+        return;
+    }
+    // Insufficient players
+    if (PlayerCount < iRankedTeamSize * 2)
+    {
+        RankedAPI.BroadcastMessageToAll("");
+        RankedAPI.BroadcastMessageToAll("Need at least" @ iRankedTeamSize * 2 @ "players to start a match.");
+        RankedAPI.BroadcastMessageToAll("Wait for more players to join or reduce the target team size.");
+        RankedAPI.BroadcastMessageToAll("Trying again in" @ fRankedModeMatchMakeInterval @ "seconds...");
+        RankedAPI.BroadcastMessageToAll("");
+        return;
+    }
+
+    RankedAPI.CalculateMatchMaking(GetActualPlayersSteamIDs(), iRankedTeamSize, RequestMatchMakeOnComplete);
+}
+
+function RequestMatchMakeOnComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed)
+{
+    local JsonObject data;
+    local array<string> AgathaPlayerIDs, MasonPlayerIDs;
+
+    // Request failed spectacularly
+    if (Response == none || !bDidSucceed)
+    {
+        RankedAPI.BroadcastMessageToAll("");
+        RankedAPI.BroadcastMessageToAll("Remote service failed to respond.");
+        RankedAPI.BroadcastMessageToAll("Trying again in" @ fRankedModeMatchMakeInterval @ "seconds...");
+        RankedAPI.BroadcastMessageToAll("");
+        return;
+    }
+
+    // Request succeeded; Get the payload
+    data = class'JsonObject'.static.DecodeJson(Response.GetContentAsString())
+                                   .GetObject("response");
+
+    // Response payload probably isn't what we're expecting
+    if (data == none || data.GetBoolValue("success") == false)
+    {
+        RankedAPI.BroadcastMessageToAll("");
+        RankedAPI.BroadcastMessageToAll("Rejected by remote service.");
+        if (data != none)
+            RankedAPI.BroadcastMessageToAll("'" @ data.GetStringValue("error") @ "'");
+        RankedAPI.BroadcastMessageToAll("Trying again in" @ fRankedModeMatchMakeInterval @ "seconds...");
+        RankedAPI.BroadcastMessageToAll("");
+        return;
+    }
+
+    // Complete success :)
+    RankedAPI.BroadcastMessageToAll("Match successfully made!");
+
+    // Ensure we stop polling for a match
+    bRankedModeMatchMade = true;
+    ClearTimer('RequestMatchMake');
+
+    // Save response payload
+    sRankedModeMatchResponseData = Response.GetContentAsString();
+
+    // Extract teams from response
+    RankedAPI.GetTeamPlayerIDs(sRankedModeMatchResponseData, AgathaPlayerIDs, MasonPlayerIDs);
+
+    // Lock and force teams
+    LockTeams(AgathaPlayerIDs, MasonPlayerIDs);
+
+    // Broadcast the match info to everyone in the server
+    RankedAPI.BroadcastMessageToAll("");
+    RankedAPI.BroadcastMatchInfo(sRankedModeMatchResponseData);
+    RankedAPI.BroadcastMessageToAll("");
+
+    // Start the match
+    bRankedModeReadyToStartMatch = true;
+}
+
+function CalculateNewElosOnComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed)
+{
+    if (bDidSucceed)
+        RankedAPI.BroadcastMessageToAll("Match result successfully sent to the remote service.");
+    else
+        RankedAPI.BroadcastMessageToAll("Failed to send match result to the remote service.");
 }
 
 
@@ -71,29 +737,25 @@ DefaultProperties
 {
     PlayerControllerClass=class'`{GAMEMODE}PlayerController'
     DefaultPawnClass=class'`{GAMEMODE}Pawn'
-
     HUDType=class'`{GAMEMODE}HUD'
-
 
     //This is the name that shows in the server browser for this mod:
     ModDisplayString="ZestyMod"
 
     Families.Empty;
-
-    // do some initialization work here
     Families(ECLASS_Archer)=class'ZestyModFamilyInfo_Agatha_Archer'
     Families(ECLASS_ManAtArms)=class'ZestyModFamilyInfo_Agatha_ManAtArms'
     Families(ECLASS_Vanguard)=class'ZestyModFamilyInfo_Agatha_Vanguard'
     Families(ECLASS_Knight)=class'ZestyModFamilyInfo_Agatha_Knight'
     Families(ECLASS_SiegeEngineer)=class'ZestyModFamilyInfo_Agatha_Archer'
-
     Families(5)=class'ZestyModFamilyInfo_Mason_Archer'
     Families(6)=class'ZestyModFamilyInfo_Mason_ManAtArms'
     Families(7)=class'ZestyModFamilyInfo_Mason_Vanguard'
     Families(8)=class'ZestyModFamilyInfo_Mason_Knight'
     Families(9)=class'ZestyModFamilyInfo_Mason_Archer'
 
-
     MinimumRespawnTime = 10.0f
     bDisableTeamDamagePenalty = true
+
+    fRankedModeMatchMakeInterval = 30.0
 }
