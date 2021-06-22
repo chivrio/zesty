@@ -157,6 +157,11 @@ reliable server function ActualUnpause() {
     }
 }*/
 
+function LocalRequestJoinClass(byte inClass)
+{
+    Request_JoinClass(inClass);
+}
+
 exec function GetAdmins() {
     S_GetAdmins();
 }
@@ -558,6 +563,17 @@ exec function PerformAim() {
     if (class<ZestyModWeapon_Crossbow>(Pawn.Weapon.Class) != none)
         StartFire(1);
 }
+
+
+// Deprecated
+exec function AdminTournamentMode(optional bool bEnable = true)
+{
+    ClientDisplayConsoleMessage("Deprecated: use 'Admin TournamentMode' instead");
+    ClientDisplayConsoleMessage("Disable: Admin TournamentMode 0");
+    ClientDisplayConsoleMessage("Enable: Admin TournamentMode 1");
+}
+
+reliable server function S_AdminTournamentMode(bool bEnable) {}
 
 
 DefaultProperties
