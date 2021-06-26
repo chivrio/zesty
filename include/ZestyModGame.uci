@@ -93,6 +93,51 @@ function Logout(Controller Exiting)
     RankedAPI.OnUserDisconnect(OnlineSubsystemSteamworks(PlayerController(Exiting).OnlineSub).UniqueNetIdToInt64(Exiting.PlayerReplicationInfo.UniqueId));
 }
 
+function bool FindInactivePRI(PlayerController PC)
+{
+    local bool bIsConsole;
+    local string NewNetworkAddress;
+    local int i;
+    local PlayerReplicationInfo OldPRI, CurrentPRI;
+
+
+    if (PC.PlayerReplicationInfo.bOnlySpectator)
+    {
+        return false;
+    }
+
+    bIsConsole = WorldInfo.IsConsoleBuild();
+    NewNetworkAddress = PC.PlayerReplicationInfo.SavedNetworkAddress;
+
+    for (i = 0; i < InactivePRIArray.Length; i++)
+    {
+        CurrentPRI = InactivePRIArray[i];
+
+        if ((CurrentPRI == None) || CurrentPRI.bDeleteMe)
+        {
+            InactivePRIArray.Remove(i, 1);
+            i--;
+        }
+        else if ((bIsConsole && CurrentPRI.UniqueId == PC.PlayerReplicationInfo.UniqueId) ||
+                 (!bIsConsole && CurrentPRI.SavedNetworkAddress ~= NewNetworkAddress))
+        {
+            // found it!
+            OldPRI = PC.PlayerReplicationInfo;
+            PC.PlayerReplicationInfo = CurrentPRI;
+            PC.PlayerReplicationInfo.SetOwner(PC);
+            PC.PlayerReplicationInfo.RemoteRole = ROLE_SimulatedProxy;
+            PC.PlayerReplicationInfo.Lifespan = 0;
+            OverridePRI(PC, OldPRI);
+            WorldInfo.GRI.AddPRI(PC.PlayerReplicationInfo);
+            InactivePRIArray.Remove(i, 1);
+            OldPRI.bIsInactive = true;
+            OldPRI.Destroy();
+            return true;
+        }
+    }
+    return false;
+}
+
 function bool ShouldCountDown()
 {
     local int AgathaSize, MasonSize;
