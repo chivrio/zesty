@@ -11,27 +11,38 @@ delegate OnProcessComplete(HttpRequestInterface OriginalRequest, HttpResponseInt
 
 function DoNothing(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed){}
 
-function OnUserConnect(string steamID64, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
+function OnUserConnect(string steamID64,
+                       optional string playerIP,
+                       optional string serverIP,
+                       optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
 {
-    local GUID RequestID;
+    local GUID GUID;
 
-    RequestID = CreateGuid();
+    GUID = CreateGuid();
 
     class'HttpFactory'.static.CreateRequest()
-        .SetURL(baseURL $ "OnUserConnect?steamid64=" $ steamID64 $ "&key=" $ key $ "&workaround=" $ GetStringFromGuid(RequestID))
+        .SetURL(baseURL $ "OnUserConnect"
+                        $ "?key=" $ key
+                        $ "&steamid64=" $ steamID64
+                        $ "&GUID=" $ GetStringFromGuid(GUID))
         .SetVerb("GET")
+        .SetHeader("playerIP", playerIP)
+        .SetHeader("serverIP", serverIP)
         .SetProcessRequestCompleteDelegate(OnProcessComplete)
         .ProcessRequest();
 }
 
 function OnUserDisconnect(string steamID64, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
 {
-    local GUID RequestID;
+    local GUID GUID;
 
-    RequestID = CreateGuid();
+    GUID = CreateGuid();
 
     class'HttpFactory'.static.CreateRequest()
-        .SetURL(baseURL $ "OnUserDisconnect?steamid64=" $ steamID64 $ "&key=" $ key $ "&workaround=" $ GetStringFromGuid(RequestID))
+        .SetURL(baseURL $ "OnUserDisconnect"
+                        $ "?key=" $ key
+                        $ "&steamid64=" $ steamID64
+                        $ "&GUID=" $ GetStringFromGuid(GUID))
         .SetVerb("GET")
         .SetProcessRequestCompleteDelegate(OnProcessComplete)
         .ProcessRequest();
@@ -47,7 +58,9 @@ function CalculateMatchMaking(Array<String> steamIDs64, int teamSize, optional d
     payload.SetStringValue("steamids64", stringSteamIDs);
 
     class'HttpFactory'.static.CreateRequest()
-        .SetURL(baseURL $ "CalculateMatchMaking?size=" $ teamSize $ "&key=" $ key)
+        .SetURL(baseURL $ "CalculateMatchMaking"
+                        $ "?key=" $ key
+                        $ "&size=" $ teamSize)
         .SetVerb("POST")
         .SetHeader("Content-Type", "application/json")
         .SetContentAsString(class'JsonObject'.static.EncodeJson(payload))
@@ -58,7 +71,8 @@ function CalculateMatchMaking(Array<String> steamIDs64, int teamSize, optional d
 function CalculateNewElos(string sCompletedMatchRequestData, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
 {
     class'HttpFactory'.static.CreateRequest()
-        .SetURL(baseURL $ "CalculateNewElos?key=" $ key)
+        .SetURL(baseURL $ "CalculateNewElos"
+                        $ "?key=" $ key)
         .SetVerb("POST")
         .SetHeader("Content-Type", "application/json")
         .SetContentAsString(sCompletedMatchRequestData)
