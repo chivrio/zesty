@@ -134,7 +134,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Zweihander]
      */
 	iFeintStaminaCost=15
-	FeintTime=0.276
+	FeintTime=0.279
 	TertiaryFeintTime=0.4
 	fParryNegation=15
 	ParryDrain(0)=28
