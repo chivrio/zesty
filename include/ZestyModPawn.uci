@@ -568,6 +568,16 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
 
     // Track statistics for each weapon
     if (PRI != none) {
+
+        // Kicks
+        if (Info.AttackType == Attack_Shove)
+        {
+            if (bQuickKick)
+                `{GAMEMODE}PRI(PRI).LightShoveHits += 1;
+            else
+                `{GAMEMODE}PRI(PRI).HeavyShoveHits += 1;
+        }
+
         // Register non-team damage
         if (!bSameTeam)
             AOCPRI(PRI).EnemyDamageDealt += ActualDamage;

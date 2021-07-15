@@ -1,5 +1,7 @@
 var string OriginalName;
-var int TeamDamageTaken,
+var int LightShoveHits,
+        HeavyShoveHits,
+        TeamDamageTaken,
         Parries,
         Blocks;
 
@@ -7,7 +9,7 @@ var int TeamDamageTaken,
 replication
 {
     if (bNetDirty && bNetOwner)
-        TeamDamageTaken, Parries, Blocks;
+        LightShoveHits, HeavyShoveHits, TeamDamageTaken, Parries, Blocks;
 }
 
 
@@ -15,6 +17,8 @@ function PreSeamlessTravelReset()
 {
     super.PreSeamlessTravelReset();
 
+    LightShoveHits = 0;
+    HeavyShoveHits = 0;
     TeamDamageTaken = 0;
     Parries = 0;
     Blocks = 0;
@@ -26,6 +30,8 @@ function CopyProperties(PlayerReplicationInfo PRI)
 
     AOCPRI(PRI).bAdmin = bAdmin;
 
+    `{GAMEMODE}PRI(PRI).LightShoveHits = LightShoveHits;
+    `{GAMEMODE}PRI(PRI).HeavyShoveHits = HeavyShoveHits;
     `{GAMEMODE}PRI(PRI).TeamDamageTaken = TeamDamageTaken;
     `{GAMEMODE}PRI(PRI).Parries = Parries;
     `{GAMEMODE}PRI(PRI).Blocks = Blocks;
