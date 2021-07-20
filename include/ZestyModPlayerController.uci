@@ -645,6 +645,12 @@ exec function AdminTournamentMode(optional bool bEnable = true)
 
 reliable server function S_AdminTournamentMode(bool bEnable) {}
 
+reliable client function OverrideVoteText(optional string Primary, optional string Secondary)
+{
+    AOCBaseHUD(myHUD).HUD.MainHUD.VotePrimaryTitle.SetText(Primary);
+    AOCBaseHUD(myHUD).HUD.MainHUD.VoteSecondaryTitle.SetText(Secondary);
+}
+
 
 DefaultProperties
 {
