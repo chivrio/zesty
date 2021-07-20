@@ -1,3 +1,14 @@
+//SetGameType returns which game mode should be used for which map prefix
+//You can do whatever you want with this. You can even use Options
+// (options => the ?blah=blah things added after the map name when launching a server or in the map list)
+//to add even more variety. See the ParseOption function in Src\Engine\Classes\GameInfo.uc
+var config array<GameTypePrefix> SDKPrefixes;
+
+var bool bLockedTeams;
+var array<string> LockedAgathaPlayerSteamIDs, LockedMasonPlayerSteamIDs;
+
+var globalconfig bool bRestartMapAfterEndGame;
+
 // Ranked Mode
 var globalconfig bool bRankedMode;
 var globalconfig int iRankedTeamSize;
@@ -6,17 +17,6 @@ var bool bRankedModeMatchMade;
 var bool bRankedModeReadyToStartMatch;
 var string sRankedModeMatchResponseData;
 var RankedAPI RankedAPI;
-
-var bool bLockedTeams;
-var array<string> LockedAgathaPlayerSteamIDs, LockedMasonPlayerSteamIDs;
-
-var globalconfig bool bRestartMapAfterEndGame;
-
-//SetGameType returns which game mode should be used for which map prefix
-//You can do whatever you want with this. You can even use Options
-// (options => the ?blah=blah things added after the map name when launching a server or in the map list)
-//to add even more variety. See the ParseOption function in Src\Engine\Classes\GameInfo.uc
-var config array<GameTypePrefix> SDKPrefixes;
 
 
 static event class<GameInfo> SetGameType(string MapName, string Options, string Portal)
@@ -108,14 +108,6 @@ function GenericPlayerInitialization(Controller C)
     }
 }
 
-function Logout(Controller Exiting)
-{
-    super.Logout(Exiting);
-
-    // Done regardless of bRankedMode to address some edge-cases where players were not disconnected from remote service
-    RankedAPI.OnUserDisconnect(OnlineSubsystemSteamworks(PlayerController(Exiting).OnlineSub).UniqueNetIdToInt64(Exiting.PlayerReplicationInfo.UniqueId));
-}
-
 function bool FindInactivePRI(PlayerController PC)
 {
     local bool bIsConsole;
@@ -159,6 +151,14 @@ function bool FindInactivePRI(PlayerController PC)
         }
     }
     return false;
+}
+
+function Logout(Controller Exiting)
+{
+    super.Logout(Exiting);
+
+    // Done regardless of bRankedMode to address some edge-cases where players were not disconnected from remote service
+    RankedAPI.OnUserDisconnect(OnlineSubsystemSteamworks(PlayerController(Exiting).OnlineSub).UniqueNetIdToInt64(Exiting.PlayerReplicationInfo.UniqueId));
 }
 
 function bool ShouldCountDown()
@@ -249,6 +249,23 @@ function bool ShouldCountDown()
     {
         return (bEachTeamHasAtleastOnePlayer || !bWaitForTeams);
     }
+}
+
+function StartRound()
+{
+    local AOCPlayerController PC;
+
+     // Reset everyone's stats before starting the game for the first time
+    if (bBeforeFirstRound)
+    {
+        foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
+        {
+            AOCPRI(PC.PlayerReplicationInfo).PreSeamlessTravelReset();
+            AOCPRI(PC.PlayerReplicationInfo).bNetDirty = true;
+        }
+    }
+
+    super.StartRound();
 }
 
 function EndGame(PlayerReplicationInfo Winner, string Reason)
@@ -357,6 +374,9 @@ function RequestJoinClass(AOCPlayerController inController, EAOCFaction inTeam, 
         inController.Response_JoinClass(inClass, false);
 }
 
+// Deprecated
+function AdminTournamentMode(bool bEnable){}
+
 
 Auto State AOCPreRound
 {
@@ -370,23 +390,6 @@ Auto State AOCPreRound
             SetTimer(fRankedModeMatchMakeInterval, true, 'RankedModeAttemptToMakeMatch');
         }
     }
-}
-
-function StartRound()
-{
-    local AOCPlayerController PC;
-
-     // Reset everyone's stats before starting the game for the first time
-    if (bBeforeFirstRound)
-    {
-        foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
-        {
-            AOCPRI(PC.PlayerReplicationInfo).PreSeamlessTravelReset();
-            AOCPRI(PC.PlayerReplicationInfo).bNetDirty = true;
-        }
-    }
-
-    super.StartRound();
 }
 
 
@@ -637,10 +640,6 @@ reliable server function ConfigureRestartMapAfterEndGame(bool bEnable)
     class'`{GAMEMODE}'.default.bRestartMapAfterEndGame = bEnable;
     class'`{GAMEMODE}'.static.StaticSaveConfig();
 }
-
-
-// Deprecated
-function AdminTournamentMode(bool bEnable){}
 
 exec function TournamentMode(bool bEnable)
 {
