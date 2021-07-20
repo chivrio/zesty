@@ -138,10 +138,10 @@ simulated function SetPawnOnFire(ParticleSystem FirePS, Controller Cont, optiona
             SetOnFireBy = Cont;
 
         // Add the Instigator to this pawn's ContributingDamagers (assist list) if it isn't already on it
-        // if (InflictedBy != none) {
-        //     if (ContributingDamagers.Find(AOCPRI(Cont.PlayerReplicationInfo)) == INDEX_NONE && !IsOnSameTeam(self, AOCPawn(InflictedBy)))
-        //         ContributingDamagers.AddItem(AOCPRI(Cont.PlayerReplicationInfo));
-        // }
+        if (InflictedBy != none) {
+            if (ContributingDamagers.Find(AOCPRI(Cont.PlayerReplicationInfo)) == INDEX_NONE && !IsOnSameTeam(self, AOCPawn(InflictedBy)))
+                ContributingDamagers.AddItem(AOCPRI(Cont.PlayerReplicationInfo));
+        }
 
     }
     
