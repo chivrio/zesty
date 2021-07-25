@@ -180,7 +180,7 @@ DefaultProperties
     /* 
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Flail]
      */
-	iFeintStaminaCost=15
+	iFeintStaminaCost=12
 	FeintTime=0.3
 	TertiaryFeintTime=0.4
 	fParryNegation=12

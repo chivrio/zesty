@@ -46,8 +46,8 @@ KickOffset=(X=50, Y=0, Z=-65)
 	WeaponSocket=wep1hpoint
 	WeaponStaticMeshScale=1
 
-	AttackTypeInfo(0)=(fBaseDamage=68.0, fForce=20500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=71.0, fForce=22500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=66.0, fForce=20500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=72.0, fForce=22500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(2)=(fBaseDamage=39.0, fForce=22500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=25500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
