@@ -367,7 +367,7 @@ DefaultProperties
 	ConfigProjectileBaseDamage[4]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[5]=(Damage=0,InitialSpeed=0.0,MaxSpeed=0.0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0)
 	ConfigProjectileBaseDamage[6]=(MinDamage=30.0f,Damage=12,InitialSpeed=4000.0,MaxSpeed=4500.0,AmmoCount=999,InitialGravityScale=0.6,Drag=0.0000045,PitchCorrection=0,bInfiniteAmmo=true,MinimumFireTime=0.425)
-	ConfigProjectileBaseDamage[7]=(MinDamage=25.0f,Damage=42,InitialSpeed=5000.0,MaxSpeed=5500.0,AmmoCount=9,InitialGravityScale=0.65,Drag=0.0000055,PitchCorrection=0,bInfiniteAmmo=false,MinimumFireTime=0.6)
+	ConfigProjectileBaseDamage[7]=(MinDamage=25.0f,Damage=39,InitialSpeed=5000.0,MaxSpeed=5500.0,AmmoCount=9,InitialGravityScale=0.65,Drag=0.0000055,PitchCorrection=0,bInfiniteAmmo=false,MinimumFireTime=0.6)
     iFeintStaminaCost=0
     WeaponFontSymbol="K"
     WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_sling"
