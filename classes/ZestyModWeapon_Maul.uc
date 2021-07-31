@@ -138,7 +138,7 @@ DefaultProperties
 	iFeintStaminaCost=15
 	fParryNegation=16
 	ParryDrain(0)=30
-	ParryDrain(1)=32
+	ParryDrain(1)=31
 	ParryDrain(2)=28
 	WeaponFontSymbol="F"
 	WeaponLargePortrait="UI_CustWeaponImages_SWF.skin_maul_png"

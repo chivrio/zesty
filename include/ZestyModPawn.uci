@@ -1261,7 +1261,7 @@ DefaultProperties
 {
     bIsInSmoke=false
 
-    fStaminaRegenCooldown=1.8
+    fStaminaRegenCooldown=1.5
     fLowStaminaThreshold=18.0
     fJumpStaminaCost=3.0
 
