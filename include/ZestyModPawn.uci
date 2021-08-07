@@ -1243,15 +1243,7 @@ function ToggleSprint(bool bSprint, optional bool bForce)
 
 reliable server function s_PlayVO(SoundCue voSound)
 {
-    if (voSound == PawnCharacter.default.MobileBattleCry)
-    {
-        OnActionSucceeded(EACT_Battlecry);
-    }
-
-    VOSoundComp.SoundCue = voSound;
-    replicatedSoundToStop.soundToStop = VOSoundComp.SoundCue.Name;
-    replicatedSoundToStop.soundOwnerNetTag = PlayerReplicationInfo.PlayerID;
-    PlaySound(voSound, false, false, true);
+    super.s_PlayVO(voSound);
 
     `{GAMEMODE}PRI(Controller.PlayerReplicationInfo).Chatter += 1;
 }
