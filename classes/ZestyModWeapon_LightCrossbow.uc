@@ -38,7 +38,7 @@ DefaultProperties
 	ConfigProjectileBaseDamage[0]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[1]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[2]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
-	ConfigProjectileBaseDamage[3]=(Damage=48,InitialSpeed=7000.0,MaxSpeed=7500.0,AmmoCount=8,InitialGravityScale=0.35,Drag=0.000003,PitchCorrection=0)
+	ConfigProjectileBaseDamage[3]=(Damage=48,InitialSpeed=7000.0,MaxSpeed=7500.0,AmmoCount=7,InitialGravityScale=0.35,Drag=0.000003,PitchCorrection=0)
 	ConfigProjectileBaseDamage[4]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[5]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
     iFeintStaminaCost=0
@@ -63,7 +63,7 @@ DefaultProperties
     ReleaseAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
     ReleaseAnimations(8)=(AnimationName=3p_crossbow_equipup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.longbow_draw',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
     ReleaseAnimations(9)=(AnimationName=3p_crossbow_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.longbow_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.21,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
-    ReloadAnimations[0]=(AnimationName=3p_crossbow_reload,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.light_crossbow_Reload',bFullBody=true,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=0.0,fAnimationLength=1.8,fBlendInTime=0.1,fBlendOutTime=0.2,bLastAnimation=true,bPlayOnWeapon=true,bAttachArrow=1)
+    ReloadAnimations[0]=(AnimationName=3p_crossbow_reload,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.light_crossbow_Reload',bFullBody=true,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=0.0,fAnimationLength=1.65,fBlendInTime=0.1,fBlendOutTime=0.2,bLastAnimation=true,bPlayOnWeapon=true,bAttachArrow=1)
     RecoveryAnimations(0)=(AnimationName=3p_crossbow_aimrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.4,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltNode=true)
     HoldAnimations[0]=(AnimationName=3p_crossbow_aimidle,ComboAnimation=,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=True,bForce=false,UniqueShieldSound=none,fModifiedMovement=0.75,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bPlayOnWeapon=false,bUseAltNode=true)
     StateAnimations(0)=(AnimationName=3p_crossbow_Fhit01,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.8,fBlendInTime=0.00,fBlendOutTime=0.08,bLastAnimation=true)
