@@ -139,7 +139,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Broadsword]
      */
 	iFeintStaminaCost=12
-	FeintTime=0.43
+	FeintTime=0.45
 	TertiaryFeintTime=0.45
 	fParryNegation=13
 	ParryDrain(0)=25

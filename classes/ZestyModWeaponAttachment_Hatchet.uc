@@ -48,7 +48,7 @@ KickOffset=(X=50, Y=0, Z=-65)
 	WeaponSocket = wep1hpoint
 
 	AttackTypeInfo(0)=(fBaseDamage=72.0, fForce=20000, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=75.0, fForce=20000, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=77.0, fForce=20000, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(2)=(fBaseDamage=21.0, fForce=22500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=100.0, fForce=55500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=1.0, fForce=22500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)

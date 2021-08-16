@@ -135,7 +135,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_NorseSword]
      */
 	iFeintStaminaCost=12
-	FeintTime=0.42
+	FeintTime=0.44
 	TertiaryFeintTime=0.45
 	fParryNegation=13
 	ParryDrain(0)=26
