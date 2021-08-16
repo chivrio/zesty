@@ -17,15 +17,15 @@ DefaultProperties
     EncircleRadius=50.0f
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_small',
-        wood=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Wood',
-        dirt=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
-        mud=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
-        foliage=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
-        metal=SoundCue'A_Phys_Mat_Impacts.BroadDagger_metal',
-        stone=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Stone')}
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
+        wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
+        mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        foliage=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        metal=SoundCue'A_Phys_Mat_Impacts.Dagesse_metal',
+        stone=SoundCue'A_Phys_Mat_Impacts.Dagesse_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Small',

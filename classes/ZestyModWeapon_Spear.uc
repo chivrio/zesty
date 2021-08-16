@@ -18,15 +18,15 @@ DefaultProperties
     bCanCombo=false
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_Stab_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Average',
-        wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
-        mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        dirt=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        metal=SoundCue'A_Phys_Mat_Impacts.Bardiche_metal',
-        stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
+        wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
+        mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        foliage=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        metal=SoundCue'A_Phys_Mat_Impacts.Dagesse_metal',
+        stone=SoundCue'A_Phys_Mat_Impacts.Dagesse_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_Stab_Small',
@@ -146,7 +146,7 @@ DefaultProperties
 	FeintTime=0.34
 	TertiaryFeintTime=0.4
 	fParryNegation=15
-	ParryDrain(0)=27
+	ParryDrain(0)=26
 	ParryDrain(1)=26
 	ParryDrain(2)=27
 	WeaponFontSymbol="P"//this used to be a '$' but was switched in the death font file...the javelinmelee now is the $
