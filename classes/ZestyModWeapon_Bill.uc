@@ -73,15 +73,15 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Longsword_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Large',
-        wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
-        mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        dirt=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        metal=SoundCue'A_Phys_Mat_Impacts.Bardiche_metal',
-        stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
+        light=SoundCue'A_Impacts_Melee.Light_stab_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_large',
+        wood=SoundCue'A_Phys_Mat_Impacts.Longsword_Wood',
+        mud=SoundCue'A_Phys_Mat_Impacts.Longsword_Dirt',
+        foliage=SoundCue'A_Phys_Mat_Impacts.Longsword_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.Longsword_Dirt',
+        metal=SoundCue'A_Phys_Mat_Impacts.Longsword_metal',
+        stone=SoundCue'A_Phys_Mat_Impacts.Longsword_Stone')}
 
     ImpactSounds(ESWINGSOUND_Sprint)={(
         light=SoundCue'A_Impacts_Melee.Light_Chop_Large',

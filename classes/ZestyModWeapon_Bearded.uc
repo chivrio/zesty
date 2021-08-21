@@ -52,9 +52,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.doubleaxe_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_average',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_average',
         wood=SoundCue'A_Phys_Mat_Impacts.doubleaxe_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.doubleaxe_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.doubleaxe_Dirt',
@@ -132,7 +132,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Bearded]
      */
 	iFeintStaminaCost=15
-	FeintTime=0.22
+	FeintTime=0.21
 	TertiaryFeintTime=0.4
 	fParryNegation=16
 	ParryDrain(0)=28

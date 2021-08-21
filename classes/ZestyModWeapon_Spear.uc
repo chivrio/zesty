@@ -29,15 +29,15 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Dagesse_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Small',
-        wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
-        mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        dirt=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        metal=SoundCue'A_Phys_Mat_Impacts.Bardiche_metal',
-        stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
+        wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
+        mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        foliage=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
+        metal=SoundCue'A_Phys_Mat_Impacts.Dagesse_metal',
+        stone=SoundCue'A_Phys_Mat_Impacts.Dagesse_Stone')}
 
     ImpactSounds(ESWINGSOUND_Stab)={(
         light=SoundCue'A_Impacts_Melee.Light_Stab_Average',
@@ -51,9 +51,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
@@ -63,21 +63,21 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         dirt=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         metal=SoundCue'A_Phys_Mat_Impacts.Bardiche_metal',
-        stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}        
+        stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}       
 
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Stab_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',

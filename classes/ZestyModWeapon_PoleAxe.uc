@@ -29,13 +29,13 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.poleaxe_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Chop_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_large',
         wood=SoundCue'A_Phys_Mat_Impacts.poleaxe_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
-        dirt=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
+		dirt=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
         metal=SoundCue'A_Phys_Mat_Impacts.poleaxe_metal',
         stone=SoundCue'A_Phys_Mat_Impacts.poleaxe_Stone')}
 
@@ -51,9 +51,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.poleaxe_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_average',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.poleaxe_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
@@ -74,13 +74,13 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.poleaxe_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Chop_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_large',
         wood=SoundCue'A_Phys_Mat_Impacts.poleaxe_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
-        dirt=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',		
         metal=SoundCue'A_Phys_Mat_Impacts.poleaxe_metal',
         stone=SoundCue'A_Phys_Mat_Impacts.poleaxe_Stone')}
 
@@ -133,7 +133,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_PoleAxe]
      */
 	iFeintStaminaCost=15
-	FeintTime=0.23
+	FeintTime=0.22
 	TertiaryFeintTime=0.4
 	fParryNegation=16
 	ParryDrain(0)=29
@@ -158,8 +158,8 @@ DefaultProperties
 	WindupAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(8)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(9)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	ReleaseAnimations(0)=(AnimationName=3p_doubleaxe_slash01release,ComboAnimation=3p_doubleaxe_slash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.56,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	ReleaseAnimations(1)=(AnimationName=3p_doubleaxe_slash02release,ComboAnimation=3p_doubleaxe_slash021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.55,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	ReleaseAnimations(0)=(AnimationName=3p_doubleaxe_slash01release,ComboAnimation=3p_doubleaxe_slash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.57,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	ReleaseAnimations(1)=(AnimationName=3p_doubleaxe_slash02release,ComboAnimation=3p_doubleaxe_slash021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.56,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(2)=(AnimationName=3p_doubleaxe_stabrelease,ComboAnimation=3p_doubleaxe_stabrelease,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_03',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.45,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(3)=(AnimationName=3p_doubleaxe_sattackrelease,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_sprint_attack',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)
 	ReleaseAnimations(4)=(AnimationName=3p_doubleaxe_parryup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)

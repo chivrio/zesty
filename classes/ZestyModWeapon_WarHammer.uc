@@ -15,9 +15,9 @@ DefaultProperties
     bUseDirHitAnims=true
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_small',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.warhammer_Wood',
         dirt=SoundCue'A_Phys_Mat_Impacts.warhammer_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.warhammer_Dirt',
@@ -26,9 +26,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.warhammer_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.warhammer_Wood',
         dirt=SoundCue'A_Phys_Mat_Impacts.warhammer_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.warhammer_Dirt',
@@ -71,9 +71,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.warhammer_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.warhammer_Wood',
         dirt=SoundCue'A_Phys_Mat_Impacts.warhammer_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.warhammer_Dirt',

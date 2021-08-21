@@ -16,8 +16,8 @@ DefaultProperties
     EncircleRadius=50.0f
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
         wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
@@ -27,8 +27,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Dagesse_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_small',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
         wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
@@ -72,8 +72,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Dagesse_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_small',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
         wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',

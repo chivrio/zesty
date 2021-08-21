@@ -16,13 +16,13 @@ DefaultProperties
     EncircleRadius=50.0f
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_small',
         wood=SoundCue'A_Phys_Mat_Impacts.Cudgel_Wood',
-        dirt=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
         metal=SoundCue'A_Phys_Mat_Impacts.Cudgel_metal',
         stone=SoundCue'A_Phys_Mat_Impacts.Cudgel_Stone')}
 
@@ -38,9 +38,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Cudgel_Stone')}
 
     ImpactSounds(ESWINGSOUND_Stab)={(
-        light=SoundCue'A_Impacts_Melee.Light_blunt_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_blunt_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_blunt_small',
+        light=SoundCue'A_Impacts_Melee.Light_blunt_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_blunt_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Cudgel_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
@@ -72,8 +72,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Cudgel_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_blunt_small',
-        medium=SoundCue'A_Impacts_Melee.Medium_blunt_small',
+        light=SoundCue'A_Impacts_Melee.Light_blunt_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_blunt_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_blunt_small',
         wood=SoundCue'A_Phys_Mat_Impacts.Cudgel_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',

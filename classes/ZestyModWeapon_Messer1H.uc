@@ -47,9 +47,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.messer_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.messer_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.messer_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.messer_Dirt',

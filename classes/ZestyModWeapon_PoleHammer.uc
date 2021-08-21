@@ -50,9 +50,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Mace_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
@@ -73,9 +73,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Mace_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_Large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Large',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',

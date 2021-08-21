@@ -47,9 +47,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Longsword_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_large',
         wood=SoundCue'A_Phys_Mat_Impacts.Longsword_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Longsword_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Longsword_Dirt',

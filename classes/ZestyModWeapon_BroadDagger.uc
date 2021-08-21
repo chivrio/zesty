@@ -17,13 +17,13 @@ DefaultProperties
     EncircleRadius=50.0f
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Wood',
-        dirt=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
         metal=SoundCue'A_Phys_Mat_Impacts.BroadDagger_metal',
         stone=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Stone')}
 
@@ -39,9 +39,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Stone')}
 
     ImpactSounds(ESWINGSOUND_Stab)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',

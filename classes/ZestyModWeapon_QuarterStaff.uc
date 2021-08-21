@@ -60,9 +60,9 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Large',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.torch_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.torch_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.torch_Dirt',
