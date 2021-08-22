@@ -40,9 +40,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.poleaxe_Stone')}
 
     ImpactSounds(ESWINGSOUND_Stab)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
+        light=SoundCue'A_Impacts_Melee.Light_stab_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_large',
         wood=SoundCue'A_Phys_Mat_Impacts.poleaxe_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
@@ -51,9 +51,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.poleaxe_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
+        light=SoundCue'A_Impacts_Melee.Light_stab_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_large',
         wood=SoundCue'A_Phys_Mat_Impacts.poleaxe_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.poleaxe_Dirt',
