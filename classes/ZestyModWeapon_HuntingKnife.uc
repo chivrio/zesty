@@ -137,7 +137,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_HuntingKnife]
      */
-	iFeintStaminaCost=12
+	iFeintStaminaCost=9
 	FeintTime=0.4
 	TertiaryFeintTime=0.45
 	fParryNegation=12

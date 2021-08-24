@@ -61,27 +61,27 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
-        wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
-        mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        dirt=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        metal=SoundCue'A_Phys_Mat_Impacts.Bardiche_metal',
-        stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
+        light=SoundCue'A_Impacts_Melee.Light_Slash_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_large',
+        wood=SoundCue'A_Phys_Mat_Impacts.Claymore_Wood',
+        mud=SoundCue'A_Phys_Mat_Impacts.Claymore_Dirt',
+        foliage=SoundCue'A_Phys_Mat_Impacts.Claymore_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.Claymore_Dirt',
+        metal=SoundCue'A_Phys_Mat_Impacts.Claymore_metal',
+        stone=SoundCue'A_Phys_Mat_Impacts.Claymore_Stone')}
 
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
-        wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
-        mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        dirt=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
-        metal=SoundCue'A_Phys_Mat_Impacts.Bardiche_metal',
-        stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
+        light=SoundCue'A_Impacts_Melee.Light_Slash_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Slash_large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_large',
+        wood=SoundCue'A_Phys_Mat_Impacts.Claymore_Wood',
+        mud=SoundCue'A_Phys_Mat_Impacts.Claymore_Dirt',
+        foliage=SoundCue'A_Phys_Mat_Impacts.Claymore_Dirt',
+        dirt=SoundCue'A_Phys_Mat_Impacts.Claymore_Dirt',
+        metal=SoundCue'A_Phys_Mat_Impacts.Claymore_metal',
+        stone=SoundCue'A_Phys_Mat_Impacts.Claymore_Stone')}
 
     ImpactSounds(ESWINGSOUND_Sprint)={(
         light=SoundCue'A_Impacts_Melee.Light_Chop_Large',

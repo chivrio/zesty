@@ -136,7 +136,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Cudgel]
      */
 	iFeintStaminaCost=12
-	FeintTime=0.39
+	FeintTime=0.36
 	TertiaryFeintTime=0.45
 	fParryNegation=14
 	ParryDrain(0)=26

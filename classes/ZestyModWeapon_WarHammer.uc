@@ -138,7 +138,7 @@ DefaultProperties
 	fParryNegation=14
 	ParryDrain(0)=27
 	ParryDrain(1)=28
-	ParryDrain(2)=25
+	ParryDrain(2)=26
 	WeaponFontSymbol="E"
 	WeaponReach=100
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_warhammer"

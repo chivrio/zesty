@@ -62,9 +62,9 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
@@ -73,9 +73,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.BroadDagger_Dirt',
@@ -137,7 +137,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_BroadDagger]
      */
-	iFeintStaminaCost=12
+	iFeintStaminaCost=9
 	FeintTime=0.42
 	TertiaryFeintTime=0.45
 	fParryNegation=12
