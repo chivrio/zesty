@@ -135,7 +135,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Dagesse]
      */
-	iFeintStaminaCost=9
+	iFeintStaminaCost=10
 	FeintTime=0.36
 	TertiaryFeintTime=0.45
 	fParryNegation=13

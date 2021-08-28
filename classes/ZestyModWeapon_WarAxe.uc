@@ -131,7 +131,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_WarAxe]
      */
 	iFeintStaminaCost=12
-	FeintTime=0.39
+	FeintTime=0.36
 	TertiaryFeintTime=0.45
 	fParryNegation=13
 	ParryDrain(0)=26
