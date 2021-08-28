@@ -443,6 +443,16 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
 
     ActualDamage += GenericDamage;
 
+    // Maul overhead headshot should 1-tap all non-king pawns
+    if (ZestyModWeapon_Maul(Info.Instigator.Weapon) != none &&
+        Info.AttackType == Attack_Overhead &&
+        (Info.BoneName == 'b_Neck' || Info.BoneName == 'b_Head') &&
+        PawnInfo.myFamily.ClassReference != ECLASS_King)
+    {
+        // 1-tap (ensuring 2 intervals of regen won't block the 1-tap)
+        ActualDamage = 101 + (HealAmount * 2); 
+    }
+
     // Finally, round the result and finish up
     ActualDamage = float(Round(ActualDamage));
 
