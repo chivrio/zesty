@@ -134,7 +134,7 @@ DefaultProperties
      */
 	FeintTime=0.23
 	TertiaryFeintTime=0.4
-	iFeintStaminaCost=16
+	iFeintStaminaCost=15
 	fParryNegation=16
 	ParryDrain(0)=30
 	ParryDrain(1)=31
