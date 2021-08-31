@@ -61,7 +61,7 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_large',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Claymore_Wood',
@@ -73,7 +73,7 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Slash_large',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Claymore_Wood',
