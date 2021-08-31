@@ -58,9 +58,9 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_chop_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_chop_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_chop_Large',
+        light=SoundCue'A_Impacts_Melee.Light_chop_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_chop_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.messer_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.messer_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.messer_Dirt',
@@ -69,9 +69,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.messer_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_chop_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_chop_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_chop_Large',
+        light=SoundCue'A_Impacts_Melee.Light_chop_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_chop_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.messer_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.messer_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.messer_Dirt',
