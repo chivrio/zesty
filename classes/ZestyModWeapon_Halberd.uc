@@ -17,7 +17,7 @@ DefaultProperties
     bUseDirParryHitAnims=true
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Large',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Halberd_Wood',
@@ -28,7 +28,7 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Halberd_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Large',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Halberd_Wood',

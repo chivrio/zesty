@@ -58,7 +58,7 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_large',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_large',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_large',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_large',
         wood=SoundCue'A_Phys_Mat_Impacts.Greatsword_Wood',
@@ -69,7 +69,7 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Greatsword_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_large',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_large',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_large',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_large',
         wood=SoundCue'A_Phys_Mat_Impacts.Greatsword_Wood',
