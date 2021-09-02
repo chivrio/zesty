@@ -1,4 +1,4 @@
-class ZestyModFamilyInfo_ManAtArms extends AOCFamilyInfo_Archer;
+class ZestyModFamilyInfo_Archer extends AOCFamilyInfo_Archer;
 
 DefaultProperties
 {
