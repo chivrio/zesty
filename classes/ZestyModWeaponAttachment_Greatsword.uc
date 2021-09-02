@@ -55,25 +55,12 @@ KickOffset=(X=50, Y=0, Z=-65)
 	AttackTypeInfo(5)=(fBaseDamage=5.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
 
+	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_2hs_greatsword.wep_greatsword",
 		StaticMeshPath="WP_2hs_greatsword.sm_greatsword",
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_greatsword_png"
-		)};
-	Skins(1)={(
-		SkeletalMeshPath="WP_2hs_Greatsword_Variant_01.WP_2hs_Greatsword_Willbreaker",
-		StaticMeshPath="WP_2hs_Greatsword_Variant_01.SM_Willbreaker",
-		MaterialPath="",
-		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_willbreaker_png"
-		)};
-	Skins(2)={(
-		SkeletalMeshPath="WP_2hs_Greatsword_Variant_02.Wep_BerserkerGreatSword",
-		StaticMeshPath="WP_2hs_Greatsword_Variant_02.SM_BerserkerGreatSword",
-		MaterialPath="",
-		StaticMeshScale=1.0,
-		ImagePath="ui_custweaponimages_swf.skin_berzerker_png"
 		)};
 }
