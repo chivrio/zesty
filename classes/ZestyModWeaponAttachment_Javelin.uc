@@ -37,18 +37,12 @@ KickOffset=(X=50, Y=0, Z=-65)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=5.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
+	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_jav_Javelin.WEP_Javelin",
 		StaticMeshPath="WP_jav_Javelin.JavelinStatic",
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_javelin_png"
-		)};
-	Skins(1)={(
-		SkeletalMeshPath="WP_jav_Javelin_variant_01.Meshes.WEP_Javelin_variant_01",
-		StaticMeshPath="WP_jav_Javelin_variant_01.Meshes.sm_Javelin_variant_01",
-		MaterialPath="",
-		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_whistler_png"
 		)};
 }

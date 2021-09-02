@@ -34,25 +34,12 @@ KickOffset=(X=50, Y=0, Z=-65)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=5.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
+	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_1hs_Norse_Sword.wep_norsesword",
 		StaticMeshPath="WP_1hs_Norse_Sword.sm_NorseSword",
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_norse_sword_png"
-		)};
-	Skins(1)={(
-		SkeletalMeshPath="WP_1hs_Norse_Sword_Variant.wep_norsesword_Variant_01",
-		StaticMeshPath="WP_1hs_Norse_Sword_Variant.sm_NorseSword_Variant_01",
-		MaterialPath="",
-		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_wulfrics_sword_png"
-		)};
-	Skins(2)={(
-		SkeletalMeshPath="WP_1hs_Norse_Sword_Variant_02.WEP_RenaissanceSword",
-		StaticMeshPath="WP_1hs_Norse_Sword_Variant_02.SM_RenaissanceSword",
-		MaterialPath="",
-		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_renaissance_png"
 		)};
 }

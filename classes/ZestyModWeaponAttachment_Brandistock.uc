@@ -32,27 +32,12 @@ KickOffset=(X=50, Y=0, Z=-65)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=32500, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=5.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
+	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_spr_Brandistock.WEP_brandistock",
 		StaticMeshPath="WP_spr_Brandistock.sm_brandistock",
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_brandistock_png"
-		)};
-
-	Skins(1)={(
-		SkeletalMeshPath="WP_spr_Brandistock_Variant_01.WEP_brandistock",
-		StaticMeshPath="WP_spr_Brandistock_Variant_01.SM_brandistock",
-		MaterialPath="",
-		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_fist_burning_sun_png"
-		)};
-
-	Skins(2)={(
-		SkeletalMeshPath="WP_spr_Brandistock_variant_02.WEP_brandistock_variant_02",
-		StaticMeshPath="WP_spr_Brandistock_variant_02.SM_brandistock_variant_02",
-		MaterialPath="",
-		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_sharp_claw_png"
 		)};
 }

@@ -32,19 +32,12 @@ KickOffset=(X=50, Y=0, Z=-65)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=5.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
+	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_aux_Shortsword.wep_shortsword",
 		StaticMeshPath="WP_aux_Shortsword.SM_Short_Sword",
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="ui_custweaponimages_swf.skin_shortsword_png"
-		)};
-
-	Skins(1)={(
-		SkeletalMeshPath="WP_aux_Shortsword_Variant_01.wep_shortsword_variant_01",
-		StaticMeshPath="WP_aux_Shortsword_Variant_01.SM_Shortsword_Variant_01",
-		MaterialPath="",
-		StaticMeshScale=1.0,
-		ImagePath="ui_custweaponimages_swf.skin_seax_png"
 		)};
 }
