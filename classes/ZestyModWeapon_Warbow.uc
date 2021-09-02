@@ -50,9 +50,9 @@ DefaultProperties
      // 4 - Javelin
      // 5 - Default
     // 6 - Warbow arrow
-	ConfigProjectileBaseDamage[0]=(Damage=75,InitialSpeed=6600.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.35,Drag=0.0000025,PitchCorrection=50)
-	ConfigProjectileBaseDamage[1]=(Damage=75,InitialSpeed=6600.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.35,Drag=0.0000025,PitchCorrection=50)
-	ConfigProjectileBaseDamage[2]=(Damage=75,InitialSpeed=6600.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.55,Drag=0.000005,PitchCorrection=240.0)
+	ConfigProjectileBaseDamage[0]=(Damage=72,InitialSpeed=6600.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.35,Drag=0.0000025,PitchCorrection=50)
+	ConfigProjectileBaseDamage[1]=(Damage=72,InitialSpeed=6600.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.35,Drag=0.0000025,PitchCorrection=50)
+	ConfigProjectileBaseDamage[2]=(Damage=72,InitialSpeed=6600.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.55,Drag=0.000005,PitchCorrection=240.0)
 	ConfigProjectileBaseDamage[3]=(Damage=0,InitialSpeed=6000.0,MaxSpeed=8000.0,AmmoCount=6,InitialGravityScale=1.0,Drag=0.0000011,PitchCorrection=300.0)
 	ConfigProjectileBaseDamage[4]=(Damage=0,InitialSpeed=6000.0,MaxSpeed=8000.0,AmmoCount=6,InitialGravityScale=1.0,Drag=0.0000011,PitchCorrection=300.0)
 	ConfigProjectileBaseDamage[5]=(Damage=0,InitialSpeed=6000.0,MaxSpeed=8000.0,AmmoCount=6,InitialGravityScale=1.0,Drag=0.0000011,PitchCorrection=300.0)
@@ -80,10 +80,10 @@ DefaultProperties
     ReleaseAnimations(8)=(AnimationName=3p_longbow_equipup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.longbow_draw',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
     ReleaseAnimations(9)=(AnimationName=3p_longbow_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.longbow_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.2,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
     RecoveryAnimations(0)=(AnimationName=3p_longbow_drawtoidle,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.9,fBlendInTime=0.0,fBlendOutTime=0.00,bLastAnimation=true,bPlayOnWeapon=true,bUseAltNode=true,bAttachArrow=1)
-    RecoveryAnimations(1)=(AnimationName=3p_longbow_reloadrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.333,fBlendInTime=0.1,fBlendOutTime=0.10,bLastAnimation=true,bUseAltNode=true)
+    RecoveryAnimations(1)=(AnimationName=3p_longbow_reloadrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.33,fBlendInTime=0.1,fBlendOutTime=0.10,bLastAnimation=true,bUseAltNode=true)
     HoldAnimations[0]=(AnimationName=3p_longbow_drawidle01,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=true,bForce=false,fModifiedMovement=0.45,fAnimationLength=0.0,fBlendInTime=0.0,fBlendOutTime=0.00,bLastAnimation=false,bPlayOnWeapon=true,bUseAltNode=true)
     HoldAnimations[1]=(AnimationName=3p_longbow_drawidle02,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=true,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.0,fBlendOutTime=0.00,bLastAnimation=false,bPlayOnWeapon=true,bUseAltNode=true)
-    ReloadAnimations[0]=(AnimationName=3p_longbow_reload,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=1.0,fAnimationLength=1.3,fBlendInTime=0.0,fBlendOutTime=0.10,bLastAnimation=false,bPlayOnWeapon=true,bUseAltNode=true,bAttachArrow=1)
+    ReloadAnimations[0]=(AnimationName=3p_longbow_reload,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=1.0,fAnimationLength=1.2,fBlendInTime=0.0,fBlendOutTime=0.10,bLastAnimation=false,bPlayOnWeapon=true,bUseAltNode=true,bAttachArrow=1)
     StateAnimations(0)=(AnimationName=3p_1hsharp_parried,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.8,fBlendInTime=0.00,fBlendOutTime=0.08,bLastAnimation=true)
     StateAnimations(1)=(AnimationName=3p_longbow_dazed,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.2,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true)
     StateAnimations(2)=(AnimationName=3p_longbow_hit1,ComboAnimation=,AssociatedSoundCue=,bFullBody=true,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.9,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true)

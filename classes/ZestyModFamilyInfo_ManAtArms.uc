@@ -57,7 +57,7 @@ DefaultProperties
     GroundSpeed=210
     AccelRate=700.0
     SprintAccelRate=100.0
-    JumpZ=380.0
+    JumpZ=390.0
     SprintModifier=1.55
     SprintTime=10.0
     DodgeSpeed=400.0
