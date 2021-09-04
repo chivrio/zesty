@@ -19,7 +19,7 @@ DefaultProperties
     ImpactSounds(ESWINGSOUND_Slash)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Large',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy__Chop_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         snow=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
