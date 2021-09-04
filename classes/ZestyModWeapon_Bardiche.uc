@@ -18,8 +18,8 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_Slash)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy__Chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         snow=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
@@ -30,8 +30,8 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         snow=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
@@ -66,8 +66,8 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Large',
+        light=SoundCue'A_Impacts_Melee.Light_Chop_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Large',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         dirt=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
@@ -78,8 +78,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Chop_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Large',
+        light=SoundCue'A_Impacts_Melee.Light_Chop_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Large',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         dirt=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
