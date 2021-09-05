@@ -30,8 +30,8 @@ simulated function float GetHandleTracerPercent(int i)
 DefaultProperties
 {
 
-KickOffset=(X=27, Y=0, Z=-3)
-	KickSize=6.f
+KickOffset=(X=30, Y=0, Z=-1)
+	KickSize=1.f
 
 	Begin Object Name=SkeletalMeshComponent0
 		SkeletalMesh=SkeletalMesh'WP_hbl_Maul.WEP_Maul'
@@ -56,7 +56,7 @@ KickOffset=(X=27, Y=0, Z=-3)
 	AttackTypeInfo(2)=(fBaseDamage=48.0, fForce=40000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=120.0, fForce=22500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=1.0, fForce=40000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
-	AttackTypeInfo(5)=(fBaseDamage=5.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
+	AttackTypeInfo(5)=(fBaseDamage=1.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
 	Skins.empty;
 	Skins(0)={(
