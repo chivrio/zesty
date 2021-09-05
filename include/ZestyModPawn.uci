@@ -413,7 +413,7 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
 
     // Less damage for quick kick
     if (bQuickKick)
-        Info.HitDamage = 3;
+        Info.HitDamage = 0;
 
     // Calculate damage of the attack
     ActualDamage = Info.HitDamage;

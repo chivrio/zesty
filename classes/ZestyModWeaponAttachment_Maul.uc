@@ -30,8 +30,8 @@ simulated function float GetHandleTracerPercent(int i)
 DefaultProperties
 {
 
-KickOffset=(X=30, Y=0, Z=-1)
-	KickSize=1.f
+KickOffset=(X=30, Y=0, Z=-36)
+	KickSize=18.f
 
 	Begin Object Name=SkeletalMeshComponent0
 		SkeletalMesh=SkeletalMesh'WP_hbl_Maul.WEP_Maul'

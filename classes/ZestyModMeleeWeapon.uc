@@ -299,6 +299,11 @@ simulated state Release
         {
             bIsInCombo = false;
         }
+        // Adjust animation length for quick kick/shove
+			if (CurrentFireMode == Attack_Shove && bIsQuickKick)
+			{
+				Info.fAnimationLength -= 0.09f;
+			}
     }
 }
 
