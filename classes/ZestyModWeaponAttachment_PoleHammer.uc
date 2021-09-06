@@ -29,7 +29,7 @@ simulated function float GetHandleTracerPercent(int i)
 defaultproperties
 {
 
-KickOffset=(X=30, Y=0, Z=-36)
+KickOffset=(X=36, Y=0, Z=-42)
 	KickSize=15.f
 
 	Begin Object Name=SkeletalMeshComponent0

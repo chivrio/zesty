@@ -11,7 +11,7 @@ DefaultProperties
 {
 
 
-KickOffset=(X=30, Y=0, Z=-36)
+KickOffset=(X=36, Y=0, Z=-42)
 	KickSize=15.f
 
 	WeaponID=EWEP_Messer

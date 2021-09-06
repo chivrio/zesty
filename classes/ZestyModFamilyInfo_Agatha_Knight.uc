@@ -23,8 +23,6 @@ DefaultProperties
     NewSecondaryWeapons(6)=(CWeapon=class'ZestyModWeapon_Hatchet')
     NewSecondaryWeapons(7)=(CWeapon=class'ZestyModWeapon_WarAxe')
     NewSecondaryWeapons(8)=(CWeapon=class'ZestyModWeapon_Dane')
-    NewSecondaryWeapons(9)=(CWeapon=class'ZestyModWeapon_Flail')
-    NewSecondaryWeapons(10)=(CWeapon=class'ZestyModWeapon_HFlail')
 
     NewTertiaryWeapons.empty;
     NewTertiaryWeapons(0)=(CWeapon=class'ZestyModWeapon_ThrowingAxe')

@@ -12,8 +12,8 @@ class ZestyModWeaponAttachment_Javelin extends AOCWeaponAttachment_Javelin;
 DefaultProperties
 {
 
-KickOffset=(X=50, Y=0, Z=-65)
-	KickSize=20.f
+KickOffset=(X=36, Y=0, Z=-42)
+	KickSize=15.f
 
 	Begin Object Name=SkeletalMeshComponent0
 		SkeletalMesh=SkeletalMesh'WP_jav_Javelin.WEP_Javelin'
