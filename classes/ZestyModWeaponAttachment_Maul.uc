@@ -31,7 +31,7 @@ DefaultProperties
 {
 
 KickOffset=(X=30, Y=0, Z=-36)
-	KickSize=18.f
+	KickSize=15.f
 
 	Begin Object Name=SkeletalMeshComponent0
 		SkeletalMesh=SkeletalMesh'WP_hbl_Maul.WEP_Maul'
