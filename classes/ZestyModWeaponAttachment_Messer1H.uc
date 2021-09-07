@@ -12,7 +12,7 @@ DefaultProperties
 
 
 KickOffset=(X=36, Y=0, Z=-42)
-	KickSize=15.f
+	KickSize=18.f
 
 	WeaponID=EWEP_Messer
 	WeaponClass=class'ZestyModWeapon_Messer1H'

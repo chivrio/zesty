@@ -30,7 +30,7 @@ DefaultProperties
 {
 
 KickOffset=(X=36, Y=0, Z=-42)
-	KickSize=15.f
+	KickSize=18.f
 
 	Begin Object Name=SkeletalMeshComponent0
 		SkeletalMesh=SkeletalMesh'WP_1hb_Mace.WEP_mace'

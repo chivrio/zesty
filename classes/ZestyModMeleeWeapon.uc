@@ -138,6 +138,11 @@ simulated state Release
                 AOCOwner.ReplicateCompressedAnimation(Info, EWST_Release, CurrentFireMode);
                 bJustPlayedCombo = true;
             }
+            // Adjust animation length for quick kick/shove
+			if (CurrentFireMode == Attack_Shove && bIsQuickKick)
+			{
+				Info.fAnimationLength -= 0.24f;
+			}
         }
         else
             super.PlayStateAnimation(); // default handle for playing animation is fine if we are not doing a combo

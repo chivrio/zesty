@@ -11,7 +11,7 @@ DefaultProperties
 {
 
 KickOffset=(X=36, Y=0, Z=-42)
-	KickSize=15.f
+	KickSize=18.f
 
 	WeaponID=EWEP_Longsword
 	WeaponClass=class'ZestyModWeapon_Longsword1H'

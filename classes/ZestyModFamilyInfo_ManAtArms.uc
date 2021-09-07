@@ -71,7 +71,7 @@ DefaultProperties
     MaxSprintSpeedTime=2
     bCanDodge=false
     iDodgeCost=30
-    iKickCost=30
+    iKickCost=25
     fComboAggressionBonus=1.0
     fBackstabModifier=1.0
     iMissMeleeStrikePenalty=10

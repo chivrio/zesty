@@ -12,5 +12,5 @@ DefaultProperties
     FORWARD_MODIFY=1.0
     CROUCH_MODIFY=0.69
     MaxSprintSpeedTime=2
-    iKickCost=30
+    iKickCost=25
 }

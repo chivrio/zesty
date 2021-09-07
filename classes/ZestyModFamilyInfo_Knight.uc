@@ -2,5 +2,5 @@ class ZestyModFamilyInfo_Knight extends AOCFamilyInfo_Knight;
 
 DefaultProperties
 {
-    iKickCost=30
+    iKickCost=25
 }
