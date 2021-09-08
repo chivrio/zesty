@@ -42,5 +42,6 @@ DefaultProperties
 
     BACK_MODIFY=0.8
 
-    iDodgeCost=30
+    iDodgeCost=33
+    iKickCost=27
 }

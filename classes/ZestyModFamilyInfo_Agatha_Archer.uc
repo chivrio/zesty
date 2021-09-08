@@ -38,4 +38,6 @@ DefaultProperties
 	CrossbowLocationModifiers(EHIT_Arm) = 1.5
 
     DamageResistances(EDMG_Swing) = 1.1
+
+    iKickCost=27
 }

@@ -80,6 +80,26 @@ simulated state Transition
     }
 }
 
+simulated state Windup
+{
+    simulated function PerformQuickKick()
+	{
+		local int iKickStamina;
+
+		if (bIsQuickKick)
+		{
+			iKickStamina = AOCOwner.PawnFamily.iKickCost - 3;
+			AOCOwner.OnAttackAnimEnd();
+		}
+		else
+		{
+			iKickStamina = AOCOwner.PawnFamily.iKickCost;
+		}
+
+		if (Role == ROLE_Authority)
+			AOCOwner.ConsumeStamina(iKickStamina);
+	}
+}
 
 simulated state Release
 {

@@ -32,4 +32,6 @@ DefaultProperties
     CrossbowLocationModifiers(EHIT_Head) = 2
     CrossbowLocationModifiers(EHIT_Torso) = 1
     CrossbowLocationModifiers(EHIT_Arm) = 1
+
+    iKickCost=27
 }
