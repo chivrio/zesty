@@ -658,7 +658,7 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
 
         // MAA gets extra stamina on kill
         if (PawnInfo.myFamily.ClassReference == ECLASS_ManAtArms) {
-                Info.Instigator.ConsumeStamina(-42.f);
+                Info.Instigator.ConsumeStamina(-45.f);
         } else {
             Info.Instigator.ConsumeStamina(-30.f);
         }
