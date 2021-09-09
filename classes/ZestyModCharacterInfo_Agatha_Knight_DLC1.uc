@@ -4,7 +4,7 @@
 * Original Author: Brady Brenot
 * 
 */
-class ZestyModCharacterInfo_Agatha_Knight_DLC1 extends AOCCharacterInfo_Agatha_Knight;
+class ZestyModCharacterInfo_Agatha_Knight_DLC1 extends AOCCharacterInfo_Agatha_Knight_DLC1;
 
 defaultproperties
 {

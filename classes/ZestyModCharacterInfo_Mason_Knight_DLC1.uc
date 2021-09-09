@@ -4,7 +4,7 @@
 * Original Author: Brady Brenot
 * 
 */
-class ZestyModCharacterInfo_Mason_Knight_DLC1 extends AOCCharacterInfo_Mason_Knight;
+class ZestyModCharacterInfo_Mason_Knight_DLC1 extends AOCCharacterInfo_Mason_Knight_DLC1;
 
 defaultproperties
 {
