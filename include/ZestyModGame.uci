@@ -58,7 +58,6 @@ static event class<GameInfo> SetGameType(string MapName, string Options, string 
 event InitGame(string Options, out string ErrorMessage)
 {
     super.InitGame(Options, ErrorMessage);
-    CustomizationClass = class'ZestyModCustomizationContent';
 
     RankedAPI = new class'RankedAPI';
 
