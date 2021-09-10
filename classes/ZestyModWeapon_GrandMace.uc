@@ -39,9 +39,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Mace_Stone')}
 
     ImpactSounds(ESWINGSOUND_Stab)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
@@ -50,9 +50,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Mace_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
@@ -155,7 +155,7 @@ DefaultProperties
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_doubleaxe_slash01downtoup,ComboAnimation=3p_doubleaxe_slash011downtoup,AlternateAnimation=3p_doubleaxe_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.61,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(1)=(AnimationName=3p_doubleaxe_slash02downtoup,ComboAnimation=3p_doubleaxe_slash021downtoup,AlternateAnimation=3p_doubleaxe_slash021altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.64,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
-	WindupAnimations(2)=(AnimationName=3p_doubleaxe_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.66,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	WindupAnimations(2)=(AnimationName=3p_doubleaxe_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(3)=(AnimationName=3p_doubleaxe_sattackdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Footsteps.Paladin_Dirt_Jump',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)
 	WindupAnimations(4)=(AnimationName=3p_doubleaxe_parryib,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(5)=(AnimationName=3p_doubleaxe_shovestart,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=True,bCombo=False,bLoop=False,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.57,fBlendInTime=0.05,fBlendOutTime=0.05,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true)
@@ -165,7 +165,7 @@ DefaultProperties
 	WindupAnimations(9)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(0)=(AnimationName=3p_doubleaxe_slash01release,ComboAnimation=3p_doubleaxe_slash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.59,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(1)=(AnimationName=3p_doubleaxe_slash02release,ComboAnimation=3p_doubleaxe_slash021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.57,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	ReleaseAnimations(2)=(AnimationName=3p_doubleaxe_stabrelease,ComboAnimation=3p_doubleaxe_stabrelease,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_03',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.44,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	ReleaseAnimations(2)=(AnimationName=3p_doubleaxe_stabrelease,ComboAnimation=3p_doubleaxe_stabrelease,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Attack_03',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.45,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(3)=(AnimationName=3p_doubleaxe_sattackrelease,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_sprint_attack',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)
 	ReleaseAnimations(4)=(AnimationName=3p_doubleaxe_parryup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(5)=(AnimationName=3p_doubleaxe_shoverelease_new,ComboAnimation=,AssociatedSoundCue=,bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.24,fBlendInTime=0.05,fBlendOutTime=0.05,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true,bUseRMM=true)

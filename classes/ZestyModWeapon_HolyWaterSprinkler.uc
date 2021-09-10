@@ -36,8 +36,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Mace_Stone')}
 
     ImpactSounds(ESWINGSOUND_Stab)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.mace_Dirt',
@@ -47,8 +47,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Mace_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.mace_Dirt',
@@ -134,7 +134,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_HolyWaterSprinkler]
      */
 	iFeintStaminaCost=12
-	FeintTime=0.39
+	FeintTime=0.36
 	TertiaryFeintTime=0.45
 	fParryNegation=13
 	ParryDrain(0)=25
