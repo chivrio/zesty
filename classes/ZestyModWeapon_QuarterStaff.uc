@@ -37,8 +37,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.torch_Stone')}
 
     ImpactSounds(ESWINGSOUND_Stab)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Chop_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.torch_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.torch_Dirt',
@@ -48,8 +48,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.torch_Stone')}
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Chop_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.torch_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.torch_Dirt',

@@ -17,8 +17,8 @@ DefaultProperties
     FlinchTime2H=1.0
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
@@ -28,8 +28,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
