@@ -40,7 +40,7 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_Stab)={(
         light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
@@ -51,7 +51,7 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
@@ -146,7 +146,7 @@ DefaultProperties
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_1hsharp_slash01downtoup,ComboAnimation=3p_1hsharp_slash011downtoup,AlternateAnimation=3p_1hsharp_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.morningstar_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.51,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(1)=(AnimationName=3p_1hsharp_slash02downtoup,ComboAnimation=3p_1hsharp_slash021downtoup,AlternateAnimation=3p_1hsharp_slash021altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.morningstar_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.53,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
-	WindupAnimations(2)=(AnimationName=3p_1hsharp_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.morningstar_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.55,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	WindupAnimations(2)=(AnimationName=3p_1hsharp_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.morningstar_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.57,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(3)=(AnimationName=3p_1hsharp_sattackdowntoup_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Footsteps.Vanguard_Dirt_Jump',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)
 	WindupAnimations(4)=(AnimationName=3p_1hsharp_parryib,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.morningstar_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.1,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(5)=(AnimationName=3p_1hsharp_shovestart,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.morningstar_windup',bFullBody=True,bCombo=False,bLoop=False,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.57,fBlendInTime=0.05,fBlendOutTime=0.00,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true)

@@ -136,7 +136,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_SwordOfWar]
      */
 	iFeintStaminaCost=15
-	FeintTime=0.3
+	FeintTime=0.31
 	TertiaryFeintTime=0.45
 	fParryNegation=15
 	ParryDrain(0)=26
