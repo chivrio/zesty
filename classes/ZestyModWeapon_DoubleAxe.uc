@@ -141,9 +141,9 @@ DefaultProperties
 	WeaponFontSymbol="h"
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_doubleaxe"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_doubleaxe_png"//"UI_WeaponImages_SWF.weapon_select_doubleaxe"
-	HorizontalRotateSpeed=60000.0
-	WeaponReach=100
+	HorizontalRotateSpeed=55000.0
 	VerticalRotateSpeed=53000.0
+	WeaponReach=100
 	AttackHorizRotateSpeed=53000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0

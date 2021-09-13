@@ -156,7 +156,7 @@ DefaultProperties
 	WeaponLargePortrait="UI_CustWeaponImages_SWF.skin_bardiche_png"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_bardiche_png"
 	WeaponReach=100
-	HorizontalRotateSpeed=55000.0
+	HorizontalRotateSpeed=50000.0
 	VerticalRotateSpeed=45000.0
 	AttackHorizRotateSpeed=49500.0
 	SprintAttackHorizRotateSpeed=25000.0
