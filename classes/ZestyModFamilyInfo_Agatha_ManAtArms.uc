@@ -41,7 +41,7 @@ DefaultProperties
     DamageResistances(EDMG_Blunt) = 0.65
 
     BACK_MODIFY=0.8
-    JumpZ=390.0
+    JumpZ=381.0
     iDodgeCost=33
     iKickCost=27
 }
