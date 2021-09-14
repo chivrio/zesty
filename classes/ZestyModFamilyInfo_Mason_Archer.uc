@@ -46,9 +46,4 @@ DefaultProperties
 	JumpZ=387.0
 	SprintModifier=1.55
 	SprintTime=10.0
-	BACK_MODIFY=0.81
-	STRAFE_MODIFY=0.9
-	FORWARD_MODIFY=1.0
-	CROUCH_MODIFY=0.69
-	MaxSprintSpeedTime=2
 }
