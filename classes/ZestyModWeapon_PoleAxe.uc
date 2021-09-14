@@ -143,9 +143,9 @@ DefaultProperties
 	WeaponReach=100
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_pollaxe"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_pollaxe_png"
-	HorizontalRotateSpeed=53800.0
-	VerticalRotateSpeed=53800.0
-	AttackHorizRotateSpeed=53800.0
+	HorizontalRotateSpeed=54000.0
+	VerticalRotateSpeed=53000.0
+	AttackHorizRotateSpeed=54000.0
 	SprintAttackHorizRotateSpeed=53800.0
 	SprintAttackVerticalRotateSpeed=53800.0
 	WindupAnimations(0)=(AnimationName=3p_doubleaxe_slash01downtoup,ComboAnimation=3p_doubleaxe_slash011downtoup,AlternateAnimation=3p_doubleaxe_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.58,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)

@@ -147,7 +147,7 @@ DefaultProperties
 	WeaponFontSymbol="-"
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_polehammer"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_polehammer_png"
-	HorizontalRotateSpeed=60000.0
+	HorizontalRotateSpeed=50000.0
 	WeaponReach=100
 	VerticalRotateSpeed=45000.0
 	AttackHorizRotateSpeed=50000.0

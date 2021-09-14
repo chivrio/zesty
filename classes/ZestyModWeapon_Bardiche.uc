@@ -158,7 +158,7 @@ DefaultProperties
 	WeaponReach=100
 	HorizontalRotateSpeed=50000.0
 	VerticalRotateSpeed=45000.0
-	AttackHorizRotateSpeed=49500.0
+	AttackHorizRotateSpeed=50000.0
 	SprintAttackHorizRotateSpeed=25000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	DirParryHitAnimations(0)=(AnimationName=3p_halberd_parryhitL,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true,bUseAltNode=true)
