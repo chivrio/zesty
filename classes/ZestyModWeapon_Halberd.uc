@@ -138,7 +138,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Halberd]
      */
 	iFeintStaminaCost=15
-	FeintTime=0.25
+	FeintTime=0.26
 	TertiaryFeintTime=0.4
 	fParryNegation=15
 	ParryDrain(0)=26
