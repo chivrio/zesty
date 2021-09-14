@@ -30,6 +30,7 @@ DefaultProperties
     NewTertiaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Heater_Mason',bEnabledDefault=true)
     NewTertiaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Kite_Mason')
     NewTertiaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Buckler_Mason')
+    NewTertiaryWeapons(5)=(CWeapon=class'ZestyModWeapon_SmokePot')
 
     ProjectileLocationModifiers(EHIT_Head) = 2
     ProjectileLocationModifiers(EHIT_Torso) = 1

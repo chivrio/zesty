@@ -30,6 +30,7 @@ DefaultProperties
     NewTertiaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Heater_Agatha',bEnabledDefault=true)
     NewTertiaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Kite_Agatha')
     NewTertiaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Buckler_Agatha')
+    NewTertiaryWeapons(5)=(CWeapon=class'ZestyModWeapon_SmokePot')
 
     ProjectileLocationModifiers(EHIT_Head) = 2
     ProjectileLocationModifiers(EHIT_Torso) = 1
