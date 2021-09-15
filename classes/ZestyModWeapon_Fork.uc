@@ -151,9 +151,9 @@ DefaultProperties
 	WeaponReach=100
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_fork"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_fork_png"
-	HorizontalRotateSpeed=45000.0
-	VerticalRotateSpeed=45000.0
-	AttackHorizRotateSpeed=45000.0
+	HorizontalRotateSpeed=47000.0
+	VerticalRotateSpeed=47000.0
+	AttackHorizRotateSpeed=47000.0
 	SprintAttackHorizRotateSpeed=25000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_spear_smashdowntoup,ComboAnimation=3p_spear_smash011altdowntoup,AlternateAnimation=3p_spear_smash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.54,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)

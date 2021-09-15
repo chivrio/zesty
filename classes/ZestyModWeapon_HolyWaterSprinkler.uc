@@ -145,7 +145,7 @@ DefaultProperties
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_hws"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_hws_png"
 	HorizontalRotateSpeed=75000.0
-	VerticalRotateSpeed=60000.0
+	VerticalRotateSpeed=65000.0
 	AttackHorizRotateSpeed=75000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0
