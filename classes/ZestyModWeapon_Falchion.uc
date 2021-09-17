@@ -145,8 +145,8 @@ DefaultProperties
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_falchion"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_falchion_png"
 	HorizontalRotateSpeed=70000.0
-	VerticalRotateSpeed=65000.0
-	AttackHorizRotateSpeed=72000.0
+	VerticalRotateSpeed=64000.0
+	AttackHorizRotateSpeed=73000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_1hsharp_slash01downtoup,ComboAnimation=3p_1hsharp_slash011downtoup,AlternateAnimation=3p_1hsharp_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.falchion_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.47,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)

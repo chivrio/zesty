@@ -143,9 +143,9 @@ DefaultProperties
 	WeaponLargePortrait="UI_CustWeaponImages_SWF.skin_maul_png"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_maul_png"
 	WeaponReach=100
-	HorizontalRotateSpeed=50000.0
+	HorizontalRotateSpeed=51000.0
 	VerticalRotateSpeed=45000.0
-	AttackHorizRotateSpeed=50000.0
+	AttackHorizRotateSpeed=51000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_doubleaxe_slash01downtoup,ComboAnimation=3p_doubleaxe_slash011downtoup,AlternateAnimation=3p_doubleaxe_slash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)

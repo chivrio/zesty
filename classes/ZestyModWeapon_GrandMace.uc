@@ -149,7 +149,7 @@ DefaultProperties
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_grandmace_png"
 	HorizontalRotateSpeed=53000.0
 	WeaponReach=100
-	VerticalRotateSpeed=53000.0
+	VerticalRotateSpeed=54000.0
 	AttackHorizRotateSpeed=53000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0

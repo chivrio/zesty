@@ -141,7 +141,7 @@ DefaultProperties
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_daneaxe"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_daneaxe_png"
 	HorizontalRotateSpeed=65000.0
-	VerticalRotateSpeed=65000.0
+	VerticalRotateSpeed=63000.0
 	AttackHorizRotateSpeed=65000.0
 	SprintAttackHorizRotateSpeed=25000.0
 	SprintAttackVerticalRotateSpeed=20000.0

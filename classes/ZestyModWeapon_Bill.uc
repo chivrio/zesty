@@ -150,7 +150,7 @@ DefaultProperties
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_billhook_png"
 	WeaponReach=100
 	HorizontalRotateSpeed=60000.0
-	VerticalRotateSpeed=45000.0
+	VerticalRotateSpeed=50000.0
 	AttackHorizRotateSpeed=60000.0
 	SprintAttackHorizRotateSpeed=25000.0
 	SprintAttackVerticalRotateSpeed=20000.0
