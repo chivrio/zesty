@@ -17,9 +17,9 @@ DefaultProperties
     NewSecondaryWeapons.empty;
     NewSecondaryWeapons(0)=(CWeapon=class'ZestyModWeapon_BroadDagger',CorrespondingDuelProp=EDUEL_BroadDaggerUse)
     NewSecondaryWeapons(1)=(CWeapon=class'ZestyModWeapon_HuntingKnife',CorrespondingDuelProp=EDUEL_HuntingKnifeUse)
-    NewSecondaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Dagesse',CorrespondingDuelProp=EDUEL_DagesseUse)
-    NewSecondaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Saber',CorrespondingDuelProp=EDUEL_SaberUse)
-    NewSecondaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Cudgel',CorrespondingDuelProp=EDUEL_CudgelUse)
+    NewSecondaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Cudgel',CorrespondingDuelProp=EDUEL_CudgelUse)
+    NewSecondaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Dagesse',CorrespondingDuelProp=EDUEL_DagesseUse)
+    NewSecondaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Saber',CorrespondingDuelProp=EDUEL_SaberUse)
 
     NewTertiaryWeapons.empty;
     NewTertiaryWeapons(0)=(CWeapon=class'ZestyModWeapon_ThrowingKnife')

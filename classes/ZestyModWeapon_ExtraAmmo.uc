@@ -1,4 +1,4 @@
-class ZestyModWeapon_ExtraAmmo extends ZestyModMeleeWeapon;
+class ZestyModWeapon_ExtraAmmo extends ZestyModRangeWeapon;
 
 var int ExtraAmmo;
 
