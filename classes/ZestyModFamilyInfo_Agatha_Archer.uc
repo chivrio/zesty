@@ -17,10 +17,9 @@ DefaultProperties
     NewSecondaryWeapons.empty;
     NewSecondaryWeapons(0)=(CWeapon=class'ZestyModWeapon_BroadDagger')
     NewSecondaryWeapons(1)=(CWeapon=class'ZestyModWeapon_HuntingKnife')
-    NewSecondaryWeapons(2)=(CWeapon=class'ZestyModWeapon_ThrustDagger')
-    NewSecondaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Dagesse')
-    NewSecondaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Saber')
-    NewSecondaryWeapons(5)=(CWeapon=class'ZestyModWeapon_Cudgel')
+    NewSecondaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Dagesse')
+    NewSecondaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Saber')
+    NewSecondaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Cudgel')
 
     NewTertiaryWeapons.empty;
     NewTertiaryWeapons(0)=(CWeapon=class'AOCWeapon_PaviseShield_Agatha',bEnabledDefault=false)
