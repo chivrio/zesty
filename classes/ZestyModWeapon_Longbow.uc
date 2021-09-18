@@ -502,9 +502,9 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Longbow]
      */
-	ConfigProjectileBaseDamage[0]=(Damage=60,InitialSpeed=6300.0,MaxSpeed=6600.0,AmmoCount=6,InitialGravityScale=0.4,Drag=0.0000030,PitchCorrection=50)
-	ConfigProjectileBaseDamage[1]=(Damage=60,InitialSpeed=6300.0,MaxSpeed=6600.0,AmmoCount=6,InitialGravityScale=0.4,Drag=0.0000030,PitchCorrection=0)
-	ConfigProjectileBaseDamage[2]=(Damage=26,InitialSpeed=6300.0,MaxSpeed=6600.0,AmmoCount=6,InitialGravityScale=0.5,Drag=0.000004,PitchCorrection=0)
+	ConfigProjectileBaseDamage[0]=(Damage=63,InitialSpeed=6300.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.4,Drag=0.0000030,PitchCorrection=50)
+	ConfigProjectileBaseDamage[1]=(Damage=63,InitialSpeed=6300.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.4,Drag=0.0000030,PitchCorrection=0)
+	ConfigProjectileBaseDamage[2]=(Damage=26,InitialSpeed=6300.0,MaxSpeed=6900.0,AmmoCount=6,InitialGravityScale=0.5,Drag=0.000004,PitchCorrection=0)
 	ConfigProjectileBaseDamage[3]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[4]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[5]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
@@ -529,7 +529,7 @@ DefaultProperties
     ReleaseAnimations(6)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
     ReleaseAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
     ReleaseAnimations(8)=(AnimationName=3p_longbow_equipup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.longbow_draw',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.33,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
-    ReleaseAnimations(9)=(AnimationName=3p_longbow_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.longbow_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.19,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
+    ReleaseAnimations(9)=(AnimationName=3p_longbow_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.longbow_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.18,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
     RecoveryAnimations(0)=(AnimationName=3p_longbow_drawtoidle,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.8,fBlendInTime=0.0,fBlendOutTime=0.10,bLastAnimation=true,bPlayOnWeapon=true,bUseAltNode=true,bAttachArrow=1)
     RecoveryAnimations(1)=(AnimationName=3p_longbow_reloadrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.1,fBlendOutTime=0.10,bLastAnimation=true,bUseAltNode=true)
     HoldAnimations[0]=(AnimationName=3p_longbow_drawidle01,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=true,bForce=false,fModifiedMovement=0.6,fAnimationLength=0.0,fBlendInTime=0.0,fBlendOutTime=0.00,bLastAnimation=false,bPlayOnWeapon=true,bUseAltNode=true)

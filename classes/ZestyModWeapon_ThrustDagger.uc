@@ -1,5 +1,4 @@
-class ZestyModWeapon_ThrustDagger extends ZestyModMeleeWeapon;
-
+class ZestyModWeapon_ThrustDagger extends AOCWeapon_ThrustDagger;
 
 DefaultProperties
 {

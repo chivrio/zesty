@@ -3,11 +3,11 @@ class ZestyModFamilyInfo_Agatha_Archer extends AOCFamilyInfo_Agatha_Archer;
 DefaultProperties
 {
     NewPrimaryWeapons.empty;
-    NewPrimaryWeapons(0)=(CWeapon=class'ZestyModWeapon_Longbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead', class'AOCWeapon_ProjFireArrow'))
-    NewPrimaryWeapons(1)=(CWeapon=class'ZestyModWeapon_Shortbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead', class'AOCWeapon_ProjFireArrow'))
-    NewPrimaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Warbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead', class'AOCWeapon_ProjFireArrow'))
-    NewPrimaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Crossbow',CForceTertiary=(class'AOCWeapon_PaviseShield_Agatha'))
-    NewPrimaryWeapons(4)=(CWeapon=class'ZestyModWeapon_LightCrossbow',CForceTertiary=(class'AOCWeapon_PaviseShield_Agatha'))
+    NewPrimaryWeapons(0)=(CWeapon=class'ZestyModWeapon_Longbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead'))
+    NewPrimaryWeapons(1)=(CWeapon=class'ZestyModWeapon_Shortbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead'))
+    NewPrimaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Warbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead'))
+    NewPrimaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Crossbow',CForceTertiary=(class'ZestyModWeapon_Buckler_Agatha', class'AOCWeapon_PaviseShield_Agatha'))
+    NewPrimaryWeapons(4)=(CWeapon=class'ZestyModWeapon_LightCrossbow',CForceTertiary=(class'AOCWeapon_ExtraAmmo', class'ZestyModWeapon_Buckler_Agatha'))
     NewPrimaryWeapons(5)=(CWeapon=class'ZestyModWeapon_HeavyCrossbow',CForceTertiary=(class'AOCWeapon_PaviseShield_Agatha'))
     NewPrimaryWeapons(6)=(CWeapon=class'ZestyModWeapon_JavelinMelee',CForceTertiary=(class'ZestyModWeapon_Buckler_Agatha'))
     NewPrimaryWeapons(7)=(CWeapon=class'ZestyModWeapon_ShortSpearMelee',CForceTertiary=(class'ZestyModWeapon_Buckler_Agatha'))
@@ -29,6 +29,7 @@ DefaultProperties
     NewTertiaryWeapons(3)=(CWeapon=class'AOCWeapon_ProjBroadhead',bEnabledDefault=false)
     NewTertiaryWeapons(4)=(CWeapon=class'AOCWeapon_ProjPebble',bEnabledDefault=false)
     NewTertiaryWeapons(5)=(CWeapon=class'AOCWeapon_ProjLeadBall',bEnabledDefault=false)
+    NewTertiaryWeapons(6)=(CWeapon=class'AOCWeapon_ExtraAmmo',bEnabledDefault=false)
 
 	ProjectileLocationModifiers(EHIT_Head) = 2
 	ProjectileLocationModifiers(EHIT_Torso) = 1.5

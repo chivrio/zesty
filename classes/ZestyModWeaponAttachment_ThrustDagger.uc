@@ -9,23 +9,8 @@ class ZestyModWeaponAttachment_ThrustDagger extends AOCWeaponAttachment_ThrustDa
 
 DefaultProperties
 {
-	
-KickOffset=(X=36, Y=0, Z=-42)
+	KickOffset=(X=36, Y=0, Z=-42)
 	KickSize=18.f
-
-	Begin Object Name=SkeletalMeshComponent0
-		SkeletalMesh=SkeletalMesh'WP_dag_BroadDagger.WEP_broadDagger'
-		Scale=1.4
-	End Object
-
-	Begin Object Name=SkeletalMeshComponent2
-		SkeletalMesh=SkeletalMesh'WP_dag_BroadDagger.WEP_broadDagger'
-		Scale=1.4
-	End Object
-
-	WeaponID=EWEP_BroadDagger
-	WeaponClass=class'ZestyModWeapon_HuntingKnife'
-	WeaponSocket=wep1hpoint
 
 	AttackTypeInfo(0)=(fBaseDamage=30.0, fForce=10000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(1)=(fBaseDamage=45.0, fForce=10000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
