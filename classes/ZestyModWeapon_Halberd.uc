@@ -18,8 +18,8 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_Slash)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Large',
+        medium=SoundCue'A_Impacts_Melee.Medium_chop_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Halberd_Wood',
         dirt=SoundCue'A_Phys_Mat_Impacts.Halberd_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.Halberd_Dirt',
@@ -29,8 +29,8 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Slash_Large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Large',
+        medium=SoundCue'A_Impacts_Melee.Medium_chop_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Halberd_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Halberd_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Halberd_Dirt',
