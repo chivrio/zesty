@@ -3,37 +3,6 @@ class ZestyModWeapon_ThrowingKnife extends AOCWeapon_ThrowingKnife;
 
 DefaultProperties
 {
-    CurrentWeaponType = EWEP_ThrownKnife
-    // set maximum ammo
-    AmmoCount=2
-    MaxAmmoCount=2
-    AIRange=5000
-
-    WeaponProjectiles(0)=class'AOCProj_ThrownDagger'
-
-    AttachmentClass=class'AOCWeaponAttachment_ThrowingKnife'
-    // should never be part of inventory attachment
-    InventoryAttachmentClass=class'AOCInventoryAttachment_ThrowingKnife'
-
-    CurrentGenWeaponType=EWT_Throwing
-    WeaponIdentifier="throwingknife"
-    WeaponIdleAnim=''
-
-    WeaponIdleAnim=''
-
-    FiringStatesArray(2)=none
-    FiringStatesArray(3)=none
-    FiringStatesArray(4)=none
-    FiringStatesArray(5)=none
-
-    ProjectileSpawnLocation=ProjPoint
-    bRetIdle=true
-    bRetIdleOriginal=true
-    bCanDodge=false
-
-    /*
-     * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_ThrowingKnife]
-     */
     ConfigProjectileBaseDamage[0]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
     ConfigProjectileBaseDamage[1]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
     ConfigProjectileBaseDamage[2]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
