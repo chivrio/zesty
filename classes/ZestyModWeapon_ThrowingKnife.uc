@@ -19,6 +19,8 @@ DefaultProperties
     WeaponIdentifier="throwingknife"
     WeaponIdleAnim=''
 
+    WeaponIdleAnim=''
+
     FiringStatesArray(2)=none
     FiringStatesArray(3)=none
     FiringStatesArray(4)=none

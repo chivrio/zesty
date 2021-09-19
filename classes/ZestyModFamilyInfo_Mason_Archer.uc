@@ -6,7 +6,7 @@ DefaultProperties
     NewPrimaryWeapons(0)=(CWeapon=class'ZestyModWeapon_Longbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead'))
     NewPrimaryWeapons(1)=(CWeapon=class'ZestyModWeapon_Shortbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead'))
     NewPrimaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Warbow',CForceTertiary=(class'AOCWeapon_ProjBroadhead'))
-    NewPrimaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Crossbow',CForceTertiary=(class'ZestyModWeapon_Buckler_Mason', class'AOCWeapon_PaviseShield_Mason'))
+    NewPrimaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Crossbow',CForceTertiary=(class'ZestyModWeapon_Buckler_Mason'))
     NewPrimaryWeapons(4)=(CWeapon=class'ZestyModWeapon_LightCrossbow',CForceTertiary=(class'ZestyModWeapon_ThrowingKnife'))
     NewPrimaryWeapons(5)=(CWeapon=class'ZestyModWeapon_HeavyCrossbow',CForceTertiary=(class'AOCWeapon_PaviseShield_Mason'))
     NewPrimaryWeapons(6)=(CWeapon=class'ZestyModWeapon_JavelinMelee',CForceTertiary=(class'ZestyModWeapon_Buckler_Mason'))
