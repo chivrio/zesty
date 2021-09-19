@@ -17,6 +17,7 @@ DefaultProperties
 
     CurrentGenWeaponType=EWT_Throwing
     WeaponIdentifier="throwingknife"
+    WeaponIdleAnim=''
 
     FiringStatesArray(2)=none
     FiringStatesArray(3)=none
