@@ -153,9 +153,9 @@ DefaultProperties
 	WeaponReach=100
 	WeaponLargePortrait="UI_CustWeaponImages_SWF.skin_spear_png"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_spear_png"
-	HorizontalRotateSpeed=47000.0
+	HorizontalRotateSpeed=48000.0
 	VerticalRotateSpeed=46000.0
-	AttackHorizRotateSpeed=47000.0
+	AttackHorizRotateSpeed=48000.0
 	SprintAttackHorizRotateSpeed=25000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_spear_smashdowntoup,ComboAnimation=3p_spear_smash011altdowntoup,AlternateAnimation=3p_spear_smash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.56,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
@@ -178,8 +178,8 @@ DefaultProperties
 	ReleaseAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(8)=(AnimationName=3p_spear_equipup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.Jav_draw',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
 	ReleaseAnimations(9)=(AnimationName=3p_spear_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.Jav_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
-	RecoveryAnimations(0)=(AnimationName=3p_spear_smashrecover,ComboAnimation=3p_spear_smash011recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.63,fBlendInTime=0.10,fBlendOutTime=0.1,bLastAnimation=true)
-	RecoveryAnimations(1)=(AnimationName=3p_spear_stab02recover,ComboAnimation=3p_spear_stab021recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.68,fBlendInTime=0.1,fBlendOutTime=0.1,bLastAnimation=true)
+	RecoveryAnimations(0)=(AnimationName=3p_spear_smashrecover,ComboAnimation=3p_spear_smash011recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.62,fBlendInTime=0.10,fBlendOutTime=0.1,bLastAnimation=true)
+	RecoveryAnimations(1)=(AnimationName=3p_spear_stab02recover,ComboAnimation=3p_spear_stab021recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.67,fBlendInTime=0.1,fBlendOutTime=0.1,bLastAnimation=true)
 	RecoveryAnimations(2)=(AnimationName=3p_spear_stab01recover,ComboAnimation=3p_spear_smashrecover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.6,fBlendInTime=0.10,fBlendOutTime=0.1,bLastAnimation=true)
 	RecoveryAnimations(3)=(AnimationName=3p_spear_sattackrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=true,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1,fAnimationLength=0.4,fBlendInTime=0.00,fBlendOutTime=0.0,bLastAnimation=true,bUseAltBoneBranch=true)
 	RecoveryAnimations(4)=(AnimationName=3p_spear_parryrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.0,bLastAnimation=true)

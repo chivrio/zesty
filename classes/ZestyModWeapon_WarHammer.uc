@@ -133,7 +133,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_WarHammer]
      */
 	iFeintStaminaCost=12
-	FeintTime=0.33
+	FeintTime=0.3
 	TertiaryFeintTime=0.45
 	fParryNegation=14
 	ParryDrain(0)=27

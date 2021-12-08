@@ -132,7 +132,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Maul]
      */
-	FeintTime=0.23
+	FeintTime=0.21
 	TertiaryFeintTime=0.4
 	iFeintStaminaCost=15
 	fParryNegation=16
