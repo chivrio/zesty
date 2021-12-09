@@ -129,7 +129,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_MorningStar]
      */
 	iFeintStaminaCost=12
-	FeintTime=0.4
+	FeintTime=0.39
 	TertiaryFeintTime=0.45
 	fParryNegation=13
 	ParryDrain(0)=26

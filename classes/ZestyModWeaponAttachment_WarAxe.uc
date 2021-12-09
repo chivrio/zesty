@@ -49,7 +49,7 @@ KickOffset=(X=36, Y=0, Z=-42)
 
 	AttackTypeInfo(0)=(fBaseDamage=75.0, fForce=20000, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(1)=(fBaseDamage=77.0, fForce=20000, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
-	AttackTypeInfo(2)=(fBaseDamage=57.0, fForce=22500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
+	AttackTypeInfo(2)=(fBaseDamage=60.0, fForce=22500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=100.0, fForce=55500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=32500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
