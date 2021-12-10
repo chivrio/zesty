@@ -149,7 +149,7 @@ DefaultProperties
 	WeaponReach=100
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_broadsword"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_broadsword_png"
-	HorizontalRotateSpeed=65000.0
+	HorizontalRotateSpeed=70000.0
 	VerticalRotateSpeed=65000.0
 	AttackHorizRotateSpeed=70000.0
 	SprintAttackHorizRotateSpeed=40000.0
