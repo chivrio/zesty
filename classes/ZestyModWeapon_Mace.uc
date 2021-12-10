@@ -37,8 +37,8 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_Stab)={(
         light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
@@ -48,8 +48,8 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Small',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
