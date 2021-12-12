@@ -135,7 +135,7 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Longsword]
      */
 	iFeintStaminaCost=15
-	FeintTime=0.24
+	FeintTime=0.25
 	TertiaryFeintTime=0.45
 	ComboFeintTime=0.525
 	fParryNegation=15
@@ -146,9 +146,9 @@ DefaultProperties
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_longsword"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_longsword_png"
 	WeaponReach=100
-	HorizontalRotateSpeed=58000.0
+	HorizontalRotateSpeed=59000.0
 	VerticalRotateSpeed=55000.0
-	AttackHorizRotateSpeed=58000.0
+	AttackHorizRotateSpeed=59000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_longsword_slash01downtoup,ComboAnimation=3p_longsword_slash011downtoup,AlternateAnimation=3p_longsword_slash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.53,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,fShieldAnimLength=0.0)

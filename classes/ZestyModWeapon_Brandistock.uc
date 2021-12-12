@@ -39,8 +39,8 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_Stab)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
@@ -50,8 +50,8 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_StabCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_large',
-        medium=SoundCue'A_Impacts_Melee.Medium_Chop_large',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Chop_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
@@ -177,8 +177,8 @@ DefaultProperties
 	ReleaseAnimations(8)=(AnimationName=3p_spear_equipup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.Jav_draw',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
 	ReleaseAnimations(9)=(AnimationName=3p_spear_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.Jav_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
 	RecoveryAnimations(0)=(AnimationName=3p_spear_smashrecover,ComboAnimation=3p_spear_smash011recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.63,fBlendInTime=0.10,fBlendOutTime=0.1,bLastAnimation=true)
-	RecoveryAnimations(1)=(AnimationName=3p_spear_stab02recover,ComboAnimation=3p_spear_stab021recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.76,fBlendInTime=0.1,fBlendOutTime=0.1,bLastAnimation=true)
-	RecoveryAnimations(2)=(AnimationName=3p_spear_stab01recover,ComboAnimation=3p_spear_smashrecover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.6,fBlendInTime=0.10,fBlendOutTime=0.1,bLastAnimation=true)
+	RecoveryAnimations(1)=(AnimationName=3p_spear_stab02recover,ComboAnimation=3p_spear_stab021recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.77,fBlendInTime=0.1,fBlendOutTime=0.1,bLastAnimation=true)
+	RecoveryAnimations(2)=(AnimationName=3p_spear_stab01recover,ComboAnimation=3p_spear_smashrecover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.61,fBlendInTime=0.10,fBlendOutTime=0.1,bLastAnimation=true)
 	RecoveryAnimations(3)=(AnimationName=3p_spear_sattackrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=true,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1,fAnimationLength=0.4,fBlendInTime=0.00,fBlendOutTime=0.0,bLastAnimation=true,bUseAltBoneBranch=true)
 	RecoveryAnimations(4)=(AnimationName=3p_spear_parryrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.0,bLastAnimation=true)
 	RecoveryAnimations(5)=(AnimationName=3p_spear_shoverecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.45,fBlendInTime=0.10,fBlendOutTime=0.0,bLastAnimation=true,bUseAltNode=true,bUseAltBoneBranch=true)

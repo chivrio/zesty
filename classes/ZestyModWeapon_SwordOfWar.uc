@@ -146,9 +146,9 @@ DefaultProperties
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_swordofwar"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_swordofwar_png"
 	WeaponReach=100
-	HorizontalRotateSpeed=59000.0
-	VerticalRotateSpeed=55000.0
-	AttackHorizRotateSpeed=59000.0
+	HorizontalRotateSpeed=60000.0
+	VerticalRotateSpeed=56000.0
+	AttackHorizRotateSpeed=60000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_longsword_slash01downtoup,ComboAnimation=3p_longsword_slash011downtoup,AlternateAnimation=3p_longsword_slash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.52,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,fShieldAnimLength=0.0)
