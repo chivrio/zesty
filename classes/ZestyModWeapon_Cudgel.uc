@@ -63,7 +63,7 @@ DefaultProperties
     ImpactSounds(ESWINGSOUND_Overhead)={(
         light=SoundCue'A_Impacts_Melee.Light_blunt_Average',
         medium=SoundCue'A_Impacts_Melee.Medium_blunt_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_blunt_small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_blunt_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Cudgel_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
@@ -74,7 +74,7 @@ DefaultProperties
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_blunt_Average',
         medium=SoundCue'A_Impacts_Melee.Medium_blunt_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_blunt_small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_blunt_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Cudgel_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Cudgel_Dirt',
