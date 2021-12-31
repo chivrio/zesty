@@ -61,6 +61,8 @@ event InitGame(string Options, out string ErrorMessage)
 
     RankedAPI = new class'RankedAPI';
 
+    CustomizationClass = class'ZestyMod.ZestyModCustomizationContent';
+
     UnlockTeams();
 
     if ((bTournamentMode && bRankedMode) || (default.bTournamentMode && default.bRankedMode))

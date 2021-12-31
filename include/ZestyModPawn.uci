@@ -1264,6 +1264,8 @@ DefaultProperties
 {
     bIsInSmoke=false
 
+    CustomizationClass=class'ZestyModCustomization'
+
     fStaminaRegenCooldown=1.8
     fLowStaminaThreshold=18.0
     fJumpStaminaCost=3.0

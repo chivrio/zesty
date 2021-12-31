@@ -1,0 +1,1 @@
+class ZestyModGFx_HUDManager extends AOCGFx_HUDManager;
