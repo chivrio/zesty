@@ -47,6 +47,122 @@ function SaveChoices()
 }
 
 
+function OnFadeOutDone()
+{
+	local Rotator rot;
+
+	PreviewController.UnPossess();
+	PreviewController.Pawn = none;
+	PreviewPawn.Controller = none;
+
+	PreviewPawn.Destroy();
+	
+	if(PreviewController == none)
+	{
+		PreviewController = class'WorldInfo'.static.GetWorldInfo().Spawn(class'AOCAIController_NPC_Preview',,,PawnLocation);
+	}
+
+	PreviewPawn = class'WorldInfo'.static.GetWorldInfo().Spawn(class'ZestyModPreviewPawn',,,PawnLocation);
+	PreviewPawn.bCollideWorld = false;
+	PreviewPawn.SetLocation(PawnLocation);
+	//class'WorldInfo'.static.GetWorldInfo().GetALocalPlayerController().ClientAddTextureStreamingLoc(PreviewPawn.Location,100, false);
+	PreviewPawn.SetPhysics(PHYS_None);	
+
+	rot.Yaw = 32767;
+	CaptureActor.SetRotation(rot);
+	CaptureActor.FocusActor = PreviewPawn;
+
+	PreviewController.myPawnClass = GetFamilyFromTeamAndClass(SelectedTeam, SelectedClass);
+
+	switch(SelectedClass)
+	{
+	case(ECLASS_Archer):
+		PreviewController.myPrimaryWeapon = class'AOCWeapon_JavelinMelee';
+		PreviewController.myTertiaryWeapon = SelectedTeam == EFAC_Agatha ? class'AOCWeapon_Buckler_Agatha' : class'AOCWeapon_Buckler_Mason';
+		break;
+	case(ECLASS_ManAtArms):
+		PreviewController.myPrimaryWeapon = class'AOCWeapon_MorningStar';
+		PreviewController.myTertiaryWeapon = SelectedTeam == EFAC_Agatha ? class'AOCWeapon_Heater_Agatha' : class'AOCWeapon_Heater_Mason';
+		break;
+	case(ECLASS_Vanguard):
+		PreviewController.myPrimaryWeapon = class'AOCWeapon_Halberd';
+		PreviewController.myTertiaryWeapon = none;
+		break;
+	case(ECLASS_Knight):
+		PreviewController.myPrimaryWeapon = class'AOCWeapon_Longsword1H';
+		PreviewController.myTertiaryWeapon = SelectedTeam == EFAC_Agatha ? class'AOCWeapon_Kite_Agatha' : class'AOCWeapon_Kite_Mason';
+		break;
+	default:
+		break;
+	}
+
+	ItemLoader.SetString("source", "img://"$PreviewController.myPrimaryWeapon.default.WeaponLargePortrait);
+
+	if(SelectedTeam == EFAC_FFA)
+	{
+		if(PreviewController.FFAFamilies[SelectedClass] == none)
+		{
+			switch(SelectedClass)
+			{
+			case(ECLASS_Archer):
+				PreviewController.FFAFamilies[SelectedClass] = class'Worldinfo'.static.GetWorldInfo().Spawn(class'AOCFamilyInfo_FFA_Mason_Archer');
+				break;
+			case(ECLASS_ManAtArms):
+				PreviewController.FFAFamilies[SelectedClass] = class'Worldinfo'.static.GetWorldInfo().Spawn(class'AOCFamilyInfo_FFA_Mason_ManAtArms');
+				break;
+			case(ECLASS_Vanguard):
+				PreviewController.FFAFamilies[SelectedClass] = class'Worldinfo'.static.GetWorldInfo().Spawn(class'AOCFamilyInfo_FFA_Mason_Vanguard');
+				break;
+			case(ECLASS_Knight):
+				PreviewController.FFAFamilies[SelectedClass] = class'Worldinfo'.static.GetWorldInfo().Spawn(class'AOCFamilyInfo_FFA_Mason_Knight');
+				break;
+			default:
+				break;
+			}
+		}
+
+		PreviewController.myPawnClass = PreviewController.FFAFamilies[SelectedClass];
+	}
+
+	PreviewController.myCustomization = TeamCustomizationChoices[SelectedTeam].ClassCustomizationChoices[SelectedClass];
+
+	if(SelectedWeapon != EWEP_MAX)
+	{
+		if(IsAShieldWeapon(SelectedWeapon))
+		{
+			PreviewController.myPrimaryWeapon = WeaponClasses[EWEP_Javelin];
+			PreviewController.myTertiaryWeapon = WeaponClasses[SelectedWeapon];
+			PreviewController.myCustomization.TertiaryWeaponDrop = TeamWeaponChoices[SelectedTeam].Classes[SelectedClass].Weapons[SelectedWeapon];
+		}
+		else
+		{
+			PreviewController.myPrimaryWeapon = WeaponClasses[SelectedWeapon];
+			PreviewController.myCustomization.PrimaryWeaponDrop = TeamWeaponChoices[SelectedTeam].Classes[SelectedClass].Weapons[SelectedWeapon];
+		}
+	}
+
+	
+
+	PreviewController.Possess(PreviewPawn, false);
+	PreviewPawn.SpawnCustomizationWeapons();
+	PreviewPawn.ReplicatedEvent('PawnInfo');
+
+	if(SelectedWeapon == EWEP_Buckler ||
+		SelectedWeapon == EWEP_Tower || 
+		SelectedWeapon == EWEP_Heater || 
+		SelectedWeapon == EWEP_Kite)
+	{
+		PreviewPawn.EquipShield(true, true);
+	}
+
+	//AOCGame(class'WorldInfo'.static.GetWorldInfo().Game).AddDefaultInventory(PreviewPawn);
+
+	CaptureActor.UICharTimerTrigger = OnTimerTriggerToStartFadeIn;
+	CaptureActor.StartUICharTimer(0.01f);
+	PreviewPawn.PrestreamTextures(10000000, true);
+}
+
+
 function GFxObject PopulatePatternList(int CharID, out float selectedIndex)
 {
 	local GFxObject ListDataProvider;

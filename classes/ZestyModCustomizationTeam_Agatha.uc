@@ -11,6 +11,9 @@ defaultproperties
 
 Emblems.Add((Img=Texture2D'CH_Warlock.T_Warlock',	GearData=(GearNameID=Warlock)))
 Emblems.Add((Img=Texture2D'CH_Warlock.T_royalpug1',	GearData=(GearNameID=Pug)))
+Emblems.Add((Img=Texture2D'CH_Warlock.T_aot',	GearData=(GearNameID=AOT)))
+Emblems.Add((Img=Texture2D'CH_Warlock.T_snapchat',	GearData=(GearNameID=Snapchat)))
+Emblems.Add((Img=Texture2D'CH_Warlock.T_trollface',	GearData=(GearNameID=trollface)))
 
     //TabardColorsPrimary.Add((R=0.133193,G=0.236336,B=0.475121))	//blue FF6584B5
 	//TabardColorsPrimary.Add((R=1,G=1,B=1))							//white FFFFFF
