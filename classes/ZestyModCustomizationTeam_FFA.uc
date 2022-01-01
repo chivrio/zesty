@@ -14,5 +14,6 @@ Emblems.Add((Img=Texture2D'CH_Warlock.T_royalpug1',	GearData=(GearNameID=Pug)))
 Emblems.Add((Img=Texture2D'CH_Warlock.T_aot',	GearData=(GearNameID=AOT)))
 Emblems.Add((Img=Texture2D'CH_Warlock.T_snapchat',	GearData=(GearNameID=Snapchat)))
 Emblems.Add((Img=Texture2D'CH_Warlock.T_trollface',	GearData=(GearNameID=trollface)))
+Emblems.Add((Img=Texture2D'CH_Warlock.T_Gorilla',	GearData=(GearNameID=Gorilla)))
 
 }
