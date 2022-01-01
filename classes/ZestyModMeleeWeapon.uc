@@ -11,6 +11,8 @@ var float fComboMinimumStamina;			// Minimum amount of stamina required to combo
 var bool bParryWasDuringRiposte;
 var bool bFeintCostWasRefunded;
 
+var int iMaxIdenticalCombo;
+
 
 simulated state ParryRelease
 {
@@ -28,9 +30,9 @@ simulated state ParryRelease
 
 			bParryWasDuringRiposte = true;
 		}
-	    super.BeginFire(FireModeNum);       
+	    super.BeginFire(FireModeNum);
     }
-	
+
 	simulated function SuccessfulParry(EAttack Type, int Dir)
     {
         local float ParryInRiposteReward;
@@ -219,7 +221,7 @@ simulated state Release
                         AOCOwner.OnActionFailed(EACT_Kick);
                     }
                 }
-            
+
                 // Handle missed attacks
                 if (CurrentFireMode != Attack_Parry &&          // Missing a parry shouldn't cost stamina
                 NextStateName != 'Flinch'       &&          // An attack being flinched shouldn't count as a miss
@@ -254,7 +256,7 @@ simulated state Release
         AOCOwner.FinishSprintAttack();
         AOCWepAttachment.GotoState('');
         bParryHitCounter = false;
-        
+
         // Deal with super.super
         //super.EndState(NextStateName);
         AOCOwner.FinishLunge();
@@ -275,7 +277,7 @@ simulated state Release
     simulated function HandleCombo(EAttack ComboAttack)
     {
         local bool bHasEnoughStamina;
-        
+
         if (CurrentFireMode == Attack_Shove || CurrentFireMode == Attack_Parry || CurrentFireMode == Attack_Sprint || (CurrentFireMode == Attack_Stab && ComboAttack == Attack_Stab))
             return;
 
@@ -290,7 +292,7 @@ simulated state Release
         else if (ComboAttack == Attack_AltSlash)
             ComboAttack = Attack_Slash;
 
-        if(ComboAttack == CurrentFireMode && iIdenticalCombo >= 3)
+        if (ComboAttack == CurrentFireMode && iMaxIdenticalCombo >= 0 && iIdenticalCombo >= iMaxIdenticalCombo)
         {
             return;
         }
@@ -309,7 +311,7 @@ simulated state Release
                 eNextAttack = ComboAttack;
 
                 AOCOwner.PlayerHUDStartCombo();
-                
+
                 if(iComboCount == 1)
                 {
                     AOCOwner.OnComboStarted();
@@ -340,7 +342,7 @@ simulated state AlternateRecovery
 
         if (ComboAttack == Attack_Parry)
             return;
-            
+
         // notify that we're in a combo now if we're not aborting the attack -- double check we're allowed to combo
         if (iComboCount < MaxComboCount)
         {
@@ -366,7 +368,7 @@ simulated state Active
     simulated event BeginState(Name PreviousStateName)
     {
         super.BeginState(PreviousStateName);
-        
+
         // Reset riposte-parry variables
         bParryWasDuringRiposte = false;
         bFeintCostWasRefunded = false;
@@ -391,6 +393,8 @@ DefaultProperties
 
     bParryWasDuringRiposte = false;
     bFeintCostWasRefunded = false;
+
+    iMaxIdenticalCombo = -1;
 
     bCanParry = true;
     bCanCombo = true;
