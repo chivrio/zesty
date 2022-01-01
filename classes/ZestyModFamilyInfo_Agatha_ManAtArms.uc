@@ -39,6 +39,8 @@ DefaultProperties
 
     DamageResistances(EDMG_Blunt) = 0.65
 
+	DodgeSpeed=600.0
+	DodgeSpeedZ=300.0
     BACK_MODIFY=0.8
     JumpZ=381.0
     iDodgeCost=33

@@ -149,9 +149,9 @@ DefaultProperties
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_billhook"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_billhook_png"
 	WeaponReach=100
-	HorizontalRotateSpeed=60000.0
+	HorizontalRotateSpeed=57000.0
 	VerticalRotateSpeed=54000.0
-	AttackHorizRotateSpeed=60000.0
+	AttackHorizRotateSpeed=57000.0
 	SprintAttackHorizRotateSpeed=25000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	DirParryHitAnimations(0)=(AnimationName=3p_halberd_parryhitL,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true,bUseAltNode=true)

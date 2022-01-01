@@ -26,7 +26,7 @@ KickOffset=(X=36, Y=0, Z=-42)
 	WeaponSocket=wep2hpoint
 	bUseAlternativeKick=true
 
-	AttackTypeInfo(0)=(fBaseDamage=33.0, fForce=30000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=30.0, fForce=30000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(1)=(fBaseDamage=63.0, fForce=26000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(2)=(fBaseDamage=67.0, fForce=27000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=100.0, fForce=65000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
