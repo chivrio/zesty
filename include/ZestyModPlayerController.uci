@@ -6,6 +6,7 @@ struct mapLink
 };
 var array<mapLink> maps;
 
+var ZestyModCustomizationContent CustomizationBaseDummy;
 
 reliable server function bool IsAdmin() {
     return WorldInfo.Game.AccessControl.IsAdmin(self) || WorldInfo.NetMode == NM_Standalone;
@@ -695,6 +696,8 @@ reliable server function ServerVoteRestartMapAfterEndGame(bool bEnable)
 DefaultProperties
 {
     suicideDelay = 1.0f
+
+    CustomizationClass=class'ZestyModCustomization'
 
     // AdminGoTo function
     maps(0)=(url="AOCFFA-Duelyard_p", alias="DY")

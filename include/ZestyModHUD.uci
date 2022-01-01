@@ -1,4 +1,34 @@
+var ZestyModGFx_EscapeMain     EscapeMenu;
+
+var ZestyModGFx_HUDManager HUD;
+
+exec function ShowEscapeMenu(optional bool bPlaySound = true)
+{
+	// Initialize Escape menu here
+	if (EscapeMenu == none || !EscapeMenu.bMovieIsOpen)
+	{
+		// Play Escape Menu Sound
+		if (bPlaySound)
+			AOCPlayerController(PlayerOwner).PlayEscapeMenuSound(true);
+
+		EscapeMenu = none;
+		EscapeMenu = ZestyModGFx_EscapeMain(OpenGFxScene(EscapeMenu, class'ZestyModGFx_EscapeMain', true, true, true, false));
+		EscapeMenu.Start();
+	}
+}
+
+function RemoveEscapeMenu()
+{
+	EscapeMenu.SetMovieCanReceiveFocus(false);
+	EscapeMenu.Close(true);
+	EscapeMenu = none;
+	ShowCursor(false);
+}
+
+
+
 DefaultProperties
 {
     PawnClass=class'`{GAMEMODE}Pawn'
+    HUDClass=class'ZestyModGFx_HUDManager'
 }
