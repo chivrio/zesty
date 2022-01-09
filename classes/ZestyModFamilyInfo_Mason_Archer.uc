@@ -22,13 +22,17 @@ DefaultProperties
     NewSecondaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Saber')
 
     NewTertiaryWeapons.empty;
-    NewTertiaryWeapons(0)=(CWeapon=class'ZestyModWeapon_Buckler_Agatha')
-    NewTertiaryWeapons(1)=(CWeapon=class'AOCWeapon_ProjBodkin')
+    NewTertiaryWeapons(0)=(CWeapon=class'AOCWeapon_ProjBroadhead')
+    NewTertiaryWeapons(1)=(CWeapon=class'AOCWeapon_ProjBroadhead')
     NewTertiaryWeapons(2)=(CWeapon=class'AOCWeapon_ProjBroadhead')
-    NewTertiaryWeapons(3)=(CWeapon=class'AOCWeapon_ProjPebble')
-    NewTertiaryWeapons(4)=(CWeapon=class'AOCWeapon_ProjLeadBall')
-    NewTertiaryWeapons(5)=(CWeapon=class'AOCWeapon_PaviseShield_Agatha')
-    NewTertiaryWeapons(6)=(CWeapon=class'ZestyModWeapon_ThrowingKnife')    
+    NewTertiaryWeapons(3)=(CWeapon=class'ZestyModWeapon_ThrowingKnife')
+    NewTertiaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Buckler_Mason')
+    NewTertiaryWeapons(5)=(CWeapon=class'AOCWeapon_PaviseShield_Mason')
+    NewTertiaryWeapons(6)=(CWeapon=class'ZestyModWeapon_Buckler_Mason')
+    NewTertiaryWeapons(7)=(CWeapon=class'ZestyModWeapon_Buckler_Mason')
+    NewTertiaryWeapons(8)=(CWeapon=class'ZestyModWeapon_Buckler_Mason')
+    NewTertiaryWeapons(9)=(CWeapon=class'AOCWeapon_ProjPebble') 
+    NewTertiaryWeapons(10)=(CWeapon=class'AOCWeapon_ProjLeadBall')  
 
 	ProjectileLocationModifiers(EHIT_Head) = 2
 	ProjectileLocationModifiers(EHIT_Torso) = 1.5
