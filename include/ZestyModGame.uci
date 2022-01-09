@@ -225,7 +225,7 @@ function bool ShouldCountDown()
             //bots cannot trigger countdown in TO2 (is breaking horde-type maps)
             continue;
         }
-        
+
         if(!bCanSpawn)
         {
             continue;
@@ -905,6 +905,11 @@ function OnUserConnectOnComplete(HttpRequestInterface OriginalRequest, HttpRespo
     RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
 }
 
+exec function RankedAttemptToMakeMatch()
+{
+    RankedModeAttemptToMakeMatch();
+}
+
 function RankedModeAttemptToMakeMatch()
 {
     local int PlayerCount;
@@ -1088,7 +1093,7 @@ function RankedModeEndGame()
     jTeamOneKPI = new class'JsonObject';
     jTeamOneKPI.SetFloatValue("score", teamOneScore);
     jTeamOneKPI.SetFloatValue("progress", teamOneProgress);
-    
+
     jTeamTwoKPI = new class'JsonObject';
     jTeamTwoKPI.SetFloatValue("score", teamTwoScore);
     jTeamTwoKPI.SetFloatValue("progress", teamTwoProgress);
@@ -1252,7 +1257,7 @@ function InitiateCustomVote(AOCPlayerController VoteInstigator, delegate<CustomV
     // Set delegate to execute when complete
     dCustomVoteOnComplete = OnComplete;
 
-    // Overrride vote duration 
+    // Overrride vote duration
     if (duration >= 10 && duration <= 60)
         fVoteDurationSeconds = duration;
 
