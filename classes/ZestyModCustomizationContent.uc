@@ -54,8 +54,8 @@ defaultproperties
     Characters.Add(class'AOCCharacterInfo_Skeleton')
     Characters.Add(class'AOCCharacterInfo_Skeleton')
 	
-	Characters.Add(class'ZestyModCharacterInfo_Mason_Vanguard_DLC1')
-	Characters.Add(class'ZestyModCharacterInfo_Agatha_Vanguard_DLC1')
+	//Characters.Add(class'ZestyModCharacterInfo_Mason_Vanguard_DLC1')
+	//Characters.Add(class'ZestyModCharacterInfo_Agatha_Vanguard_DLC1')
 	
 
     // 2 placeholders
@@ -64,7 +64,7 @@ defaultproperties
 
 	//Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Archer')
 	//Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Knight')
-	Characters.Add(class'ZestyModCharacterInfo_BARB_Agatha_ManAtArms')
+	//Characters.Add(class'ZestyModCharacterInfo_BARB_Agatha_ManAtArms')
 
     //2 placeholders
     Characters.Add(class'AOCCharacterInfo_Skeleton')
@@ -72,8 +72,8 @@ defaultproperties
 
 	//Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Vanguard')
 	//Characters.Add(class'AOCCharacterInfo_BARB_Mason_Archer')
-	Characters.Add(class'ZestyModCharacterInfo_BARB_Mason_Knight')
-	Characters.Add(class'ZestyModCharacterInfo_BARB_Mason_ManAtArms')
+	//Characters.Add(class'ZestyModCharacterInfo_BARB_Mason_Knight')
+	//Characters.Add(class'ZestyModCharacterInfo_BARB_Mason_ManAtArms')
 
     //2 placeholders
     Characters.Add(class'AOCCharacterInfo_Skeleton')
@@ -84,14 +84,24 @@ defaultproperties
 
     Characters.Add(class'ZestyModCharacterInfo_Agatha_King_Warlock')
     Characters.Add(class'ZestyModCharacterInfo_Mason_King_Warlock')
+
+    Characters.Add(class'ZestyModCharacterInfo_Playable_Rat')
     
 
     Teams.Empty()
-    Teams.Add(class'ZestyModCustomizationTeam_Agatha')
+    Teams.Add(class'ZestyModCustomizationTeam_Agatha') //0
+    Teams.Add(class'ZestyModCustomizationTeam_Mason') // 1
+    Teams.Add() // 2
+    Teams.Add() // 3
+    Teams.Add() // 4
+    Teams.Add(class'ZestyModCustomizationTeam_FFA') //5
+    Teams.Add() // 6
+    Teams.Add() // 7
 
-	Teams.Add(class'ZestyModCustomizationTeam_FFA')
     
-	Teams.Add(class'ZestyModCustomizationTeam_Mason')
-
+    //Teams.Add()
+    //Teams.Add()
+    //Teams.Add()
+	
 }
 

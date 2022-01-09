@@ -4,7 +4,7 @@
 * Original Author: Brady Brenot
 * 
 */
-class ZestyModCharacterInfo_Playable_Peasant extends AOCCharacterInfo;
+class ZestyModCharacterInfo_Playable_Rat extends AOCCharacterInfo;
 
 defaultproperties
 {
@@ -55,18 +55,18 @@ defaultproperties
 	FirstPersonAnimSets(16)=AnimSet'ANIM_Sling.ANIM_1p_sling'
 	FirstPersonAnimSets(17)=AnimSet'ANIM_Qstaff.ANIM_1p_Qstaff'
 
-	CharacterMeshPath="CH_NPC_Peasant.models.SK_NPC_Peasant01"
-	DecapMeshPath="CH_NPC_Peasant.models.SK_NPC_Peasant01"
+	CharacterMeshPath="npc_animal_rat.models.SK_NPC_Animal_Rat"
+	//DecapMeshPath="CH_Skeletons_PKG.models.Sk_NPC_Skeleton_01"
 	OwnerMeshPath="CH_A_MasonArcher_PKG.SkeletalMesh.SK_CH_1P_MAsonArcher"
 
-	HeadMaterialPath="CH_NPC_Peasant.Materials.M_CH_Peasant_grey"
-	BodyMaterialPath="CH_NPC_Peasant.Materials.M_CH_Peasant01_Head"
+	HeadMaterialPath="NPC_Animal_Rat.Materials.MI_NPC_Animal_Rat"
+	BodyMaterialPath="NPC_Animal_Rat.Materials.MI_NPC_Animal_Rat"
 
-	StandinMesh=SkeletalMesh'CH_AgathanMaa_PKG.SkeletalMesh.SK_CH_3P_AgathaMaa'
+	StandinMesh=SkeletalMesh'NPC_Animal_Rat.models.SK_NPC_Animal_Rat'
 	StandinOwnerMesh=SkeletalMesh'CH_AgathanMaa_PKG.SkeletalMesh.Sk_CH_1P_AgathaMaa'
-	StandinDecapMesh=SkeletalMesh'CH_AgathanMaa_PKG.SkeletalMesh.SK_CH_3P_AgathaMaa_Gore'
-	StandinBodyMaterial=MaterialInterface'CH_AgathanMaa_PKG.Materials.MI_CH_3P_AgathaMaa_Head'
-	StandinHeadMaterial=MaterialInterface'CH_AgathanMaa_PKG.Materials.MI_CH_3P_AgathaMaa_Body'
+	//StandinDecapMesh=SkeletalMesh'CH_AgathanMaa_PKG.SkeletalMesh.SK_CH_3P_AgathaMaa_Gore'
+	StandinBodyMaterial=MaterialInstanceConstant'NPC_Animal_Rat.Materials.MI_NPC_Animal_Rat'
+	StandinHeadMaterial=MaterialInstanceConstant'NPC_Animal_Rat.Materials.MI_NPC_Animal_Rat'
 
 	PhysAsset=PhysicsAsset'CH_AgathanMaa_PKG.SkeletalMesh.SK_CH_3P_AgathaMaa_Physics'
 
@@ -77,7 +77,7 @@ defaultproperties
 
 	/** Ownership info **/
 
-	GearData=(GroupHexID="1700000027C84D0",GearNameID=Peasant,bVisibleInSelectorIfUnowned=false)
+	GearData=(GroupHexID="1700000027C84D0",GearNameID=Rat,bVisibleInSelectorIfUnowned=false)
 
 	/** Customizables **/
 
@@ -86,7 +86,7 @@ defaultproperties
 	Helmets.Add((SkeletalMeshPath="",                                                         StaticMeshPath="",                                                     GearData=(GearNameID=NoHat)))
 	Helmets.Add((SkeletalMeshPath="CH_H_AOC.Meshes.sk_aoc_agatha_helm",         StaticMeshPath="CH_H_AOC.Meshes.sm_AOC_Agatha_Knight",     GearData=(AppID=219970, GearNameID=KickStarterHat, bVisibleInSelectorIfUnowned=false)))
 	Helmets.Add((SkeletalMeshPath="CH_H_AOC.Meshes.sk_aoc_mason_helm",                  StaticMeshPath="CH_H_AOC.Meshes.sm_AOC_Mason_Knight",                   GearData=(AppID=219970, GearNameID=KickStarterHat, bVisibleInSelectorIfUnowned=false)))
-	Helmets.Add((SkeletalMeshPath="CHV_Cowskull.cowskull.sk_cowskull", StaticMeshPath="CHV_Cowskull.cowskull.SM_CowSkull", GearData=(AppID=222360, GearNameID=GDev, bVisibleInSelectorIfUnowned=false)))
+	Helmets.Add((SkeletalMeshPath="CHV_Cowskull.cowskull.sk_cowskull", StaticMeshPath="CHV_Cowskull.cowskull.SM_CowSkull", MaterialPath="CHV_Cowskull.cowskull.M_cowskull_mason", GearData=(GroupHexID="1700000027C84D0", GearNameID=GDev, bVisibleInSelectorIfUnowned=false)))
 	Helmets.Add((SkeletalMeshPath="CH_NPC_Peasant.models.Sk_PC_Peasant_Hat03",             StaticMeshPath="CH_sm_helms.smhelms_SK_NPC_Peasant_Hat03",              GearData=(GearNameID=Cartographer, MicroTxID=101034, bVisibleInSelectorIfUnowned=false)))
 	Helmets.Add((SkeletalMeshPath="CH_NPC_Peasant.models.Sk_PC_Peasant_Hat04",             StaticMeshPath="CH_sm_helms.smhelms_SK_NPC_Peasant_Hat04",              GearData=(GearNameID=Cartographer, MicroTxID=101034, bVisibleInSelectorIfUnowned=false)))
 	Helmets.Add((SkeletalMeshPath="ch_hp3_polycount.Mesh.sk_HP3_Archer",             StaticMeshPath="ch_hp3_polycount.Mesh.sm_HP3_Archer",              GearData=(GearNameID=Greentooth, MicroTxID=101035, bVisibleInSelectorIfUnowned=false)))
@@ -95,16 +95,17 @@ defaultproperties
 	Helmets.Add((SkeletalMeshPath="CHV_Santa.hat.SK_Chivmas_hat", StaticMeshPath="CHV_Santa.hat.SM_Chivmas_hat", MaterialPath="CHV_Santa.hat.M_chivmas-hat", GearData=(AppID=222360, GearNameID=GDev, bVisibleInSelectorIfUnowned=false)))
 	Helmets.Add((SkeletalMeshPath="CHV_Santa.hat.sm_chivmas_antlers", StaticMeshPath="CHV_Santa.hat.sk_chivmas_antlers", GearData=(AppID=222360, GearNameID=GDev, bVisibleInSelectorIfUnowned=false)))
 
-	Helmets.Add((SkeletalMeshPath="CH_H_SwordMaster.SK_smastercrown", StaticMeshPath="CH_H_SwordMaster.SM_smastercrown", GearData=(GroupHexID="1700000027C84D0", GearNameID=SquireTrainerHelm,bVisibleInSelectorIfUnowned=true, GearStoreDescriptionID=PeasantRevoltDesc)))
 	Helmets.Add((SkeletalMeshPath="HP_PlagueDoctorMask.SK_PlagueDoctorMask_Mason",             StaticMeshPath="HP_PlagueDoctorMask.mask02",          GearData=(GearNameID=KF2_MasonHelm, bVisibleInSelectorIfUnowned=true, AppIdNoDLC=232090, bPartOfBundle=true, BundleNameID=KF2_Item_Set_Name, GearStoreDescriptionID=KF2_Item_Set_Description)))
-	Helmets.Add((SkeletalMeshPath="CH_HP_Community_Helms.Meshes.SK_Community_Helm", StaticMeshPath="CH_HP_Community_Helms.SM_Community_Helm", MaterialPath="CH_HP_Community_Helms.Materials.M_Community_Helm_Agatha", GearData=(GroupHexID="1700000003F72EC", GearNameID=CommunityHat, GearStoreDescriptionID=CommunityHatDesc)))
+	Helmets.Add((SkeletalMeshPath="CH_HP_Community_Helms.Meshes.SK_Community_Helm", StaticMeshPath="CH_HP_Community_Helms.SM_Community_Helm", MaterialPath="CH_HP_Community_Helms.Materials.M_Community_Helm_Agatha", GearData=(GroupHexID="1700000027C84D0", GearNameID=CommunityHat, GearStoreDescriptionID=CommunityHatDesc)))
+	Helmets.Add((SkeletalMeshPath="CH_H_SwordMaster.SK_smastercrown", StaticMeshPath="CH_H_SwordMaster.SM_smastercrown", GearData=(GroupHexID="1700000027C84D0", GearNameID=SquireTrainerHelm,bVisibleInSelectorIfUnowned=true, GearStoreDescriptionID=PeasantRevoltDesc)))
 	Helmets.Add((SkeletalMeshPath="ch_punkin_head.sk_punkinHead", StaticMeshPath="ch_punkin_head.SM_PunkinHead", GearData=(GroupHexID="1700000027C84D0", GearNameID=HalloweenHelm2015,bVisibleInSelectorIfUnowned=true, GearStoreDescriptionID=HalloweenHelm2015Desc)))
 	Helmets.Add((SkeletalMeshPath="CH_H_FarmsToArms.SK_CH_HelmetFarmsToArms",       StaticMeshPath="CH_H_FarmsToArms.SM_FarmsToArms_Helmet",              GearData=(GroupHexID="1700000027C84D0", GearNameID=FarmsHat,bVisibleInSelectorIfUnowned=true, GearStoreDescriptionID=PeasantRevoltDesc)))
 	
+
 	//Warlock
 
 	Helmets.Add((SkeletalMeshPath="CH_KingA.sk_crown",StaticMeshPath="CH_sm_helms.smhelms_sk_crown", ParticleSystemPath="CH_H_Gold.Particles.P_devhelmfireR", GearData=(GroupHexID="1700000027C84D0", GearNameID=Fire_Crown, bVisibleInSelectorIfUnowned=false)))
-Helmets.Add((SkeletalMeshPath="CH_KingA.sk_crown",StaticMeshPath="CH_sm_helms.smhelms_sk_crown", GearData=(GroupHexID="1700000027C84D0", GearNameID=Crown, bVisibleInSelectorIfUnowned=false)))
+	Helmets.Add((SkeletalMeshPath="CH_KingA.sk_crown",StaticMeshPath="CH_sm_helms.smhelms_sk_crown", GearData=(GroupHexID="1700000027C84D0", GearNameID=Crown, bVisibleInSelectorIfUnowned=false)))
     Helmets.Add((SkeletalMeshPath="CH_H_AOC.Meshes.sk_aoc_agatha_helm",                         StaticMeshPath="CH_H_AOC.Meshes.sm_AOC_Agatha_Knight",                  MaterialPath="CH_H_Gold.Materials.M_ka_b", ParticleSystemPath="CH_H_Gold.Particles.P_devhelmfire", GearData=(GroupHexID="1700000027C84D0", GearNameID=WINNER_FEB_2022,bVisibleInSelectorIfUnowned=false)))
     Helmets.Add((SkeletalMeshPath="ch_hp3_polycount.Mesh.sk_HP3_Archer",             StaticMeshPath="ch_hp3_polycount.Mesh.sm_HP3_Archer",              GearData=(GroupHexID="1700000027D2F8D", GearNameID=Greentooth, bVisibleInSelectorIfUnowned=false)))
     Helmets.Add((SkeletalMeshPath="CH_Helmet_heartpiercer.SK_archer_heartpiercerhelmet_hoodup",                 StaticMeshPath="CH_Helmet_heartpiercer.SM_archer_heartpiercerhelmet_hoodup", ParticleSystemPath="CH_H_Gold.Particles.P_devhelmfireR",              GearData=(GroupHexID="1700000027C84D0", GearNameID=Warlock_Hood,bVisibleInSelectorIfUnowned=false)))
@@ -123,7 +124,7 @@ Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_halo",                         Stat
 Helmets.Add((SkeletalMeshPath="CH_Warlock.sk_LeafCrown",                         StaticMeshPath="CH_Warlock.SM_LeafCrown", MaterialPath="CH_Warlock.M_Leaves2",                  GearData=(GroupHexID="1700000027D57C8", GearNameID=GoldLaurels, bVisibleInSelectorIfUnowned=false)))
 
 
-
+	
 	ShieldPatterns.Add((GearData=(GearNameID=Default),PerShieldTextures[0]=Texture2D'WP_shld_Buckler.T_buckler_pa1',PerShieldTextures[1]=Texture2D'WP_shld_Heatshield.T_Heaters_pa1',PerShieldTextures[2]=Texture2D'WP_shld_TowerShield.Materials.t_towershield_pa1',PerShieldTextures[3]=Texture2D'WP_shld_Kite.T_kite_pa1'))
 	ShieldPatterns.Add((GearData=(GearNameID=Quadrant),PerShieldTextures[0]=Texture2D'WP_shld_Buckler.T_buckler_p01',PerShieldTextures[1]=Texture2D'WP_shld_Heatshield.T_Heaters_p01',PerShieldTextures[2]=Texture2D'WP_shld_TowerShield.Materials.t_towershield_p01',PerShieldTextures[3]=Texture2D'WP_shld_Kite.T_kite_p01'))
 	ShieldPatterns.Add((GearData=(GearNameID=Stripes),PerShieldTextures[0]=Texture2D'WP_shld_Buckler.T_buckler_p02',PerShieldTextures[1]=Texture2D'WP_shld_Heatshield.T_Heaters_p02',PerShieldTextures[2]=Texture2D'WP_shld_TowerShield.Materials.t_towershield_p02',PerShieldTextures[3]=Texture2D'WP_shld_Kite.T_kite_p02'))
@@ -136,9 +137,6 @@ Helmets.Add((SkeletalMeshPath="CH_Warlock.sk_LeafCrown",                        
 	AllowedClasses.Add(2)
 	AllowedClasses.Add(3)
 	AllowedClasses.Add(4)
-	AllowedClasses.Add(5)
-	AllowedClasses.Add(6)
-	AllowedClasses.Add(7)
 	AllowedTeams.Add(0)
 	AllowedTeams.Add(1)
 	AllowedTeams.Add(5)
