@@ -30,7 +30,7 @@ event bool WidgetInitialized(name WidgetName, name WidgetPath, GFxObject Widget)
 	local bool bResult;
 	bResult = false;
 
-	LogAlwaysInternal("ZestyModGFx_EscapeMain::WidgetInitialized"@Widget);
+	//LogAlwaysInternal("ZestyModGFx_EscapeMain::WidgetInitialized"@Widget);
 
 	switch(WidgetName)
     {           
@@ -114,7 +114,7 @@ event bool WidgetInitialized(name WidgetName, name WidgetPath, GFxObject Widget)
 
 function LoadViewByName(string InputName)
 {
-	LogAlwaysInternal("ZestyModGFx_EscapeMain::LoadViewByName"@InputName);
+	//LogAlwaysInternal("ZestyModGFx_EscapeMain::LoadViewByName"@InputName);
 	switch (InputName)
 	{
 	case "ConfigMain":

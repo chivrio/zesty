@@ -1,4 +1,5 @@
-class ZestyModView_Frontend_Customization extends AOCView_Frontend_Customization;
+class ZestyModView_Frontend_Customization extends AOCView_Frontend_Customization
+config(ZestyModCustomization);
 
 function OnEscapeKeyPress()
 {
