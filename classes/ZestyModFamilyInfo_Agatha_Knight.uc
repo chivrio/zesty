@@ -27,7 +27,7 @@ DefaultProperties
     NewTertiaryWeapons.empty;
     NewTertiaryWeapons(0)=(CWeapon=class'ZestyModWeapon_ThrowingAxe')
     NewTertiaryWeapons(1)=(CWeapon=class'ZestyModWeapon_TowerShield_Agatha')
-    NewTertiaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Heater_Agatha',bEnabledDefault=true)
+    NewTertiaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Heater_Agatha')
     NewTertiaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Kite_Agatha')
     NewTertiaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Buckler_Agatha')
     NewTertiaryWeapons(5)=(CWeapon=class'ZestyModWeapon_SmokePot')

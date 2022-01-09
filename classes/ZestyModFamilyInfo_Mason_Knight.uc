@@ -27,7 +27,7 @@ DefaultProperties
     NewTertiaryWeapons.empty;
     NewTertiaryWeapons(0)=(CWeapon=class'ZestyModWeapon_ThrowingAxe')
     NewTertiaryWeapons(1)=(CWeapon=class'ZestyModWeapon_TowerShield_Mason')
-    NewTertiaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Heater_Mason',bEnabledDefault=true)
+    NewTertiaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Heater_Mason')
     NewTertiaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Kite_Mason')
     NewTertiaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Buckler_Mason')
     NewTertiaryWeapons(5)=(CWeapon=class'ZestyModWeapon_SmokePot')
