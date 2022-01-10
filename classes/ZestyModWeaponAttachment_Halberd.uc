@@ -44,8 +44,8 @@ KickOffset=(X=36, Y=0, Z=-42)
 	WeaponClass=class'ZestyModWeapon_Halberd'
 	WeaponSocket=wepPolepoint
 
-	AttackTypeInfo(0)=(fBaseDamage=69.0, fForce=35000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=75.0, fForce=34000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=78.0, fForce=35000, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=79.0, fForce=34000, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(2)=(fBaseDamage=69.0, fForce=34500, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=100.0, fForce=65000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=1.0, fForce=35500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
