@@ -43,9 +43,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Dagesse_Stone')}
 
     ImpactSounds(ESWINGSOUND_Stab)={(
-        light=SoundCue'A_Impacts_Melee.Light_stab_small',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_small',
+        light=SoundCue'A_Impacts_Melee.Light_stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_stab_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',

@@ -144,7 +144,7 @@ DefaultProperties
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_warhammer"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_warhammer_png"
 	HorizontalRotateSpeed=650000.0
-	VerticalRotateSpeed=50000.0
+	VerticalRotateSpeed=55000.0
 	AttackHorizRotateSpeed=65000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0
