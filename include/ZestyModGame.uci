@@ -9,6 +9,9 @@ var array<string> LockedAgathaPlayerSteamIDs, LockedMasonPlayerSteamIDs;
 
 var globalconfig bool bRestartMapAfterEndGame;
 
+
+var Pawn LastKilledPawn; //uh, I want a reference to this so I can use it in ScoreKill. DON'T JUDGE ME.
+
 // Ranked Mode
 var globalconfig bool bRankedMode;
 var globalconfig int iRankedTeamSize;
@@ -21,6 +24,7 @@ var RankedAPI RankedAPI;
 // Custom player votes
 var delegate<CustomVoteOnComplete> dCustomVoteOnComplete;
 var int iVoteRankedTeamSize;
+
 
 
 delegate CustomVoteOnComplete(bool bSuccess);
@@ -562,11 +566,19 @@ function Array<String> GetActualPlayersSteamIDs()
     local AOCPlayerController PC;
     local Array<String> PlayerSteamIDs;
 
+ 
+
     foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
     {
         if (!PC.IsVoluntarySpectator() && PC.CurrentFamilyInfo != none && PC.bReady)
             PlayerSteamIDs.AddItem(OnlineSubsystemSteamworks(OnlineSub).UniqueNetIdToInt64(PC.PlayerReplicationInfo.UniqueId));
     }
+    
+        // Test IDs
+     //PlayerSteamIDs.AddItem("76561198088696466");
+     //PlayerSteamIDs.AddItem("76561198286309129");
+     //PlayerSteamIDs.AddItem("76561198236107712");
+     //PlayerSteamIDs.AddItem("76561198063542511");
 
     return PlayerSteamIDs;
 }
@@ -774,6 +786,20 @@ function UnlockTeams()
     LockedMasonPlayerSteamIDs.Remove(0, LockedMasonPlayerSteamIDs.length);
 }
 
+
+function UpdateELOPRI(string SteamID64, int elo)
+{
+    local AOCPlayerController PC;
+
+    PC = GetControllerViaSteamID64(SteamID64);
+
+    if (PC != none)
+    {
+        `{GAMEMODE}PRI(PC.PlayerReplicationInfo).elo = elo;
+    }
+}
+
+
 function RenamePlayerViaSteamID64(string SteamID64, string name)
 {
     local AOCPlayerController PC;
@@ -902,7 +928,9 @@ function OnUserConnectOnComplete(HttpRequestInterface OriginalRequest, HttpRespo
     elo = data.GetIntValue("elo");
     name = data.GetStringValue("name");
 
-    RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
+    UpdateELOPRI(id, elo);
+
+    //RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
 }
 
 function RankedModeAttemptToMakeMatch()
@@ -942,6 +970,8 @@ function RankedModeAttemptToMakeMatch()
         return;
     }
     // Insufficient ready players
+
+
     if (PlayerCount < iRankedTeamSize * 2)
     {
         RankedAPI.BroadcastMessageToAll("");
@@ -952,14 +982,18 @@ function RankedModeAttemptToMakeMatch()
         RankedAPI.BroadcastMessageToAll("");
         return;
     }
-
+     
+    //RankedAPI.CalculateMatchMaking(GetActualPlayersSteamIDs(), 2, CalculateMatchMakingOnComplete);
     RankedAPI.CalculateMatchMaking(GetActualPlayersSteamIDs(), iRankedTeamSize, CalculateMatchMakingOnComplete);
+
 }
 
 function CalculateMatchMakingOnComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed)
 {
     local JsonObject data, team;
     local array<string> AgathaPlayerIDs, MasonPlayerIDs;
+    local int avgElo;
+    local String NewTeamName;
 
     // Request failed spectacularly
     if (Response == none || !bDidSucceed)
@@ -1027,6 +1061,38 @@ function CalculateMatchMakingOnComplete(HttpRequestInterface OriginalRequest, Ht
     // Start the match
     bRankedModeReadyToStartMatch = true;
 }
+
+
+/*
+function String FormatAvgElo(int avgElo) {
+
+    local String NewTeamName;
+
+    if (avgElo <= 0) {
+      NewTeamName = "<font color=\"#777777\">["$ avgElo $"]</font>";
+    } else if (avgElo > 0 && avgElo <= 499) {
+      NewTeamName = "<font color=\"#706057\">["$ avgElo $"]</font>";
+    } else if (avgElo >= 500 && avgElo <= 999) {
+      NewTeamName = "<font color=\"#bf8559\">["$ avgElo $"]</font>";
+    } else if (avgElo >= 1000 && avgElo <= 1499) {
+      NewTeamName = "<font color=\"#c4c4c4\">["$ avgElo $"]</font>";
+    } else if (avgElo >= 1500 && avgElo <= 1999) {
+      NewTeamName = "<font color=\"#ffd154\">["$ avgElo $"]</font>";
+    } else if (avgElo >= 2000 && avgElo <= 2499) {
+      NewTeamName = "<font color=\"#15aac0\">["$ avgElo $"]</font>";
+    } else if (avgElo >= 2500 && avgElo <= 2999) {
+      NewTeamName = "<font color=\"#3875b9\">["$ avgElo $"]</font>";
+    } else if (avgElo >= 3000 && avgElo <= 3499) {
+      NewTeamName = "<font color=\"#af1346\">["$ avgElo $"]</font>";
+    } else if (avgElo >= 3500) {
+      NewTeamName = "<font color=\"#9545c7\">["$ avgElo $"]</font>";
+    }
+
+    return NewTeamName;
+
+}
+ */
+
 
 function RankedModeEndGame()
 {
@@ -1395,7 +1461,6 @@ function VoteRestartMapAfterEndGameOnComplete(bool bSuccess)
     ConfigureRestartMapAfterEndGame(!bRestartMapAfterEndGame);
 }
 
-
 DefaultProperties
 {
     PlayerControllerClass=class'`{GAMEMODE}PlayerController'
@@ -1420,6 +1485,25 @@ DefaultProperties
     Families(7)=class'ZestyModFamilyInfo_Mason_Vanguard'
     Families(8)=class'ZestyModFamilyInfo_Mason_Knight'
     Families(9)=class'ZestyModFamilyInfo_Mason_Archer'
+
+    AllBotNames(0)=(MyName=BOT00GIRU00GIRU,bInUse=False)
+	AllBotNames(1)=(MyName=BOT00Stouty,bInUse=False)
+	AllBotNames(2)=(MyName=BOT00Jin,bInUse=False)
+	AllBotNames(3)=(MyName=BOT00SeConquerer,bInUse=False)
+	AllBotNames(4)=(MyName=BOT00Cookie,bInUse=False)
+	AllBotNames(5)=(MyName=BOT00Ownage,bInUse=False)
+	AllBotNames(6)=(MyName=BOT00Viriathus,bInUse=False)
+	AllBotNames(7)=(MyName=BOT00Frontliner,bInUse=False)
+	AllBotNames(8)=(MyName=BOT00Babber,bInUse=False)
+	AllBotNames(9)=(MyName=BOT00Vox,bInUse=False)
+	AllBotNames(10)=(MyName=BOT00Apex00the00Midget,bInUse=False)
+	AllBotNames(11)=(MyName=BOT00Doktr,bInUse=False)
+	AllBotNames(12)=(MyName=BOT00Ludicrosity,bInUse=False)
+	AllBotNames(13)=(MyName=BOT00Mr00Rag,bInUse=False)
+	AllBotNames(14)=(MyName=BOT00Lyon,bInUse=False)
+	AllBotNames(15)=(MyName=BOT00Rio,bInUse=False)
+	AllBotNames(16)=(MyName=BOT00Ragnar,bInUse=False)
+	AllBotNames(17)=(MyName=BOT00Warlock,bInUse=False)
 
     MinimumRespawnTime = 10.0f
     bDisableTeamDamagePenalty = true
