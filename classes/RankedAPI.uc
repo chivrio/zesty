@@ -3,15 +3,16 @@ class RankedAPI extends Object;
 
 var string baseURL;
 var string key;
-var string chatColourHex;
 
 
 delegate OnProcessComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed);
 
 
-function DoNothing(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed){}
+static function DoNothing(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed){}
 
-function OnUserConnect(string steamID64, optional string playerIP, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
+
+// Endpoints
+static function OnUserConnect(string steamID64, optional string playerIP, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
 {
     local GUID GUID;
 
@@ -21,33 +22,33 @@ function OnUserConnect(string steamID64, optional string playerIP, optional dele
         playerIP = "?";
 
     class'HttpFactory'.static.CreateRequest()
-        .SetURL(baseURL $ "OnUserConnect"
-                        $ "?key=" $ key
-                        $ "&steamid64=" $ steamID64
-                        $ "&GUID=" $ GetStringFromGuid(GUID))
+        .SetURL(default.baseURL $ "OnUserConnect"
+                                $ "?key=" $ default.key
+                                $ "&steamid64=" $ steamID64
+                                $ "&GUID=" $ GetStringFromGuid(GUID))
         .SetVerb("GET")
         .SetHeader("playerIP", playerIP)
         .SetProcessRequestCompleteDelegate(OnProcessComplete)
         .ProcessRequest();
 }
 
-function OnUserDisconnect(string steamID64, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
+static function OnUserDisconnect(string steamID64, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
 {
     local GUID GUID;
 
     GUID = CreateGuid();
 
     class'HttpFactory'.static.CreateRequest()
-        .SetURL(baseURL $ "OnUserDisconnect"
-                        $ "?key=" $ key
-                        $ "&steamid64=" $ steamID64
-                        $ "&GUID=" $ GetStringFromGuid(GUID))
+        .SetURL(default.baseURL $ "OnUserDisconnect"
+                                $ "?key=" $ default.key
+                                $ "&steamid64=" $ steamID64
+                                $ "&GUID=" $ GetStringFromGuid(GUID))
         .SetVerb("GET")
         .SetProcessRequestCompleteDelegate(OnProcessComplete)
         .ProcessRequest();
 }
 
-function CalculateMatchMaking(Array<String> steamIDs64, int teamSize, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
+static function CalculateMatchMaking(Array<String> steamIDs64, int teamSize, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
 {
     local string stringSteamIDs;
     local JsonObject payload;
@@ -57,9 +58,9 @@ function CalculateMatchMaking(Array<String> steamIDs64, int teamSize, optional d
     payload.SetStringValue("steamids64", stringSteamIDs);
 
     class'HttpFactory'.static.CreateRequest()
-        .SetURL(baseURL $ "CalculateMatchMaking"
-                        $ "?key=" $ key
-                        $ "&size=" $ teamSize)
+        .SetURL(default.baseURL $ "CalculateMatchMaking"
+                                $ "?key=" $ default.key
+                                $ "&size=" $ teamSize)
         .SetVerb("POST")
         .SetHeader("Content-Type", "application/json")
         .SetContentAsString(class'JsonObject'.static.EncodeJson(payload))
@@ -67,11 +68,11 @@ function CalculateMatchMaking(Array<String> steamIDs64, int teamSize, optional d
         .ProcessRequest();
 }
 
-function CalculateNewElos(string sCompletedMatchRequestData, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
+static function CalculateNewElos(string sCompletedMatchRequestData, optional delegate<OnProcessComplete> OnProcessComplete = DoNothing)
 {
     class'HttpFactory'.static.CreateRequest()
-        .SetURL(baseURL $ "CalculateNewElos"
-                        $ "?key=" $ key)
+        .SetURL(default.baseURL $ "CalculateNewElosTO"
+                                $ "?key=" $ default.key)
         .SetVerb("POST")
         .SetHeader("Content-Type", "application/json")
         .SetContentAsString(sCompletedMatchRequestData)
@@ -80,82 +81,59 @@ function CalculateNewElos(string sCompletedMatchRequestData, optional delegate<O
 }
 
 
-function BroadcastMessageToAll(string Message)
+// Payload handling
+static function GetTeamsSteamID64s(string sMatchmakingResponse, out array<string> TeamOneSteamID64s, out array<string> TeamTwoSteamID64s)
 {
-    local AOCPlayerController PC;
-    foreach class'Worldinfo'.static.GetWorldInfo().AllControllers(class'AOCPlayerController', PC)
+    local JsonObject jMatchmakingResponse,
+                     jTeamOnePlayers,
+                     jTeamTwoPlayers,
+                     jPlayer;
+
+    jMatchmakingResponse = class'JsonObject'.static.DecodeJson(sMatchmakingResponse);
+
+    jTeamOnePlayers = jMatchmakingResponse.GetObject("response")
+                                          .GetObject("items")
+                                          .GetObject("Team1")
+                                          .GetObject("players");
+
+    jTeamTwoPlayers = jMatchmakingResponse.GetObject("response")
+                                          .GetObject("items")
+                                          .GetObject("Team2")
+                                          .GetObject("players");
+
+    // Clear any previous data from referenced arrays
+    TeamOneSteamID64s.Remove(0, TeamOneSteamID64s.Length);
+    TeamTwoSteamID64s.Remove(0, TeamTwoSteamID64s.Length);
+
+    foreach jTeamOnePlayers.ObjectArray(jPlayer)
     {
-        PC.ReceiveChatMessage(Message, EFAC_ALL, false, true, chatColourHex, false);
+        TeamOneSteamID64s.AddItem(jPlayer.GetStringValue("_id"));
+    }
+
+    foreach jTeamTwoPlayers.ObjectArray(jPlayer)
+    {
+        TeamTwoSteamID64s.AddItem(jPlayer.GetStringValue("_id"));
     }
 }
 
-function GetTeamPlayerIDs(string MatchResponseData, out array<string> AgathaPlayerIDs, out array<string> MasonPlayerIDs)
+static function GetTeamsAverageElos(string sMatchmakingResponse, out float TeamOneAverageElo, out float TeamTwoAverageElo)
 {
-    local JsonObject jMatchResponseData,
-                     TeamOnePlayers,
-                     TeamTwoPlayers,
-                     PlayerInfo;
+    local JsonObject jMatchmakingResponse,
+                     jTeamOne,
+                     jTeamTwo;
 
-    jMatchResponseData = class'JsonObject'.static.DecodeJson(MatchResponseData);
+    jMatchmakingResponse = class'JsonObject'.static.DecodeJson(sMatchmakingResponse);
 
-    AgathaPlayerIDs.Remove(0, 100);
-    MasonPlayerIDs.Remove(0, 100);
+    jTeamOne = jMatchmakingResponse.GetObject("response")
+                                   .GetObject("items")
+                                   .GetObject("Team1");
 
-    TeamOnePlayers = jMatchResponseData
-        .GetObject("response")
-        .GetObject("items")
-        .GetObject("Team1")
-        .GetObject("players");
+    jTeamTwo = jMatchmakingResponse.GetObject("response")
+                                   .GetObject("items")
+                                   .GetObject("Team2");
 
-    TeamTwoPlayers = jMatchResponseData
-        .GetObject("response")
-        .GetObject("items")
-        .GetObject("Team2")
-        .GetObject("players");
-
-    foreach TeamOnePlayers.ObjectArray(PlayerInfo)
-    {
-        AgathaPlayerIDs.AddItem(PlayerInfo.GetStringValue("_id"));
-    }
-
-    foreach TeamTwoPlayers.ObjectArray(PlayerInfo)
-    {
-        MasonPlayerIDs.AddItem(PlayerInfo.GetStringValue("_id"));
-    }
-}
-
-function BroadcastMatchInfo(string MatchResponseData)
-{
-    local JsonObject jMatchResponseData,
-                     TeamOnePlayers,
-                     TeamTwoPlayers,
-                     PlayerInfo;
-
-    jMatchResponseData = class'JsonObject'.static.DecodeJson(MatchResponseData);
-
-    TeamOnePlayers = jMatchResponseData
-        .GetObject("response")
-        .GetObject("items")
-        .GetObject("Team1")
-        .GetObject("players");
-
-    TeamTwoPlayers = jMatchResponseData
-        .GetObject("response")
-        .GetObject("items")
-        .GetObject("Team2")
-        .GetObject("players");
-
-    BroadcastMessageToAll("Agatha:");
-    foreach TeamOnePlayers.ObjectArray(PlayerInfo)
-    {
-        BroadcastMessageToAll("    [" $ PlayerInfo.GetIntValue("elo") $ "]" @ PlayerInfo.GetStringValue("name"));
-    }
-
-    BroadcastMessageToAll("Mason:");
-    foreach TeamTwoPlayers.ObjectArray(PlayerInfo)
-    {
-        BroadcastMessageToAll("    [" $ PlayerInfo.GetIntValue("elo") $ "]" @ PlayerInfo.GetStringValue("name"));
-    }
+    TeamOneAverageElo = jTeamOne.GetIntValue("eloSum") / jTeamOne.GetObject("players").ObjectArray.Length;
+    TeamTwoAverageElo = jTeamTwo.GetIntValue("eloSum") / jTeamTwo.GetObject("players").ObjectArray.Length;
 }
 
 
@@ -163,5 +141,4 @@ DefaultProperties
 {
     baseURL = "https://rufuspitt.com/api/";
     key = "";
-    chatColourHex = "#00BFFF";
 }

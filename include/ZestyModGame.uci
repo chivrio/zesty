@@ -4,27 +4,30 @@
 //to add even more variety. See the ParseOption function in Src\Engine\Classes\GameInfo.uc
 var config array<GameTypePrefix> SDKPrefixes;
 
+var float fMatchStartGameTime;  // WorldInfo.TimeSeconds when the match was started (GameStartTime reassigns every round in LTS)
+var float fMatchStartRealTime;  // WorldInfo.RealTimeSeconds when the match was started
+
 var bool bLockedTeams;
 var array<string> LockedAgathaPlayerSteamIDs, LockedMasonPlayerSteamIDs;
 
 var globalconfig bool bRestartMapAfterEndGame;
 
-
-var Pawn LastKilledPawn; //uh, I want a reference to this so I can use it in ScoreKill. DON'T JUDGE ME.
+var Pawn LastKilledPawn; // uh, I want a reference to this so I can use it in ScoreKill. DON'T JUDGE ME.
 
 // Ranked Mode
 var globalconfig bool bRankedMode;
 var globalconfig int iRankedTeamSize;
-var float fRankedModeMatchMakeInterval;
-var bool bRankedModeMatchMade;
-var bool bRankedModeReadyToStartMatch;
-var string sRankedModeMatchResponseData;
-var RankedAPI RankedAPI;
+var globalconfig int iRankedGameSize;
+var float fRankedModeAttemptToStartMatchInterval;
+var float fRankedModeAttemptToSendResultsInterval;
+var float fRankedModeResumeEndGameInterval;
+var string sRankedModeChatColour;
+var RankedGame RankedGame;
 
 // Custom player votes
 var delegate<CustomVoteOnComplete> dCustomVoteOnComplete;
 var int iVoteRankedTeamSize;
-
+var string sVoteChatColour;
 
 
 delegate CustomVoteOnComplete(bool bSuccess);
@@ -33,23 +36,23 @@ delegate CustomVoteOnComplete(bool bSuccess);
 static event class<GameInfo> SetGameType(string MapName, string Options, string Portal)
 {
     local string ThisMapPrefix;
-    local int i,pos;
+    local int i, pos;
     local class<GameInfo> NewGameType;
 
-    LogAlwaysInternal("SetGameType is being called on"@default.Class);
+    LogAlwaysInternal("SetGameType is being called on" @ default.Class);
 
-    MapName = StripPlayOnPrefix( MapName );
+    MapName = StripPlayOnPrefix(MapName);
 
     // replace self with appropriate gametype if no game specified
-    pos = InStr(MapName,"-");
-    ThisMapPrefix = left(MapName,pos);
+    pos = InStr(MapName, "-");
+    ThisMapPrefix = left(MapName, pos);
 
     for (i = 0; i < default.SDKPrefixes.length; i++)
     {
         if (default.SDKPrefixes[i].Prefix ~= ThisMapPrefix)
         {
             NewGameType = class<GameInfo>(DynamicLoadObject(default.SDKPrefixes[i].GameType, class'Class'));
-            if ( NewGameType != None )
+            if (NewGameType != None)
             {
                 return NewGameType;
             }
@@ -61,24 +64,37 @@ static event class<GameInfo> SetGameType(string MapName, string Options, string 
 
 event InitGame(string Options, out string ErrorMessage)
 {
-    super.InitGame(Options, ErrorMessage);
+    local RankedGame PreviousRankedGame;
 
-    RankedAPI = new class'RankedAPI';
+    super.InitGame(Options, ErrorMessage);
 
     CustomizationClass = class'ZestyMod.ZestyModCustomizationContent';
 
-    UnlockTeams();
-
-    if ((bTournamentMode && bRankedMode) || (default.bTournamentMode && default.bRankedMode))
+    // Preserve actors which should persist through seamless travel
+    if (WorldInfo.IsInSeamlessTravel())
     {
-        ConfigureTournamentMode(false);
-        ConfigureRankedMode(false);
-        WorldInfo.ServerTravel("?restart", false);
-        return;
+        // Look for the RankedGame instance
+        foreach DynamicActors(Class'RankedGame', PreviousRankedGame)
+        {
+            // Conditions to keep the previous RankedGame
+            if (bRankedMode                                                                 &&  // Ranked mode is still enabled
+                PreviousRankedGame.MatchmakingResponse != ""                                &&  // A game was successfully made
+                PreviousRankedGame.CompletedMatches.Length < PreviousRankedGame.GameSize    &&  // There's still matches to play
+                PreviousRankedGame.Map == string(WorldInfo.GetPackageName())                &&  // The next map is as expected
+                !PreviousRankedGame.Cancelled)                                                  // The game wasn't cancelled
+            {
+                RankedGame = PreviousRankedGame;
+                break;
+            }
+        }
     }
 
     if (bRankedMode)
     {
+        // Spawn a new RankedGame instance if one wasn't found
+        if (RankedGame == none)
+            RankedGame = Spawn(class'RankedGame');
+
         // Autobalance
         bAutoBalance = false;
         bDeathBasedAutoBalance = false;
@@ -86,9 +102,27 @@ event InitGame(string Options, out string ErrorMessage)
 
         bUseMaxPingLimit = false;
         bDisableTeamDamagePenalty = true;
+        fServerTeamDamagePercent = 1.0f;
+        fTeamDamagePercent = 1.0f;
         bAdminCanPause = true;
         bAnyUserCanGetSteamID = true;
     }
+
+    // Ensure Tournament Mode and Ranked Mode are not both enabled at the same time
+    if ((bTournamentMode || default.bTournamentMode) && (bRankedMode || default.bRankedMode))
+    {
+        ConfigureTournamentMode(false);
+        ConfigureRankedMode(false);
+        WorldInfo.ServerTravel("?restart", false);
+    }
+}
+
+event GetSeamlessTravelActorList(bool bToEntry, out array<Actor> ActorList)
+{
+    super.GetSeamlessTravelActorList(bToEntry, ActorList);
+
+    if (RankedGame != none)
+        ActorList[ActorList.Length] = RankedGame;
 }
 
 event PostLogin(PlayerController NewPlayer)
@@ -110,9 +144,9 @@ function GenericPlayerInitialization(Controller C)
     if (bRankedMode)
     {
         // Connect player to remote service and rename them to display their elo
-        RankedAPI.OnUserConnect(OnlineSubsystemSteamworks(OnlineSub).UniqueNetIdToInt64(C.PlayerReplicationInfo.UniqueId),
-                                PlayerController(C).GetPlayerNetworkAddress(),
-                                OnUserConnectOnComplete);
+        class'RankedAPI'.static.OnUserConnect(OnlineSubsystemSteamworks(OnlineSub).UniqueNetIdToInt64(C.PlayerReplicationInfo.UniqueId),
+                                              PlayerController(C).GetPlayerNetworkAddress(),
+                                              OnUserConnectOnComplete);
     }
     else
     {
@@ -202,7 +236,7 @@ function Logout(Controller Exiting)
     super.Logout(Exiting);
 
     // Done regardless of bRankedMode to address some edge-cases where players were not disconnected from remote service
-    RankedAPI.OnUserDisconnect(OnlineSubsystemSteamworks(OnlineSub).UniqueNetIdToInt64(Exiting.PlayerReplicationInfo.UniqueId));
+    class'RankedAPI'.static.OnUserDisconnect(OnlineSubsystemSteamworks(OnlineSub).UniqueNetIdToInt64(Exiting.PlayerReplicationInfo.UniqueId));
 }
 
 function bool ShouldCountDown()
@@ -224,13 +258,13 @@ function bool ShouldCountDown()
         PC = AOCPlayerController(C);
         bCanSpawn = (PC != none && PC.CurrentFamilyInfo != none && PC.bReady) || AOCAIController(C) != none;
 
-        if(CMWTO2GRI(GameReplicationInfo) != none && AOCAIController(C) != none)
+        if (CMWTO2GRI(GameReplicationInfo) != none && AOCAIController(C) != none)
         {
             //bots cannot trigger countdown in TO2 (is breaking horde-type maps)
             continue;
         }
 
-        if(!bCanSpawn)
+        if (!bCanSpawn)
         {
             continue;
         }
@@ -239,11 +273,11 @@ function bool ShouldCountDown()
         {
             AgathaSize += 1;
 
-            if(PC.IsVoluntarySpectator())
+            if (PC.IsVoluntarySpectator())
             {
                 AgathaMod += 1;
             }
-            else if(PC.bTournamentReady)
+            else if (PC.bTournamentReady)
             {
                 AgathiansReady += 1;
             }
@@ -252,11 +286,11 @@ function bool ShouldCountDown()
         {
             MasonSize += 1;
 
-            if(PC.IsVoluntarySpectator())
+            if (PC.IsVoluntarySpectator())
             {
                 MasonMod += 1;
             }
-            else if(PC.bTournamentReady)
+            else if (PC.bTournamentReady)
             {
                 MasonsReady += 1;
             }
@@ -287,7 +321,7 @@ function bool ShouldCountDown()
     }
     else if (bRankedMode)
     {
-        return (bEachTeamHasAtleastOnePlayer && bRankedModeReadyToStartMatch);
+        return (bEachTeamHasAtleastOnePlayer && RankedGame != none && RankedGame.ReadyToPlay);
     }
     else
     {
@@ -299,14 +333,19 @@ function StartRound()
 {
     local AOCPlayerController PC;
 
-     // Reset everyone's stats before starting the game for the first time
+     // When starting the match for the first time
     if (bBeforeFirstRound)
     {
+        // Reset all players' stats
         foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
         {
             AOCPRI(PC.PlayerReplicationInfo).PreSeamlessTravelReset();
             AOCPRI(PC.PlayerReplicationInfo).bNetDirty = true;
         }
+
+        // Record actual match start times
+        fMatchStartGameTime = WorldInfo.TimeSeconds;
+        fMatchStartRealTime = WorldInfo.RealTimeSeconds;
     }
 
     super.StartRound();
@@ -316,13 +355,13 @@ function EndGame(PlayerReplicationInfo Winner, string Reason)
 {
     super.EndGame(Winner, Reason);
 
-    if (bRankedMode && bRankedModeMatchMade && sRankedModeMatchResponseData != "")
+    if (bRankedMode)
         SetTimer(3.0f, false, 'RankedModeEndGame');
 }
 
 function string GetNextMap()
 {
-    if (bRestartMapAfterEndGame)
+    if (bRestartMapAfterEndGame || (bRankedMode && RankedGame != none && RankedGame.CompletedMatches.Length < RankedGame.GameSize))
         return "?restart";
     else
         return super.GetNextMap();
@@ -449,6 +488,15 @@ function AdminChangeTeam(AOCPlayerController ChangeInstigator, String PlayerName
     Target.SetNewClass(AOCGRI(GameReplicationInfo).FamilyInfos[i]);
 }
 
+function AdminChangeTeamDamageAmount(AOCPlayerController ChangeInstigator, float Amount)
+{
+    if (!AccessControl.IsAdmin(ChangeInstigator) || bRankedMode)
+        return;
+
+    fTeamDamagePercent = Amount;
+    UpdateGameSettings();
+}
+
 function UpdateVoteTally()
 {
     local int VoteTimeLeft;
@@ -529,21 +577,32 @@ Auto State AOCPreRound
     {
         super.BeginState(PreviousStateName);
 
-        if (bRankedMode && !bRankedModeMatchMade && !bRankedModeReadyToStartMatch)
+        if (bRankedMode && RankedGame != none && !RankedGame.ReadyToPlay)
         {
-            ClearTimer('RankedModeAttemptToMakeMatch');
-            SetTimer(fRankedModeMatchMakeInterval, true, 'RankedModeAttemptToMakeMatch');
+            ClearTimer('RankedModeAttemptToStartMatch');
+            SetTimer(fRankedModeAttemptToStartMatchInterval, true, 'RankedModeAttemptToStartMatch');
         }
     }
 }
 
 
-reliable server function S_BroadcastServerMessage(string Message)
+reliable server function BroadcastMessageToAll(string Message, optional string Colour)
 {
     local AOCPlayerController PC;
+
     foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
     {
-        PC.ReceiveChatMessage(Message, EFAC_ALL, false, false, , false);
+        PC.ReceiveChatMessage(Message, EFAC_ALL, false, (Colour != ""), Colour, false);
+    }
+}
+
+reliable server function SetScoreboardTimer(float Seconds)
+{
+    local AOCPlayerController PC;
+
+    foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
+    {
+        PC.InitializeTimer(Seconds, true);
     }
 }
 
@@ -566,19 +625,17 @@ function Array<String> GetActualPlayersSteamIDs()
     local AOCPlayerController PC;
     local Array<String> PlayerSteamIDs;
 
- 
-
     foreach WorldInfo.AllControllers(class'AOCPlayerController', PC)
     {
         if (!PC.IsVoluntarySpectator() && PC.CurrentFamilyInfo != none && PC.bReady)
             PlayerSteamIDs.AddItem(OnlineSubsystemSteamworks(OnlineSub).UniqueNetIdToInt64(PC.PlayerReplicationInfo.UniqueId));
     }
-    
-        // Test IDs
-     //PlayerSteamIDs.AddItem("76561198088696466");
-     //PlayerSteamIDs.AddItem("76561198286309129");
-     //PlayerSteamIDs.AddItem("76561198236107712");
-     //PlayerSteamIDs.AddItem("76561198063542511");
+
+    // Test IDs
+    // PlayerSteamIDs.AddItem("76561198088696466");
+    // PlayerSteamIDs.AddItem("76561198286309129");
+    // PlayerSteamIDs.AddItem("76561198236107712");
+    // PlayerSteamIDs.AddItem("76561198063542511");
 
     return PlayerSteamIDs;
 }
@@ -786,7 +843,6 @@ function UnlockTeams()
     LockedMasonPlayerSteamIDs.Remove(0, LockedMasonPlayerSteamIDs.length);
 }
 
-
 function UpdateELOPRI(string SteamID64, int elo)
 {
     local AOCPlayerController PC;
@@ -798,7 +854,6 @@ function UpdateELOPRI(string SteamID64, int elo)
         `{GAMEMODE}PRI(PC.PlayerReplicationInfo).elo = elo;
     }
 }
-
 
 function RenamePlayerViaSteamID64(string SteamID64, string name)
 {
@@ -817,7 +872,7 @@ exec function RestartMapAfterEndGame(bool bEnable)
     if (default.bRestartMapAfterEndGame == bEnable)
         return;
 
-    S_BroadcastServerMessage("Admin RestartMapAfterEndGame" @ bEnable);
+    BroadcastMessageToAll("Admin RestartMapAfterEndGame" @ bEnable);
 
     ConfigureRestartMapAfterEndGame(bEnable);
 }
@@ -836,7 +891,7 @@ exec function TournamentMode(bool bEnable)
     if (default.bTournamentMode == bEnable)
         return;
 
-    S_BroadcastServerMessage("Admin TournamentMode");
+    BroadcastMessageToAll("Admin TournamentMode" @ bEnable);
 
     if (bEnable)
         ConfigureRankedMode(false);
@@ -860,7 +915,7 @@ exec function RankedMode(bool bEnable)
     if (default.bRankedMode == bEnable)
         return;
 
-    S_BroadcastServerMessage("Admin RankedMode");
+    BroadcastMessageToAll("Admin RankedMode" @ bEnable);
 
     if (bEnable)
         ConfigureTournamentMode(false);
@@ -880,10 +935,10 @@ reliable server function ConfigureRankedMode(bool bEnable)
 
 exec function RankedTeamSize(int Size)
 {
-    if (Size <= 0 || Size > (MaxPlayers / 2))
+    if (Size <= 0 || Size > (MaxPlayers / 2) || Size == iRankedTeamSize)
         return;
 
-    RankedAPI.BroadcastMessageToAll("Admin RankedTeamSize" @ Size);
+    BroadcastMessageToAll("Admin RankedTeamSize" @ Size);
 
     ConfigureRankedTeamSize(Size);
 }
@@ -900,6 +955,25 @@ reliable server function ConfigureRankedTeamSize(int Size)
     class'`{GAMEMODE}'.static.StaticSaveConfig();
 }
 
+exec function CancelRankedGame()
+{
+    if (!bRankedMode || RankedGame == none || RankedGame.MatchmakingResponse == "" || RankedGame.Cancelled)
+        return;
+
+    BroadcastMessageToAll("Admin CancelRankedGame");
+
+    RankedModeCancelGame();
+}
+
+reliable server function RankedModeCancelGame()
+{
+    if (!bRankedMode || RankedGame == none || RankedGame.MatchmakingResponse == "" || RankedGame.Cancelled)
+        return;
+
+    RankedGame.Cancelled = true;
+    WorldInfo.ServerTravel("?restart", false);
+}
+
 function OnUserConnectOnComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed)
 {
     local JsonObject data;
@@ -909,6 +983,10 @@ function OnUserConnectOnComplete(HttpRequestInterface OriginalRequest, HttpRespo
 
     // Request failed spectacularly
     if (Response == none || !bDidSucceed)
+        return;
+
+    // Request failed unimpressively
+    if (Response.GetResponseCode() >= 400)
         return;
 
     // Request succeeded; Get the payload
@@ -930,83 +1008,104 @@ function OnUserConnectOnComplete(HttpRequestInterface OriginalRequest, HttpRespo
 
     UpdateELOPRI(id, elo);
 
-    //RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
+    // RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
 }
 
-exec function RankedAttemptToMakeMatch()
+exec function RankedAttemptToStartMatch()
 {
-    RankedModeAttemptToMakeMatch();
+    RankedModeAttemptToStartMatch();
 }
 
-function RankedModeAttemptToMakeMatch()
+function RankedModeAttemptToStartMatch()
 {
     local int PlayerCount;
+    local array<string> TeamOneSteamID64s, TeamTwoSteamID64s;
+    local float TeamOneAverageElo, TeamTwoAverageElo;
 
     PlayerCount = GetActualPlayersCount();
 
-    // Cases to not bother POSTing remote service and to not bother sending notifications
+    // Cases to not bother proceeding and to not bother sending notifications
     if (!bRankedMode ||
-        PlayerCount == 0 ||
-        bRankedModeMatchMade ||
-        bRankedModeReadyToStartMatch
+        RankedGame == none ||
+        PlayerCount == 0
     )
         return;
 
-    // Cases to not bother POSTing remote service and to notify players why
-    // Unsupported gamemodes
+    // Don't bother proceeding for unsupported gamemodes
     if (AOCFFAGRI(GameReplicationInfo) != none ||
         AOCDuelGRI(GameReplicationInfo) != none ||
         CDWDuelGRI(GameReplicationInfo) != none
     )
     {
-        RankedAPI.BroadcastMessageToAll("");
-        RankedAPI.BroadcastMessageToAll("Unsupported gamemode.");
-        RankedAPI.BroadcastMessageToAll("Disable ranked mode for this gamemode!");
-        RankedAPI.BroadcastMessageToAll("");
+        BroadcastMessageToAll("Unsupported gamemode.", sRankedModeChatColour);
+        BroadcastMessageToAll("Disable ranked mode for this gamemode!", sRankedModeChatColour);
         return;
     }
-    // Team Objective
-    if (AOCTOGRI(GameReplicationInfo) != none)
+
+    // If there's no game in progress request to make a game
+    if (RankedGame.MatchmakingResponse == "")
     {
-        RankedAPI.BroadcastMessageToAll("");
-        RankedAPI.BroadcastMessageToAll("Team Objective has been disabled until the usual format of playing two halves is supported.");
-        RankedAPI.BroadcastMessageToAll("Disable ranked mode for Team Objective for now!");
-        RankedAPI.BroadcastMessageToAll("");
-        return;
+        // Don't bother proceeding if there's insufficient ready players
+        if (PlayerCount < iRankedTeamSize * 2)
+        {
+            BroadcastMessageToAll("Need at least" @ iRankedTeamSize * 2 @ "ready players to start a match.", sRankedModeChatColour);
+            BroadcastMessageToAll("Note: Being in team-select or class-select is not being ready!", sRankedModeChatColour);
+            BroadcastMessageToAll("Trying again in" @ int(fRankedModeAttemptToStartMatchInterval) @ "seconds...", sRankedModeChatColour);
+            return;
+        }
+
+        class'RankedAPI'.static.CalculateMatchMaking(GetActualPlayersSteamIDs(), iRankedTeamSize, CalculateMatchMakingOnComplete);
     }
-    // Insufficient ready players
-
-
-    if (PlayerCount < iRankedTeamSize * 2)
+    // If there's a game in progress
+    else if (RankedGame.MatchmakingResponse != "" && RankedGame.CompletedMatches.Length < RankedGame.GameSize)
     {
-        RankedAPI.BroadcastMessageToAll("");
-        RankedAPI.BroadcastMessageToAll("Need at least" @ iRankedTeamSize * 2 @ "ready players to start a match.");
-        RankedAPI.BroadcastMessageToAll("Note: Being in team-select or class-select is not being ready!");
-        RankedAPI.BroadcastMessageToAll("Wait for more ready players to join or reduce the target team size.");
-        RankedAPI.BroadcastMessageToAll("Trying again in" @ fRankedModeMatchMakeInterval @ "seconds...");
-        RankedAPI.BroadcastMessageToAll("");
-        return;
-    }
-     
-    //RankedAPI.CalculateMatchMaking(GetActualPlayersSteamIDs(), 2, CalculateMatchMakingOnComplete);
-    RankedAPI.CalculateMatchMaking(GetActualPlayersSteamIDs(), iRankedTeamSize, CalculateMatchMakingOnComplete);
+        // Get player steamID64s and team average elos
+        RankedGame.GetTeamsSteamID64s(TeamOneSteamID64s, TeamTwoSteamID64s);
+        RankedGame.GetTeamsAverageElos(TeamOneAverageElo, TeamTwoAverageElo);
 
+        // Handle rotating teams
+        if ((RankedGame.CompletedMatches.Length + 1) % 2 == 1)
+        {
+            LockTeams(TeamOneSteamID64s, TeamTwoSteamID64s);
+            AOCGRI(GameReplicationInfo).AgathaNameOverride = "[" $ int(TeamOneAverageElo) $ "]";
+            AOCGRI(GameReplicationInfo).MasonNameOverride =  "[" $ int(TeamTwoAverageElo) $ "]";
+        }
+        else
+        {
+            LockTeams(TeamTwoSteamID64s, TeamOneSteamID64s);
+            AOCGRI(GameReplicationInfo).AgathaNameOverride = "[" $ int(TeamTwoAverageElo) $ "]";
+            AOCGRI(GameReplicationInfo).MasonNameOverride =  "[" $ int(TeamOneAverageElo) $ "]";
+        }
+
+        // Broadcast the match info to everyone in the server
+        RankedModeBroadcastMatchInfo();
+
+        // Start the match
+        ClearTimer('RankedModeAttemptToStartMatch');
+        RankedGame.ReadyToPlay = true;
+    }
 }
 
 function CalculateMatchMakingOnComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed)
 {
-    local JsonObject data, team;
-    local array<string> AgathaPlayerIDs, MasonPlayerIDs;
+    local JsonObject data;
     local int avgElo;
     local String NewTeamName;
 
     // Request failed spectacularly
     if (Response == none || !bDidSucceed)
     {
-        RankedAPI.BroadcastMessageToAll("");
-        RankedAPI.BroadcastMessageToAll("Remote service failed to respond.");
-        RankedAPI.BroadcastMessageToAll("Trying again in" @ fRankedModeMatchMakeInterval @ "seconds...");
-        RankedAPI.BroadcastMessageToAll("");
+        BroadcastMessageToAll("Remote service failed to respond.", sRankedModeChatColour);
+        BroadcastMessageToAll("Trying again in" @ int(fRankedModeAttemptToStartMatchInterval) @ "seconds...", sRankedModeChatColour);
+        return;
+    }
+
+    // Request failed unimpressively
+    if (Response.GetResponseCode() >= 400)
+    {
+        BroadcastMessageToAll("Remote service returned an unexpected response code.", sRankedModeChatColour);
+        BroadcastMessageToAll("Response code:" @ Response.GetResponseCode(), sRankedModeChatColour);
+        BroadcastMessageToAll("Trying again in" @ int(fRankedModeAttemptToStartMatchInterval) @ "seconds...", sRankedModeChatColour);
         return;
     }
 
@@ -1017,54 +1116,29 @@ function CalculateMatchMakingOnComplete(HttpRequestInterface OriginalRequest, Ht
     // Response payload isn't what we're expecting
     if (data == none)
     {
-        RankedAPI.BroadcastMessageToAll("");
-        RankedAPI.BroadcastMessageToAll("Remote service returned an unexpected payload.");
-        RankedAPI.BroadcastMessageToAll("Trying again in" @ fRankedModeMatchMakeInterval @ "seconds...");
-        RankedAPI.BroadcastMessageToAll("");
+        BroadcastMessageToAll("Remote service returned an unexpected payload.", sRankedModeChatColour);
+        BroadcastMessageToAll("Trying again in" @ int(fRankedModeAttemptToStartMatchInterval) @ "seconds...", sRankedModeChatColour);
         return;
     }
 
     // Remote service was unable to make a match
     if (data.GetBoolValue("success") == false)
     {
-        RankedAPI.BroadcastMessageToAll("");
-        RankedAPI.BroadcastMessageToAll("Remote service was unable to make a match.");
+        BroadcastMessageToAll("Remote service was unable to make a match.", sRankedModeChatColour);
         if (data.GetStringValue("error") != "")
-            RankedAPI.BroadcastMessageToAll("error: '" @ data.GetStringValue("error") @ "'");
-        RankedAPI.BroadcastMessageToAll("Trying again in" @ fRankedModeMatchMakeInterval @ "seconds...");
-        RankedAPI.BroadcastMessageToAll("");
+            BroadcastMessageToAll("Error: '" $ data.GetStringValue("error") $ "'", sRankedModeChatColour);
+        BroadcastMessageToAll("Trying again in" @ int(fRankedModeAttemptToStartMatchInterval) @ "seconds...", sRankedModeChatColour);
         return;
     }
 
-    // Complete success :)
-    RankedAPI.BroadcastMessageToAll("Match successfully made!");
+    // Save game data
+    RankedGame.MatchmakingResponse = Response.GetContentAsString();
+    RankedGame.Map = string(WorldInfo.GetPackageName());
+    RankedGame.TeamSize = iRankedTeamSize;
+    RankedGame.GameSize = iRankedGameSize;
 
-    // Ensure we stop polling for a match
-    bRankedModeMatchMade = true;
-    ClearTimer('RankedModeAttemptToMakeMatch');
-
-    // Save response payload
-    sRankedModeMatchResponseData = Response.GetContentAsString();
-
-    // Extract teams from response
-    RankedAPI.GetTeamPlayerIDs(sRankedModeMatchResponseData, AgathaPlayerIDs, MasonPlayerIDs);
-
-    // Lock and force teams
-    LockTeams(AgathaPlayerIDs, MasonPlayerIDs);
-
-    // Broadcast the match info to everyone in the server
-    RankedAPI.BroadcastMessageToAll("");
-    RankedAPI.BroadcastMatchInfo(sRankedModeMatchResponseData);
-    RankedAPI.BroadcastMessageToAll("");
-
-    // Change team names to average elo of each team
-    team = data.GetObject("items").GetObject("Team1");
-    AOCGRI(GameReplicationInfo).AgathaNameOverride = "[" $ team.GetIntValue("eloSum") / team.GetObject("players").ObjectArray.Length $ "]";
-    team = data.GetObject("items").GetObject("Team2");
-    AOCGRI(GameReplicationInfo).MasonNameOverride =  "[" $ team.GetIntValue("eloSum") / team.GetObject("players").ObjectArray.Length $ "]";
-
-    // Start the match
-    bRankedModeReadyToStartMatch = true;
+    // Try to start the match now that we have a game
+    RankedModeAttemptToStartMatch();
 }
 
 
@@ -1096,13 +1170,81 @@ function String FormatAvgElo(int avgElo) {
     return NewTeamName;
 
 }
- */
+*/
 
+
+function RankedModeBroadcastMatchInfo()
+{
+    local JsonObject jMatchmakingResponse,
+                     jTeamOnePlayers,
+                     jTeamTwoPlayers,
+                     jPlayer;
+
+    if (!bRankedMode || RankedGame == none || RankedGame.MatchmakingResponse == "")
+        return;
+
+    jMatchmakingResponse = RankedGame.GetMatchmakingResponseObject();
+
+    jTeamOnePlayers = jMatchmakingResponse
+        .GetObject("response")
+        .GetObject("items")
+        .GetObject("Team1")
+        .GetObject("players");
+
+    jTeamTwoPlayers = jMatchmakingResponse
+        .GetObject("response")
+        .GetObject("items")
+        .GetObject("Team2")
+        .GetObject("players");
+
+    if (RankedGame.GameSize > 1)
+    {
+        BroadcastMessageToAll("Match" @ RankedGame.CompletedMatches.Length + 1 @ "of" @ RankedGame.GameSize, sRankedModeChatColour);
+        BroadcastMessageToAll("");
+    }
+
+    foreach jTeamOnePlayers.ObjectArray(jPlayer)
+    {
+        BroadcastMessageToAll("[" $ jPlayer.GetIntValue("elo") $ "]" @ jPlayer.GetStringValue("name"), sRankedModeChatColour);
+    }
+
+    BroadcastMessageToAll("");
+    BroadcastMessageToAll("versus", sRankedModeChatColour);
+    BroadcastMessageToAll("");
+
+    foreach jTeamTwoPlayers.ObjectArray(jPlayer)
+    {
+        BroadcastMessageToAll("[" $ jPlayer.GetIntValue("elo") $ "]" @ jPlayer.GetStringValue("name"), sRankedModeChatColour);
+    }
+}
 
 function RankedModeEndGame()
 {
-    local JsonObject jMatchResponseData,
-                     jResponse,
+    RankedModeSaveMatchData();
+
+    if (RankedGame.IsComplete())
+    {
+        // Stop actual endgame just in case the request fails
+        if (IsTimerActive('ActualEndGame'))
+            ClearTimer('ActualEndGame');
+
+        // Round time still ticks down in LTS which makes winning team go to 8 rounds won
+        TimeLeft = 3600;
+
+        // Keep on trying to send game results
+        SetTimer(fRankedModeAttemptToSendResultsInterval, true, 'RankedModeAttemptToSendResults');
+
+        BroadcastMessageToAll("Sending game results to the remote service...", sRankedModeChatColour);
+    }
+    else
+    {
+        BroadcastMessageToAll("It is now safe to manually restart the map.", sRankedModeChatColour);
+    }
+}
+
+function RankedModeSaveMatchData()
+{
+    local JsonObject jMatchmakingResponse,
                      jItems,
                      jTeamOne,
                      jTeamTwo,
@@ -1113,111 +1255,65 @@ function RankedModeEndGame()
                      jTeamTwoKPI,
                      jPlayer,
                      jPlayerKPI,
-                     jCompletedMatchRequestData;
+                     jObjectives,
+                     jObjective,
+                     jCompletedMatch;
+    local int i;
     local EAOCFaction WinningTeam;
     local AOCGRI GRI;
-    local float teamOneScore,
-                teamOneProgress,
-                teamTwoScore,
-                teamTwoProgress;
     local `{GAMEMODE}PRI PRI;
-    local int winner,
-              i;
+    local ObjInfo Objective;
 
 
-    jMatchResponseData = class'JsonObject'.static.DecodeJson(sRankedModeMatchResponseData);
-    jCompletedMatchRequestData = class'JsonObject'.static.DecodeJson(sRankedModeMatchResponseData);
+    if (!bRankedMode ||
+        RankedGame == none ||
+        RankedGame.MatchmakingResponse == "" ||
+        RankedGame.IsComplete())
+    {
+        return;
+    }
 
-    // Get each nested object
-    jResponse = jMatchResponseData.GetObject("response");
-    jItems = jResponse.GetObject("items");
+    // Extract relevant data from the matchmaking response
+    jMatchmakingResponse = RankedGame.GetMatchmakingResponseObject();
+    jItems = jMatchmakingResponse.GetObject("response").GetObject("items");
     jTeamOne = jItems.GetObject("Team1");
     jTeamTwo = jItems.GetObject("Team2");
     jTeamOnePlayers = jTeamOne.GetObject("players");
     jTeamTwoPlayers = jTeamTwo.GetObject("players");
 
-
-    // Get winning team
-    WinningTeam = GetWinningTeam();
-    if (WinningTeam == EFAC_AGATHA)
-        winner = 1;
-    else if (WinningTeam == EFAC_MASON)
-        winner = 2;
-    else
-        winner = 0;
-
-
-    // Get each team's KPIs
-    GRI = AOCGRI(GameReplicationInfo);
-    teamOneScore = GRI.GetTeamScore(EFAC_AGATHA);
-    teamOneProgress = GRI.GetTeamProgress(EFAC_AGATHA);
-
-    teamTwoScore = GRI.GetTeamScore(EFAC_MASON);
-    teamTwoProgress = GRI.GetTeamProgress(EFAC_MASON);
-
-    // Create team KPI objects
+    // Prepare remaining objects
+    jCompletedMatch = new class'JsonObject';
     jTeamOneKPI = new class'JsonObject';
-    jTeamOneKPI.SetFloatValue("score", teamOneScore);
-    jTeamOneKPI.SetFloatValue("progress", teamOneProgress);
-
     jTeamTwoKPI = new class'JsonObject';
-    jTeamTwoKPI.SetFloatValue("score", teamTwoScore);
-    jTeamTwoKPI.SetFloatValue("progress", teamTwoProgress);
 
+    GRI = AOCGRI(GameReplicationInfo);
 
+    // Map
+    jCompletedMatch.SetStringValue("mapName", RankedGame.Map);
+
+    // Winning team
+    WinningTeam = GetWinningTeam();
+
+    // Duration
+    jCompletedMatch.SetFloatValue("duration",         WorldInfo.TimeSeconds     - fMatchStartGameTime);
+    jCompletedMatch.SetFloatValue("realTimeDuration", WorldInfo.RealTimeSeconds - fMatchStartRealTime);
+
+    // Player stats
     // Extend the player objects with their respective KPIs
     for (i = 0; i < jTeamOnePlayers.ObjectArray.Length; i++)
     {
+        // Get player object
         jPlayer = jTeamOnePlayers.ObjectArray[i];
 
+        // Get their PRI
         PRI = `{GAMEMODE}PRI(GetPlayerReplicationInfoViaSteamID64(jPlayer.GetStringValue("_id")));
         if (PRI == none)
             continue;
 
-        // Create KPI object
-        jPlayerKPI = new class'JsonObject';
-        jPlayerKPI.SetIntValue("score",   PRI.Score);
-        jPlayerKPI.SetIntValue("kills",   PRI.NumKills);
-        jPlayerKPI.SetIntValue("deaths",  PRI.Deaths);
-        jPlayerKPI.SetIntValue("assists", PRI.NumAssists);
+        // Get stats
+        jPlayerKPI = PRI.GetStatsObject();
 
-        jPlayerKPI.SetIntValue("healthRegenerated",             PRI.HealthRegenerated);
-        jPlayerKPI.SetIntValue("healthDamageReceivedFromAll",   PRI.AllDamageTaken);
-        jPlayerKPI.SetIntValue("healthDamageReceivedFromEnemy", PRI.DamageTaken);
-        jPlayerKPI.SetIntValue("healthDamageReceivedFromTeam",  PRI.TeamDamageTaken);
-        jPlayerKPI.SetIntValue("healthDamageDealtToEnemy",      PRI.EnemyDamageDealt);
-        jPlayerKPI.SetIntValue("healthDamageDealtToTeam",       PRI.TeamDamageDealt);
-
-        jPlayerKPI.SetFloatValue("staminaRegenerated",           PRI.StaminaRegenerated);
-        jPlayerKPI.SetFloatValue("staminaDamageReceivedFromAll", PRI.AllStaminaConsumed);
-        jPlayerKPI.SetIntValue("staminaDamageReceivedFromEnemy", PRI.EnemyStaminaDamageTaken);
-        jPlayerKPI.SetIntValue("staminaDamageReceivedFromTeam",  PRI.TeamStaminaDamageTaken);
-        jPlayerKPI.SetIntValue("staminaDamageDealtToEnemy",      PRI.EnemyStaminaDamageDealt);
-        jPlayerKPI.SetIntValue("staminaDamageDealtToTeam",       PRI.TeamStaminaDamageDealt);
-
-        jPlayerKPI.SetIntValue("feints", PRI.Feints);
-
-        jPlayerKPI.SetIntValue("attacks",           PRI.NumAttacks);
-        jPlayerKPI.SetIntValue("successfulAttacks", PRI.NumHits);
-
-        jPlayerKPI.SetIntValue("meleeHits",      PRI.MeleeHits);
-        jPlayerKPI.SetIntValue("projectileHits", PRI.ProjectileHits);
-        jPlayerKPI.SetIntValue("lightShoveHits", PRI.LightShoveHits);
-        jPlayerKPI.SetIntValue("heavyShoveHits", PRI.HeavyShoveHits);
-
-        jPlayerKPI.SetIntValue("parries", PRI.Parries);
-        jPlayerKPI.SetIntValue("blocks",  PRI.Blocks);
-
-        jPlayerKPI.SetIntValue("crouches", PRI.Crouches);
-        jPlayerKPI.SetIntValue("jumps",    PRI.Jumps);
-        jPlayerKPI.SetIntValue("dodges",   PRI.Dodges);
-
-        jPlayerKPI.SetIntValue("objectivePoints", PRI.ObjPoints);
-
-        jPlayerKPI.SetIntValue("decapitations", PRI.NumDecaps);
-        jPlayerKPI.SetIntValue("chatter",       PRI.Chatter);
-
-        // Extend original object
+        // Extend player object
         jTeamOnePlayers.ObjectArray[i].SetObject("kpi", jPlayerKPI);
     }
 
@@ -1229,84 +1325,190 @@ function RankedModeEndGame()
         if (PRI == none)
             continue;
 
-        jPlayerKPI = new class'JsonObject';
-        jPlayerKPI.SetIntValue("score",   PRI.Score);
-        jPlayerKPI.SetIntValue("kills",   PRI.NumKills);
-        jPlayerKPI.SetIntValue("deaths",  PRI.Deaths);
-        jPlayerKPI.SetIntValue("assists", PRI.NumAssists);
-
-        jPlayerKPI.SetIntValue("healthRegenerated",             PRI.HealthRegenerated);
-        jPlayerKPI.SetIntValue("healthDamageReceivedFromAll",   PRI.AllDamageTaken);
-        jPlayerKPI.SetIntValue("healthDamageReceivedFromEnemy", PRI.DamageTaken);
-        jPlayerKPI.SetIntValue("healthDamageReceivedFromTeam",  PRI.TeamDamageTaken);
-        jPlayerKPI.SetIntValue("healthDamageDealtToEnemy",      PRI.EnemyDamageDealt);
-        jPlayerKPI.SetIntValue("healthDamageDealtToTeam",       PRI.TeamDamageDealt);
-
-        jPlayerKPI.SetFloatValue("staminaRegenerated",           PRI.StaminaRegenerated);
-        jPlayerKPI.SetFloatValue("staminaDamageReceivedFromAll", PRI.AllStaminaConsumed);
-        jPlayerKPI.SetIntValue("staminaDamageReceivedFromEnemy", PRI.EnemyStaminaDamageTaken);
-        jPlayerKPI.SetIntValue("staminaDamageReceivedFromTeam",  PRI.TeamStaminaDamageTaken);
-        jPlayerKPI.SetIntValue("staminaDamageDealtToEnemy",      PRI.EnemyStaminaDamageDealt);
-        jPlayerKPI.SetIntValue("staminaDamageDealtToTeam",       PRI.TeamStaminaDamageDealt);
-
-        jPlayerKPI.SetIntValue("feints", PRI.Feints);
-
-        jPlayerKPI.SetIntValue("attacks",           PRI.NumAttacks);
-        jPlayerKPI.SetIntValue("successfulAttacks", PRI.NumHits);
-
-        jPlayerKPI.SetIntValue("meleeHits",      PRI.MeleeHits);
-        jPlayerKPI.SetIntValue("projectileHits", PRI.ProjectileHits);
-        jPlayerKPI.SetIntValue("lightShoveHits", PRI.LightShoveHits);
-        jPlayerKPI.SetIntValue("heavyShoveHits", PRI.HeavyShoveHits);
-
-        jPlayerKPI.SetIntValue("parries", PRI.Parries);
-        jPlayerKPI.SetIntValue("blocks",  PRI.Blocks);
-
-        jPlayerKPI.SetIntValue("crouches", PRI.Crouches);
-        jPlayerKPI.SetIntValue("jumps",    PRI.Jumps);
-        jPlayerKPI.SetIntValue("dodges",   PRI.Dodges);
-
-        jPlayerKPI.SetIntValue("objectivePoints", PRI.ObjPoints);
-
-        jPlayerKPI.SetIntValue("decapitations", PRI.NumDecaps);
-        jPlayerKPI.SetIntValue("chatter",       PRI.Chatter);
+        jPlayerKPI = PRI.GetStatsObject();
 
         jTeamTwoPlayers.ObjectArray[i].SetObject("kpi", jPlayerKPI);
     }
 
-
-    // Build request payload
+    // Teams
+    // Update the team objects' with the new players objects
     jTeamOne.SetObject("players", jTeamOnePlayers);
-    jTeamOne.SetObject("kpi", jTeamOneKPI);
-
     jTeamTwo.SetObject("players", jTeamTwoPlayers);
+
+    // Handle rotating teams and get the rest of the data
+    if ((RankedGame.CompletedMatches.Length + 1) % 2 == 1)
+    {
+        // Team1: Agatha
+        // Team2: Mason
+
+        // Attacking team
+        if (AttackingTeam == EFAC_AGATHA)
+            jCompletedMatch.SetIntValue("attacker", 1);
+        else if (AttackingTeam == EFAC_MASON)
+            jCompletedMatch.SetIntValue("attacker", 2);
+        else
+            jCompletedMatch.SetIntValue("attacker", -1);
+
+        // Winning team
+        if (WinningTeam == EFAC_AGATHA)
+            jCompletedMatch.SetIntValue("winner", 1);
+        else if (WinningTeam == EFAC_MASON)
+            jCompletedMatch.SetIntValue("winner", 2);
+        else
+            jCompletedMatch.SetIntValue("winner", -1);
+
+        // Name
+        jTeamOne.SetStringValue("teamName", "Agatha Knights");
+        jTeamTwo.SetStringValue("teamName", "Mason Order");
+
+        // KPI
+        jTeamOneKPI.SetFloatValue("score", GRI.GetTeamScore(EFAC_AGATHA));
+        jTeamTwoKPI.SetFloatValue("score", GRI.GetTeamScore(EFAC_MASON));
+        jTeamOneKPI.SetFloatValue("progress", GRI.GetTeamProgress(EFAC_AGATHA));
+        jTeamTwoKPI.SetFloatValue("progress", GRI.GetTeamProgress(EFAC_MASON));
+    }
+    else
+    {
+        // Team1: Mason
+        // Team2: Agatha
+
+        // Attacking team
+        if (AttackingTeam == EFAC_MASON)
+            jCompletedMatch.SetIntValue("attacker", 1);
+        else if (AttackingTeam == EFAC_AGATHA)
+            jCompletedMatch.SetIntValue("attacker", 2);
+        else
+            jCompletedMatch.SetIntValue("attacker", -1);
+
+        // Winning team
+        if (WinningTeam == EFAC_MASON)
+            jCompletedMatch.SetIntValue("winner", 1);
+        else if (WinningTeam == EFAC_AGATHA)
+            jCompletedMatch.SetIntValue("winner", 2);
+        else
+            jCompletedMatch.SetIntValue("winner", -1);
+
+        // Name
+        jTeamOne.SetStringValue("teamName", "Mason Order");
+        jTeamTwo.SetStringValue("teamName", "Agatha Knights");
+
+        // KPI
+        jTeamOneKPI.SetFloatValue("score", GRI.GetTeamScore(EFAC_MASON));
+        jTeamTwoKPI.SetFloatValue("score", GRI.GetTeamScore(EFAC_AGATHA));
+        jTeamOneKPI.SetFloatValue("progress", GRI.GetTeamProgress(EFAC_MASON));
+        jTeamTwoKPI.SetFloatValue("progress", GRI.GetTeamProgress(EFAC_AGATHA));
+    }
+
+    // Update the team objects with the team KPIs
+    jTeamOne.SetObject("kpi", jTeamOneKPI);
     jTeamTwo.SetObject("kpi", jTeamTwoKPI);
 
-    jItems.SetObject("Team1", jTeamOne);
-    jItems.SetObject("Team2", jTeamTwo);
+    // Add the team objects to the completed match object
+    jCompletedMatch.SetObject("Team1", jTeamOne);
+    jCompletedMatch.SetObject("Team2", jTeamTwo);
 
-    jResponse.SetObject("items", jItems);
-    jResponse.SetIntValue("winner", winner);
+    // Add objective data if necessary
+    if (AOCTeamObjective(WorldInfo.Game) != none)
+    {
+        jObjectives = new class'JsonObject';
 
-    jCompletedMatchRequestData.SetObject("response", jResponse);
+        // Get objective data
+        foreach AOCTeamObjective(WorldInfo.Game).AllObjectives(Objective)
+        {
+            jObjective = new class'JsonObject';
+
+            jObjective.SetStringValue("name", Objective.StageName);
+            jObjective.SetFloatValue("completionTime", Objective.CompletionTime);
+            jObjective.SetFloatValue("actualProgress", Objective.CurVar);
+            jObjective.SetFloatValue("maxProgress", Objective.MaxVar);
+            jObjective.SetFloatValue("extraProgress", Objective.ExtraVar);
+
+            jObjectives.ObjectArray.AddItem(jObjective);
+        }
+
+        // Add to match object
+        jCompletedMatch.SetObject("objectives", jObjectives);
+    }
+
+    // Save the completed match as a JSON string
+    RankedGame.CompletedMatches.AddItem(class'JsonObject'.static.EncodeJson(jCompletedMatch));
+
+    // Ensure any subsequent matches are able to start after seamless-travel
+    RankedGame.ReadyToPlay = false;
+
+    // Notify that the match result was saved
+    if (RankedGame.GameSize > 1)
+        BroadcastMessageToAll("Match results" @ RankedGame.CompletedMatches.Length @ "of" @ RankedGame.GameSize @ "saved.", sRankedModeChatColour);
+    else
+        BroadcastMessageToAll("Match results saved.", sRankedModeChatColour);
+}
+
+function RankedModeAttemptToSendResults()
+{
+    local JsonObject jCompletedMatches,
+                     jRequestPayload;
+    local string sCompletedMatch,
+                 uuid;
 
 
-    RankedAPI.CalculateNewElos(class'JsonObject'.static.EncodeJson(jCompletedMatchRequestData), CalculateNewElosOnComplete);
+    // Set the scoreboard timer to indicate when the next attempt will be if this one fails
+    SetScoreboardTimer(fRankedModeAttemptToSendResultsInterval);
+
+    jCompletedMatches = new class'JsonObject';
+    jRequestPayload = new class'JsonObject';
+
+    // Convert each completed match from JSON string back to an object
+    foreach RankedGame.CompletedMatches(sCompletedMatch)
+    {
+        jCompletedMatches.ObjectArray.AddItem(class'JsonObject'.static.DecodeJson(sCompletedMatch));
+    }
+
+    uuid = RankedGame.GetMatchmakingResponseObject()
+                     .GetObject("response")
+                     .GetObject("items")
+                     .GetStringValue("uuid");
+
+    // Build the request payload
+    jRequestPayload.SetStringValue("uuid", uuid);
+    jRequestPayload.SetStringValue("modName", ModDisplayString);
+    jRequestPayload.SetObject("matches", jCompletedMatches);
+
+    // Send the request
+    class'RankedAPI'.static.CalculateNewElos(class'JsonObject'.static.EncodeJson(jRequestPayload), CalculateNewElosOnComplete);
 }
 
 function CalculateNewElosOnComplete(HttpRequestInterface OriginalRequest, HttpResponseInterface Response, bool bDidSucceed)
 {
-    if (bDidSucceed)
-        RankedAPI.BroadcastMessageToAll("Match result successfully sent to the remote service.");
-    else
-        RankedAPI.BroadcastMessageToAll("Failed to send match result to the remote service.");
+    if (!bDidSucceed || Response == none)
+    {
+        BroadcastMessageToAll("...Failed to communicate with the remote service.", sRankedModeChatColour);
+        BroadcastMessageToAll("Trying again within" @ int(fRankedModeAttemptToSendResultsInterval) @ "seconds...", sRankedModeChatColour);
+    }
+    else if (Response.GetResponseCode() >= 400)
+    {
+        BroadcastMessageToAll("...Failed to send game results to the remote service.", sRankedModeChatColour);
+        BroadcastMessageToAll("Response code:" @ Response.GetResponseCode(), sRankedModeChatColour);
+        BroadcastMessageToAll("Trying again within" @ int(fRankedModeAttemptToSendResultsInterval) @ "seconds...", sRankedModeChatColour);
+    }
+    else // Success!
+    {
+        // Stop trying to send game results
+        ClearTimer('RankedModeAttemptToSendResults');
+
+        // Allow the game to end naturally
+        SetTimer(fRankedModeResumeEndGameInterval, false, 'ActualEndGame');
+        SetScoreboardTimer(fRankedModeResumeEndGameInterval);
+
+        BroadcastMessageToAll("...Game results successfully sent to the remote service.", sRankedModeChatColour);
+    }
 }
 
 // Custom player votes
-function InitiateCustomVote(AOCPlayerController VoteInstigator, delegate<CustomVoteOnComplete> OnComplete, optional float duration, optional string PrimaryText, optional string SecondaryText)
+function InitiateCustomVote(AOCPlayerController VoteInstigator, delegate<CustomVoteOnComplete> OnComplete, optional float duration, optional string PrimaryText, optional string SecondaryText, optional string MessagePartial)
 {
     local AOCPlayerController PC;
     local int FailReasonPMCode;
+    local float fPreviousVoteDurationSeconds;
 
     if (!IsAllowedToInitiateVote(VoteInstigator, FailReasonPMCode))
     {
@@ -1323,7 +1525,10 @@ function InitiateCustomVote(AOCPlayerController VoteInstigator, delegate<CustomV
     // Set delegate to execute when complete
     dCustomVoteOnComplete = OnComplete;
 
-    // Overrride vote duration
+    // Preserve previous vote duration
+    fPreviousVoteDurationSeconds = fVoteDurationSeconds;
+
+    // Apply vote duration override if it's suitable
     if (duration >= 10 && duration <= 60)
         fVoteDurationSeconds = duration;
 
@@ -1341,10 +1546,20 @@ function InitiateCustomVote(AOCPlayerController VoteInstigator, delegate<CustomV
     AOCGRI(GameReplicationInfo).VotesNo = 0;
     AOCGRI(GameReplicationInfo).VotesYes = 0;
 
-    InitiateNewVote(VoteInstigator);
+    InitiateNewVote(VoteInstigator); // Uses fVoteDurationSeconds -.-
     VoteInstigator.Vote = EVOTE_Yes;
 
     SetTimer(0.5f, true, 'CountVotes');
+
+    // Restore previous vote duration
+    fVoteDurationSeconds = fPreviousVoteDurationSeconds;
+
+    // Default the partial message which appends the name of the vote instigator if applicable
+    if (MessagePartial == "")
+        MessagePartial = "has started a custom vote.";
+
+    // Notify players who started the vote
+    BroadcastMessageToAll(VoteInstigator.PlayerReplicationInfo.PlayerName @ MessagePartial, sVoteChatColour);
 }
 
 function EndCustomVote()
@@ -1374,11 +1589,11 @@ function InitiateVoteTournamentMode(AOCPlayerController VoteInstigator, bool bEn
 {
     if (default.bTournamentMode == bEnable)
     {
-        VoteInstigator.ReceiveChatMessage("TournamentMode is already" @ bEnable ? "enabled." : "disabled.", EFAC_ALL, true);
+        VoteInstigator.ClientDisplayConsoleMessage("TournamentMode is already" @ bEnable ? "enabled." : "disabled.");
         return;
     }
 
-    InitiateCustomVote(VoteInstigator, VoteTournamentModeOnComplete, , bEnable ? "Enable?" : "Disable?", "TournamentMode");
+    InitiateCustomVote(VoteInstigator, VoteTournamentModeOnComplete, , bEnable ? "Enable?" : "Disable?", "TournamentMode", "has started a vote to toggle TournamentMode.");
 }
 
 function VoteTournamentModeOnComplete(bool bSuccess)
@@ -1398,11 +1613,11 @@ function InitiateVoteRankedMode(AOCPlayerController VoteInstigator, bool bEnable
 {
     if (bRankedMode == bEnable)
     {
-        VoteInstigator.ReceiveChatMessage("RankedMode is already" @ bEnable ? "enabled." : "disabled.", EFAC_ALL, true);
+        VoteInstigator.ClientDisplayConsoleMessage("RankedMode is already" @ bEnable ? "enabled." : "disabled.");
         return;
     }
 
-    InitiateCustomVote(VoteInstigator, VoteRankedModeOnComplete, , bEnable ? "Enable?" : "Disable?", "RankedMode");
+    InitiateCustomVote(VoteInstigator, VoteRankedModeOnComplete, , bEnable ? "Enable?" : "Disable?", "RankedMode", "has started a vote to toggle RankedMode.");
 }
 
 function VoteRankedModeOnComplete(bool bSuccess)
@@ -1422,17 +1637,17 @@ function InitiateVoteRankedTeamSize(AOCPlayerController VoteInstigator, int Size
 {
     if (Size <= 0 || Size > (MaxPlayers / 2))
     {
-        VoteInstigator.ReceiveChatMessage("RankedTeamSize cannot be set to" @ Size $ ".", EFAC_ALL, true);
+        VoteInstigator.ClientDisplayConsoleMessage("RankedTeamSize cannot be set to" @ Size $ ".");
         return;
     }
     if (iRankedTeamSize == Size)
     {
-        VoteInstigator.ReceiveChatMessage("RankedTeamSize is already" @ Size $ ".", EFAC_ALL, true);
+        VoteInstigator.ClientDisplayConsoleMessage("RankedTeamSize is already" @ Size $ ".");
         return;
     }
 
     iVoteRankedTeamSize = Size;
-    InitiateCustomVote(VoteInstigator, VoteRankedTeamSizeOnComplete, 15.0, string(Size), "RankedTeamSize");
+    InitiateCustomVote(VoteInstigator, VoteRankedTeamSizeOnComplete, 15.0, string(Size), "RankedTeamSize", "has started a vote to set RankedTeamSize to" @ Size $ ".");
 }
 
 function VoteRankedTeamSizeOnComplete(bool bSuccess)
@@ -1440,21 +1655,40 @@ function VoteRankedTeamSizeOnComplete(bool bSuccess)
     if (!bSuccess)
         return;
 
-    RankedAPI.BroadcastMessageToAll("RankedTeamSize" @ iVoteRankedTeamSize);
+    BroadcastMessageToAll("RankedTeamSize" @ iVoteRankedTeamSize, sVoteChatColour);
 
     ConfigureRankedTeamSize(iVoteRankedTeamSize);
     iVoteRankedTeamSize = 0;
+}
+
+function InitiateVoteCancelRankedGame(AOCPlayerController VoteInstigator)
+{
+    if (!bRankedMode || RankedGame == none || RankedGame.MatchmakingResponse == "" || RankedGame.Cancelled)
+    {
+        VoteInstigator.ClientDisplayConsoleMessage("The Ranked Game either doesn't exist or is already cancelled.");
+        return;
+    }
+
+    InitiateCustomVote(VoteInstigator, VoteCancelRankedGameOnComplete, , "Cancel?", "Ranked Game", "has started a vote to cancel the current Ranked Game.");
+}
+
+function VoteCancelRankedGameOnComplete(bool bSuccess)
+{
+    if (!bSuccess)
+        return;
+
+    RankedModeCancelGame();
 }
 
 function InitiateVoteRestartMapAfterEndGame(AOCPlayerController VoteInstigator, bool bEnable)
 {
     if (bRestartMapAfterEndGame == bEnable)
     {
-        VoteInstigator.ReceiveChatMessage("RestartMapAfterEndGame is already" @ bEnable ? "enabled." : "disabled.", EFAC_ALL, true);
+        VoteInstigator.ClientDisplayConsoleMessage("RestartMapAfterEndGame is already" @ bEnable ? "enabled." : "disabled.");
         return;
     }
 
-    InitiateCustomVote(VoteInstigator, VoteRestartMapAfterEndGameOnComplete, , bEnable ? "Enable?" : "Disable?", "RestartMapAfterEndGame");
+    InitiateCustomVote(VoteInstigator, VoteRestartMapAfterEndGameOnComplete, , bEnable ? "Enable?" : "Disable?", "RestartMapAfterEndGame", "has started a vote to toggle RestartMapAfterEndGame.");
 }
 
 function VoteRestartMapAfterEndGameOnComplete(bool bSuccess)
@@ -1462,22 +1696,21 @@ function VoteRestartMapAfterEndGameOnComplete(bool bSuccess)
     if (!bSuccess)
         return;
 
-    S_BroadcastServerMessage("RestartMapAfterEndGame" @ !bRestartMapAfterEndGame);
+    BroadcastMessageToAll("RestartMapAfterEndGame" @ !bRestartMapAfterEndGame, sVoteChatColour);
     ConfigureRestartMapAfterEndGame(!bRestartMapAfterEndGame);
 }
 
+
 DefaultProperties
 {
-    PlayerControllerClass=class'`{GAMEMODE}PlayerController'
-    DefaultPawnClass=class'`{GAMEMODE}Pawn'
-    HUDType=class'`{GAMEMODE}HUD'
+    ModDisplayString="ZestyMod"
 
-    PlayerReplicationInfoClass=class'`{GAMEMODE}PRI'
 
     AccessControlClass=class'ZestyModAccessControl'
-
-    //This is the name that shows in the server browser for this mod:
-    ModDisplayString="ZestyMod"
+    PlayerControllerClass=class'`{GAMEMODE}PlayerController'
+    PlayerReplicationInfoClass=class'`{GAMEMODE}PRI'
+    DefaultPawnClass=class'`{GAMEMODE}Pawn'
+    HUDType=class'`{GAMEMODE}HUD'
 
     Families.Empty;
     Families(ECLASS_Archer)=class'ZestyModFamilyInfo_Agatha_Archer'
@@ -1492,26 +1725,31 @@ DefaultProperties
     Families(9)=class'ZestyModFamilyInfo_Mason_Archer'
 
     AllBotNames(0)=(MyName=BOT00GIRU00GIRU,bInUse=False)
-	AllBotNames(1)=(MyName=BOT00Stouty,bInUse=False)
-	AllBotNames(2)=(MyName=BOT00Jin,bInUse=False)
-	AllBotNames(3)=(MyName=BOT00SeConquerer,bInUse=False)
-	AllBotNames(4)=(MyName=BOT00Cookie,bInUse=False)
-	AllBotNames(5)=(MyName=BOT00Ownage,bInUse=False)
-	AllBotNames(6)=(MyName=BOT00Viriathus,bInUse=False)
-	AllBotNames(7)=(MyName=BOT00Frontliner,bInUse=False)
-	AllBotNames(8)=(MyName=BOT00Babber,bInUse=False)
-	AllBotNames(9)=(MyName=BOT00Vox,bInUse=False)
-	AllBotNames(10)=(MyName=BOT00Apex00the00Midget,bInUse=False)
-	AllBotNames(11)=(MyName=BOT00Doktr,bInUse=False)
-	AllBotNames(12)=(MyName=BOT00Ludicrosity,bInUse=False)
-	AllBotNames(13)=(MyName=BOT00Mr00Rag,bInUse=False)
-	AllBotNames(14)=(MyName=BOT00Lyon,bInUse=False)
-	AllBotNames(15)=(MyName=BOT00Rio,bInUse=False)
-	AllBotNames(16)=(MyName=BOT00Ragnar,bInUse=False)
-	AllBotNames(17)=(MyName=BOT00Warlock,bInUse=False)
+    AllBotNames(1)=(MyName=BOT00Stouty,bInUse=False)
+    AllBotNames(2)=(MyName=BOT00Jin,bInUse=False)
+    AllBotNames(3)=(MyName=BOT00SeConquerer,bInUse=False)
+    AllBotNames(4)=(MyName=BOT00Cookie,bInUse=False)
+    AllBotNames(5)=(MyName=BOT00Ownage,bInUse=False)
+    AllBotNames(6)=(MyName=BOT00Viriathus,bInUse=False)
+    AllBotNames(7)=(MyName=BOT00Frontliner,bInUse=False)
+    AllBotNames(8)=(MyName=BOT00Babber,bInUse=False)
+    AllBotNames(9)=(MyName=BOT00Vox,bInUse=False)
+    AllBotNames(10)=(MyName=BOT00Apex00the00Midget,bInUse=False)
+    AllBotNames(11)=(MyName=BOT00Doktr,bInUse=False)
+    AllBotNames(12)=(MyName=BOT00Ludicrosity,bInUse=False)
+    AllBotNames(13)=(MyName=BOT00Mr00Rag,bInUse=False)
+    AllBotNames(14)=(MyName=BOT00Lyon,bInUse=False)
+    AllBotNames(15)=(MyName=BOT00Rio,bInUse=False)
+    AllBotNames(16)=(MyName=BOT00Ragnar,bInUse=False)
+    AllBotNames(17)=(MyName=BOT00Warlock,bInUse=False)
 
     MinimumRespawnTime = 10.0f
     bDisableTeamDamagePenalty = true
 
-    fRankedModeMatchMakeInterval = 30.0
+    fRankedModeAttemptToStartMatchInterval = 30.0
+    fRankedModeAttemptToSendResultsInterval = 20.0
+    fRankedModeResumeEndGameInterval = 10.0
+    sRankedModeChatColour = "#00BFFF"
+
+    sVoteChatColour = "#fc4ed9"
 }
