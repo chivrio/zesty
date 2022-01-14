@@ -1034,7 +1034,8 @@ function RankedModeAttemptToStartMatch()
     // Don't bother proceeding for unsupported gamemodes
     if (AOCFFAGRI(GameReplicationInfo) != none ||
         AOCDuelGRI(GameReplicationInfo) != none ||
-        CDWDuelGRI(GameReplicationInfo) != none
+        CDWDuelGRI(GameReplicationInfo) != none ||
+        AOCTOGRI(GameReplicationInfo) != none // TODO: Remove when TO is ready
     )
     {
         BroadcastMessageToAll("Unsupported gamemode.", sRankedModeChatColour);
