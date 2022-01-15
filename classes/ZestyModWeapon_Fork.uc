@@ -62,8 +62,8 @@ DefaultProperties
 
 
     ImpactSounds(ESWINGSOUND_Overhead)={(
-        light=SoundCue'A_Impacts_Melee.Light_Stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
@@ -73,8 +73,8 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Bardiche_Stone')}
 
     ImpactSounds(ESWINGSOUND_OverheadCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Stab_Small',
-        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Small',
+        light=SoundCue'A_Impacts_Melee.Light_Stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_Stab_Average',
         heavy=SoundCue'A_Impacts_Melee.Heavy_Stab_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.Bardiche_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Bardiche_Dirt',
