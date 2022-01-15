@@ -2,6 +2,7 @@ var ZestyModGFx_EscapeMain     EscapeMenu;
 
 var ZestyModGFx_HUDManager HUD;
 
+
 exec function ShowEscapeMenu(optional bool bPlaySound = true)
 {
 	// Initialize Escape menu here

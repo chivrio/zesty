@@ -325,6 +325,7 @@ reliable server function AttackDeadPawn(HitInfo Info, int ID)
         HandleDeadPawnGetHit();
 }
 
+
 reliable server function AttackOtherPawn(HitInfo Info, string DamageString, optional bool bCheckParryOnly = false, optional bool bBoxParrySuccess, optional bool bHitShield = false, optional SwingTypeImpactSound LastHit = ESWINGSOUND_Slash, optional bool bQuickKick = false) {
     local bool bParry;
     local float ActualDamage;
@@ -387,6 +388,9 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
 
     if (Info.DamageType.default.bIsProjectile && !bParry)
         AOCPRI(PlayerReplicationInfo).NumHits += 1;
+        if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+        //AOCPRI(PlayerReplicationInfo).Score += 5;
+        }
 
     // Check for passive shield block
     bPassiveBlock = false;
@@ -596,30 +600,58 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
             Info.AttackType == Attack_AltOverhead)
         ) {
             `{GAMEMODE}PRI(PRI).MeleeHits += 1;
+            if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+            AOCPRI(PlayerReplicationInfo).Score += 5;
+            }
+
         }
         // Projectiles
         else if (Info.DamageType.default.bIsProjectile)
         {
             `{GAMEMODE}PRI(PRI).ProjectileHits += 1;
+            if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+            AOCPRI(PlayerReplicationInfo).Score += 5;
+            }
         }
         // Kicks
         else if (Info.AttackType == Attack_Shove)
         {
-            if (bQuickKick)
+            if (bQuickKick) {
                 `{GAMEMODE}PRI(PRI).LightShoveHits += 1;
+                if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+                AOCPRI(PRI).Score += 5;
+                }
+            }
             else
-                `{GAMEMODE}PRI(PRI).HeavyShoveHits += 1;
+                {
+                    `{GAMEMODE}PRI(PRI).HeavyShoveHits += 1;
+                    if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+                    AOCPRI(PRI).Score += 5;
+                    }
+                }
         }
 
         // Register non-team damage
-        if (!bSameTeam)
+        if (!bSameTeam) {
             AOCPRI(PRI).EnemyDamageDealt += ActualDamage;
+            if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+                if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+            AOCPRI(PRI).Score += ActualDamage;
+                }
+            }
+        }
         // Register team damage with the PlayerController
         else
             if (Info.HitActor.PawnInfo.myFamily.ClassReference != ECLASS_Peasant
                 && Info.HitActor.PlayerReplicationInfo != PRI) {
                 AOCPRI(PRI).TeamDamageDealt += ActualDamage;
                 AOCPlayerController(Controller).TeamDamageDealt += ActualDamage;
+
+                if (AOCGame(WorldInfo.Game).bIsTeamMode) {
+                    if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+                AOCPRI(PRI).Score -= (ActualDamage * 1.75);
+                    }
+                }
             }
 
         // Force an update
@@ -629,12 +661,23 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
     // Replicate this information
     if (Info.HitActor.PlayerReplicationInfo != none) {
         // Non-team damage
-        if (!bSameTeam)
+        if (!bSameTeam) {
             AOCPRI(Info.HitActor.PlayerReplicationInfo).DamageTaken += ActualDamage;
+        }
+            
         // Team damage
-        else
-            `{GAMEMODE}PRI(Info.HitActor.PlayerReplicationInfo).TeamDamageTaken += ActualDamage;
+        else {
+             `{GAMEMODE}PRI(Info.HitActor.PlayerReplicationInfo).TeamDamageTaken += ActualDamage;
+            
+            if (AOCGame(WorldInfo.Game).bIsTeamMode) {
+                if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+                `{GAMEMODE}PRI(Info.HitActor.PlayerReplicationInfo).Score += (ActualDamage * 1.25);
+                }
+            }
+        }
+           
         AOCPRI(Info.HitActor.PlayerReplicationInfo).bForceNetUpdate = TRUE;
+        
     }
 
     // Is the target burning?
@@ -827,6 +870,7 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
 
                 // Blocks
                 `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Blocks += 1;
+                //`{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 15;
 
                 // Stamina damage received
                 if (!bSameTeam)
@@ -894,6 +938,7 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
 
             // Parries
             `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Parries += 1;
+            //`{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 15;
 
             // Stamina damage received
             if (!bSameTeam)
@@ -1259,6 +1304,96 @@ reliable server function s_PlayVO(SoundCue voSound)
     `{GAMEMODE}PRI(Controller.PlayerReplicationInfo).Chatter += 1;
 }
 
+
+function bool Died(Controller Killer, class<DamageType> DamageType, vector HitLocation)
+{
+	local AOCPRI PRI;
+	local int i;
+	local AOCAmmoDrop Drop;
+	local EAOCFaction KillerTeam, KilledTeam;
+	//`log("PAWN JUST DIED BY"@Killer);
+	if (AOCPlayerController(Controller) != none  && AOCPlayerController(Controller).bJustSuicided && LastPawnToHurtYou != none)
+	{
+		AOCPlayerController(Controller).bJustSuicided = false;
+		Killer = LastPawnToHurtYou;
+	}
+	else if (AOCPlayerController(Controller) != none  && AOCPlayerController(Controller).bJustSuicided)
+	{
+		AOCPlayerController(Controller).bJustSuicided = false;
+		Killer = none; // make sure noone gets points for dis.
+	}
+	else if (Killer == none && LastPawnToHurtYou != none)
+	{
+		Killer = LastPawnToHurtYou;
+	}
+
+	if (AOCTeamObjectivePC(Controller) != none)
+		AOCTeamObjectivePC(Controller).bCanChangeClass = true; // will only have 1 life as king.
+
+	if (AOCPlayerController(Killer) != none)
+		KillerTeam = AOCPlayerController(Killer).CurrentFamilyInfo.FamilyFaction;
+	else if (AOCAIController(Killer) != none)
+		KillerTeam = AOCAIController(Killer).myPawnClass.default.FamilyFaction;
+
+	if (AOCPlayerController(Controller) != none)
+		KilledTeam = AOCPlayerController(Controller).CurrentFamilyInfo.FamilyFaction;
+	else if (AOCAIController(Controller) != none)
+		KilledTeam = AOCAIController(Controller).myPawnClass.default.FamilyFaction;
+ 
+	// Distribute assists points as necessary
+	foreach ContributingDamagers(PRI)
+	{
+		if (PRI != AOCPRI(PlayerReplicationInfo) && PRI != AOCPRI(Killer.PlayerReplicationInfo))
+		{
+			// Make sure not on same team or the game is a FFA game
+			if (KilledTeam != KillerTeam && AOCFFA(WorldInfo.Game) == none )//AOCGame(WorldInfo.Game).CurrentGametypeNum != AOC_GAMETYPE_FFA)
+			{
+				//PRI.NumAssists += 1;
+				PRI.ObjPoints += PawnFamily.AssistBonus;
+                if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+				PRI.Score += 75 + PawnFamily.AssistBonus;
+                } else {
+                  PRI.Score += 5 + PawnFamily.AssistBonus;  
+                }
+
+				if (PRI.OwnerController.StatWrapper != none)
+				{
+					PRI.OwnerController.StatWrapper.IncrementAssistStat();
+				}
+			}
+		}
+	}
+
+	// Spawn les ammos
+	for (i = 0; i < MAXIMUM_STORED_PROJECTILE_TYPES; i++)
+	{
+		//`log("Struck by projectile drop"@StruckByProjectiles[i].ProjectileOwner);
+		if (StruckByProjectiles[i].ProjectileOwner != none)
+		{
+			Drop = Spawn(class'AOCAmmoDrop', self,,Location, Rotation);
+			Drop.AmmoOwner = StruckByProjectiles[i].ProjectileOwner;
+			Drop.AmmoType = StruckByProjectiles[i].ProjectileType;
+			Drop.AmmoToGive = StruckByProjectiles[i].ProjectileCount;
+			Drop.bReady = true;
+
+			StruckByProjectiles[i].ProjectileOwner = none;
+		}
+	}
+
+	// Notify remote console
+	if (Killer == None || Killer.Pawn == Self)
+	{
+		AOCGame(WorldInfo.Game).RemoteConsole.GameEvent_Suicide(PlayerReplicationInfo);
+	}
+	else
+	{
+		AOCGame(WorldInfo.Game).RemoteConsole.GameEvent_Kill(Killer.PlayerReplicationInfo, PlayerReplicationInfo, AOCWeapon(Killer.Pawn.Weapon));
+	}
+
+	super.Died(Killer, DamageType, HitLocation);
+
+	return true;
+}
 
 DefaultProperties
 {
