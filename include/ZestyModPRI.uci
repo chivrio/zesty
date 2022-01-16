@@ -30,7 +30,8 @@ replication
         Feints, MeleeHits, ProjectileHits, LightShoveHits, HeavyShoveHits,
         Parries, Blocks,
         Crouches, Jumps, Dodges,
-        Chatter;
+        Chatter,
+        elo;
 }
 
 
