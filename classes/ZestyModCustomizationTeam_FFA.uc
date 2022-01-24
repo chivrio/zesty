@@ -26,4 +26,7 @@ Emblems.Add((Img=Texture2D'CH_Warlock.T_snapchat',	GearData=(GearNameID=Snapchat
 Emblems.Add((Img=Texture2D'CH_Warlock.T_trollface',	GearData=(GearNameID=trollface)))
 Emblems.Add((Img=Texture2D'CH_Warlock.T_Gorilla',	GearData=(GearNameID=Gorilla)))
 
+Emblems.Add((Img=Texture2D'CH_Warlock.T_Direwolf',	GearData=(GearNameID=Direwolf)))
+Emblems.Add((Img=Texture2D'CH_Warlock.T_CompModBetter',	GearData=(GearNameID=AverageChivalryPlayer)))
+
 }

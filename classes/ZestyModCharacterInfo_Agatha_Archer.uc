@@ -18,6 +18,7 @@ Helmets.Add((SkeletalMeshPath="CH_Warlock.sk_LeafCrown",                        
 
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_pughat",                         StaticMeshPath="CH_Warlock.SM_pughat",              GearData=(GroupHexID="1700000027D6646", GearNameID=PugPeasant, bVisibleInSelectorIfUnowned=false)))
 
+Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_Cowboy", StaticMeshPath="CH_Warlock.SM_Cowboy", GearData=(GroupHexID="1700000027DC808", GearNameID=Cowboy, bVisibleInSelectorIfUnowned=false)))
 
 
 }

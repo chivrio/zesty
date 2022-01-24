@@ -89,7 +89,7 @@ Helmets.Add((SkeletalMeshPath="CH_Warlock.sk_LeafCrown",                        
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_greekhelm_hat",                         StaticMeshPath="CH_Warlock.sm_greekhelm_hat",                GearData=(GroupHexID="1700000027D301B", GearNameID=TournamentWinnerHat, bVisibleInSelectorIfUnowned=false)))
 
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_mask",                         StaticMeshPath="CH_Warlock.SM_Mask", MaterialPath="CH_Warlock.M_Mask2",                GearData=(GroupHexID="1700000027D5452", GearNameID=DMKS, bVisibleInSelectorIfUnowned=false)))
-
+Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_Cowboy", StaticMeshPath="CH_Warlock.SM_Cowboy", GearData=(GroupHexID="1700000027DC808", GearNameID=Cowboy, bVisibleInSelectorIfUnowned=false)))
 	Tabards.Empty
 	
 	Tabards.Add((Img=Texture2D'CH_AgathaVanguard_DLC1.Textures.T_CH_3P_AgathaVanguard01_Body_P01', GearData=(GearNameID=Quadrant)))

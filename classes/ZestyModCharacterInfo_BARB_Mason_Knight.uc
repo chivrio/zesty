@@ -30,7 +30,7 @@ defaultproperties
 	/** Ownership info **/
 
 	//GearData=(GearNameID=MasonKnight,AppID=222360,bVisibleInSelectorIfUnowned=false)
-	GearData=(GearNameID=BarbMasonKnight, GearStoreDescriptionID=Barb_Knight_Bundle_1, MicroTxID=101022, bVisibleInSelectorIfUnowned=true, bPartOfBundle=true, BundleNameID=Barb_Knight_Bundle_1)
+	GearData=(GearNameID=BarbMasonKnight, GearStoreDescriptionID=Barb_Knight_Bundle_1, bVisibleInSelectorIfUnowned=true, bPartOfBundle=true, BundleNameID=Barb_Knight_Bundle_1)
 
 	AllowedTeams.Add(1)
 
@@ -102,7 +102,7 @@ Helmets.Add((SkeletalMeshPath="CH_Warlock.sk_LeafCrown",                        
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_mask",                         StaticMeshPath="CH_Warlock.SM_Mask",                GearData=(GroupHexID="1700000027D5452", GearNameID=DMKS, bVisibleInSelectorIfUnowned=false)))
 
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_pughat",                         StaticMeshPath="CH_Warlock.SM_pughat",              GearData=(GroupHexID="1700000027D6646", GearNameID=PugPeasant, bVisibleInSelectorIfUnowned=false)))
-
+Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_Cowboy", StaticMeshPath="CH_Warlock.SM_Cowboy", GearData=(GroupHexID="1700000027DC808", GearNameID=Cowboy, bVisibleInSelectorIfUnowned=false)))
 
 //	SkeletalMesh'' StaticMesh''
 //SkeletalMesh''	 StaticMesh''

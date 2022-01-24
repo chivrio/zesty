@@ -180,7 +180,7 @@ simulated function string GetPlayerNameForMarkup()
 
     local string colour;
 
-    LogAlwaysInternal("GetPlayerNameForMarkupZesty");
+    //LogAlwaysInternal("GetPlayerNameForMarkupZesty");
 
 	NewName = PlayerName;
 	NewName = Repl(NewName, "&", "&#38;");
@@ -192,7 +192,7 @@ simulated function string GetPlayerNameForMarkup()
 
         if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
 
-            LogAlwaysInternal("GetPlayerNameForMarkupZesty");
+            //LogAlwaysInternal("GetPlayerNameForMarkupZesty");
 
      if (elo <= 0) {
       NewName = "<font color=\"#777777\">["$ elo $"]</font>" @ PlayerName;

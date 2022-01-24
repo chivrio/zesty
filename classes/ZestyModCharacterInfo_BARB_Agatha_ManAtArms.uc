@@ -30,7 +30,7 @@ defaultproperties
 	/** Ownership info **/
 
 	//GearData=(GearNameID=AgathaManAtArms,AppID=222360,bVisibleInSelectorIfUnowned=false)
-	GearData=(GearNameID=BarbAgathaMAA, GearStoreDescriptionID=Barb_MAA_Bundle_1, MicroTxID=101024, bVisibleInSelectorIfUnowned=true, bPartOfBundle=true, BundleNameID=Barb_MAA_Bundle_1)
+	GearData=(GearNameID=BarbAgathaMAA, GearStoreDescriptionID=Barb_MAA_Bundle_1, bVisibleInSelectorIfUnowned=true, bPartOfBundle=true, BundleNameID=Barb_MAA_Bundle_1)
 
 	AllowedTeams.Add(0)
 
@@ -78,7 +78,7 @@ Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_halo",                         Stat
 Helmets.Add((SkeletalMeshPath="CH_Warlock.sk_LeafCrown",                         StaticMeshPath="CH_Warlock.SM_LeafCrown", MaterialPath="CH_Warlock.M_Leaves2",                  GearData=(GroupHexID="1700000027D57C8", GearNameID=GoldLaurels, bVisibleInSelectorIfUnowned=false)))
 
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_pughat",                         StaticMeshPath="CH_Warlock.SM_pughat",              GearData=(GroupHexID="1700000027D6646", GearNameID=PugPeasant, bVisibleInSelectorIfUnowned=false)))
-
+Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_Cowboy", StaticMeshPath="CH_Warlock.SM_Cowboy", GearData=(GroupHexID="1700000027DC808", GearNameID=Cowboy, bVisibleInSelectorIfUnowned=false)))
 
 	//Tabards.Add((Img=Texture2D'CH_AgathanMaa_PKG.Textures.T_CH_3P_AgathaMaa_Body_pb1', GearData=(GearNameID=Default)))
 	//Tabards.Add((Img=Texture2D'CH_AgathanMaa_PKG.Textures.T_CH_3P_AgathaMaa_Body_pc1', GearData=(GearNameID=Checkers)))
