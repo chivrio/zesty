@@ -387,9 +387,9 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
             DetectSuccessfulParry(Info, i, bCheckParryOnly, 0);
 
     if (Info.DamageType.default.bIsProjectile && !bParry)
-        AOCPRI(PlayerReplicationInfo).NumHits += 1;
+        AOCPRI(PRI).NumHits += 1;
         if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-        //AOCPRI(PlayerReplicationInfo).Score += 5;
+        //AOCPRI(PRI).Score += 5;
         }
 
     // Check for passive shield block
@@ -443,7 +443,17 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
 
     // If this was a team hit, reduce by team damage amount
     if (PawnFamily.FamilyFaction == Info.HitActor.PawnFamily.FamilyFaction)
+
         ActualDamage *= AOCGame(WorldInfo.Game).fTeamDamagePercent;
+        /* 
+        // Possibly Make it so that Ranked is always 100% Team damage? Havent Tested so commented it out...
+
+        if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+        ActualDamage *= 1.0f;
+        } else {
+            ActualDamage *= AOCGame(WorldInfo.Game).fTeamDamagePercent;
+        }
+        */
 
     ActualDamage += GenericDamage;
 
@@ -601,7 +611,7 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
         ) {
             `{GAMEMODE}PRI(PRI).MeleeHits += 1;
             if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-            AOCPRI(PlayerReplicationInfo).Score += 5;
+            AOCPRI(PRI).Score += 5;
             }
 
         }
@@ -610,7 +620,7 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
         {
             `{GAMEMODE}PRI(PRI).ProjectileHits += 1;
             if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-            AOCPRI(PlayerReplicationInfo).Score += 5;
+            AOCPRI(PRI).Score += 5;
             }
         }
         // Kicks
@@ -870,7 +880,7 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
 
                 // Blocks
                 `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Blocks += 1;
-                //`{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 15;
+                `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 15;
 
                 // Stamina damage received
                 if (!bSameTeam)
@@ -938,7 +948,7 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
 
             // Parries
             `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Parries += 1;
-            //`{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 15;
+            `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 15;
 
             // Stamina damage received
             if (!bSameTeam)

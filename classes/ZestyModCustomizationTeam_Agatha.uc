@@ -30,6 +30,9 @@ Emblems.Add((Img=Texture2D'CH_Warlock.T_snapchat',	GearData=(GearNameID=Snapchat
 Emblems.Add((Img=Texture2D'CH_Warlock.T_trollface',	GearData=(GearNameID=trollface)))
 Emblems.Add((Img=Texture2D'CH_Warlock.T_Gorilla',	GearData=(GearNameID=Gorilla)))
 
+Emblems.Add((Img=Texture2D'CH_Warlock.T_Direwolf',	GearData=(GearNameID=Direwolf)))
+Emblems.Add((Img=Texture2D'CH_Warlock.T_CompModBetter',	GearData=(GearNameID=AverageChivalryPlayer)))
+
 
     //TabardColorsPrimary.Add((R=0.133193,G=0.236336,B=0.475121))	//blue FF6584B5
 	//TabardColorsPrimary.Add((R=1,G=1,B=1))							//white FFFFFF

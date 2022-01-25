@@ -361,7 +361,7 @@ reliable client function ClientNotifyKilled(AOCPRI Killer, AOCPRI Killed, EAOCFa
 
         PerPRIKillTracking[FoundIndex].TimesIHaveKilled++;
     }
-    
+
     if(Killed == PlayerReplicationInfo)
     {
         //I was killed
@@ -520,10 +520,10 @@ exec function AdminGoTo(optional string MapAlias) {
         {
             ClientDisplayConsoleMessage(mapItem.alias $ " : " $ mapItem.url);
         }
-        
+
         ClientDisplayConsoleMessage("------");
 
-        return;  
+        return;
     }
 
     // Iterate through all maps, attempting to match an alias (case-insensitive)
@@ -539,7 +539,7 @@ exec function AdminGoTo(optional string MapAlias) {
     // If nothing has matched, notify the user that they provided an invalid parameter
     ClientDisplayConsoleMessage("'MapAlias' did not match any Map's alias.");
     ClientDisplayConsoleMessage("Use 'AdminGoTo Help' for some help!");
-    
+
 }
 
 
@@ -680,6 +680,16 @@ exec function VoteRankedTeamSize(int Size)
 reliable server function ServerVoteRankedTeamSize(int Size)
 {
     `{GAMEMODE} (WorldInfo.Game).InitiateVoteRankedTeamSize(self, Size);
+}
+
+exec function VoteCancelRankedGame()
+{
+    ServerVoteCancelRankedGame();
+}
+
+reliable server function ServerVoteCancelRankedGame()
+{
+    `{GAMEMODE} (WorldInfo.Game).InitiateVoteCancelRankedGame(self);
 }
 
 exec function VoteRestartMapAfterEndGame(bool bEnable)
