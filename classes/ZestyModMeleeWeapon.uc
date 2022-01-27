@@ -388,7 +388,7 @@ DefaultProperties
 
     fStaminaGainOnHit = 6.0;
     fStaminaGainOnRiposteParry = 24.0;
-    fMissAdditionalStaminaCost = 6.0;
+    fMissAdditionalStaminaCost = 3.0;
     fComboMinimumStamina = 9.0;
 
     bParryWasDuringRiposte = false;

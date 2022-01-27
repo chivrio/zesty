@@ -713,7 +713,7 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
         if (PawnInfo.myFamily.ClassReference == ECLASS_ManAtArms) {
                 Info.Instigator.ConsumeStamina(-45.f);
         } else {
-            Info.Instigator.ConsumeStamina(-30.f);
+            Info.Instigator.ConsumeStamina(-36.f);
         }
         StaminaAtKill = Info.Instigator.Stamina;
 
@@ -844,15 +844,15 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
         if (!Info.DamageType.default.bIsProjectile) {
 
             // Calculate stamina drain
-            StaminaDamage = 5 + Info.HitActor.ShieldClass.NewShield.static.CalculateParryDamage(Info.HitDamage);
+            StaminaDamage = 4 + Info.HitActor.ShieldClass.NewShield.static.CalculateParryDamage(Info.HitDamage);
 
             // Enter stun state if the player is out of stamina
             if (!Info.HitActor.HasEnoughStamina(StaminaDamage)) {
                 StaminaDamage = Info.HitActor.Stamina;
                 Info.HitActor.ConsumeStamina(StaminaDamage);
 
-                // Regain 30 stamina
-                Info.HitActor.ConsumeStamina(-30.f);
+                // Regain 36 stamina
+                Info.HitActor.ConsumeStamina(-36.f);
                 AOCWeapon(Info.HitActor.Weapon).ActivateFlinch(true, Info.HitActor.GetHitDirection(Location), true, true, AOCWeapon(Weapon).bTwoHander);
 
                 // The hit does zero damage
@@ -1411,16 +1411,16 @@ DefaultProperties
 
     CustomizationClass=class'ZestyModCustomization'
 
-    fStaminaRegenCooldown=1.8
-    fLowStaminaThreshold=18.0
+    fStaminaRegenCooldown=1.6
+    fLowStaminaThreshold=15.0
     fJumpStaminaCost=3.0
 
     HealthTimeElapse=0.0
     HealAmount=3.0
 
     Begin Object Name=OuterCylinder
-        CollisionRadius=+0039.000000
-        CollisionHeight=+0065.000000
+        CollisionRadius=+0043.000000
+        CollisionHeight=+0060.000000
         BlockNonZeroExtent=true
         BlockZeroExtent=false
         BlockActors=true
@@ -1433,6 +1433,6 @@ DefaultProperties
         BlockZeroExtent=FALSE
         AlwaysCheckCollision=true
         CollisionRadius=+0036.000000
-        CollisionHeight=+0065.000000
+        CollisionHeight=+0060.000000
     End Object
 }

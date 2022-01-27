@@ -10,7 +10,7 @@ class ZestyModWeaponAttachment_Spear extends AOCWeaponAttachment_Spear;
 DefaultProperties
 {
 
-KickOffset=(X=36, Y=0, Z=-42)
+KickOffset=(X=39, Y=0, Z=-42)
 	KickSize=18.f
 
 	Begin Object Name=SkeletalMeshComponent0

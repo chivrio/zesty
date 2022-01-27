@@ -43,6 +43,6 @@ DefaultProperties
 	DodgeSpeedZ=300.0
     BACK_MODIFY=0.8
     JumpZ=381.0
-    iDodgeCost=33
+    iDodgeCost=30
     iKickCost=27
 }
