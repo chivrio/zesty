@@ -361,7 +361,7 @@ function EndGame(PlayerReplicationInfo Winner, string Reason)
 
 function string GetNextMap()
 {
-    if (bRestartMapAfterEndGame || (bRankedMode && RankedGame != none && RankedGame.CompletedMatches.Length < RankedGame.GameSize))
+    if (bRestartMapAfterEndGame || (bRankedMode && RankedGame != none && RankedGame.CompletedMatches.Length <= RankedGame.GameSize))
         return "?restart";
     else
         return super.GetNextMap();
