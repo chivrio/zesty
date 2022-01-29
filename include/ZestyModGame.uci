@@ -1237,10 +1237,10 @@ function RankedModeEndGame()
         // Register a timer to keep on trying to send game results
         SetTimer(fRankedModeAttemptToSendResultsInterval, true, 'RankedModeAttemptToSendResults');
 
+        BroadcastMessageToAll("Sending game results to the remote service...", sRankedModeChatColour);
+
         // Try to send game results instantly
         RankedModeAttemptToSendResults();
-
-        BroadcastMessageToAll("Sending game results to the remote service...", sRankedModeChatColour);
     }
     else
     {
