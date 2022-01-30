@@ -1007,9 +1007,9 @@ function OnUserConnectOnComplete(HttpRequestInterface OriginalRequest, HttpRespo
     elo = data.GetIntValue("elo");
     name = data.GetStringValue("name");
 
-    UpdateELOPRI(id, elo);
+    //UpdateELOPRI(id, elo);
 
-    // RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
+    RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
 }
 
 exec function RankedAttemptToStartMatch()
