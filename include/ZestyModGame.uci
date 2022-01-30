@@ -1007,9 +1007,9 @@ function OnUserConnectOnComplete(HttpRequestInterface OriginalRequest, HttpRespo
     elo = data.GetIntValue("elo");
     name = data.GetStringValue("name");
 
-    UpdateELOPRI(id, elo);
+    //UpdateELOPRI(id, elo);
 
-    // RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
+    RenamePlayerViaSteamID64(id, "[" $ elo $ "]" @ name);
 }
 
 exec function RankedAttemptToStartMatch()
@@ -1056,7 +1056,10 @@ function RankedModeAttemptToStartMatch()
             return;
         }
 
-        class'RankedAPI'.static.CalculateMatchMaking(GetActualPlayersSteamIDs(), iRankedTeamSize, CalculateMatchMakingOnComplete);
+        class'RankedAPI'.static.CalculateMatchMaking(GetActualPlayersSteamIDs(),
+                                                     iRankedTeamSize,
+                                                     string(WorldInfo.GetPackageName()),
+                                                     CalculateMatchMakingOnComplete);
     }
     // If there's a game in progress
     else if (RankedGame.MatchmakingResponse != "" && RankedGame.CompletedMatches.Length < RankedGame.GameSize)
