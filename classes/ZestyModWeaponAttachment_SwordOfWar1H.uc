@@ -10,7 +10,7 @@ class ZestyModWeaponAttachment_SwordOfWar1H extends AOCWeaponAttachment_SwordOfW
 DefaultProperties
 {
 
-KickOffset=(X=36, Y=0, Z=-42)
+KickOffset=(X=39, Y=0, Z=-42)
 	KickSize=18.f
 
 	Begin Object Name=SkeletalMeshComponent0
@@ -29,12 +29,12 @@ KickOffset=(X=36, Y=0, Z=-42)
 
 	WeaponStaticMeshScale=1
 
-	AttackTypeInfo(0)=(fBaseDamage=69.0, fForce=12000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=72.0, fForce=12000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
-	AttackTypeInfo(2)=(fBaseDamage=66.0, fForce=30000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=69.0, fForce=23000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=72.0, fForce=16000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
+	AttackTypeInfo(2)=(fBaseDamage=66.0, fForce=21000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
-	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
+	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
 	Skins.empty;
 	Skins(0)={(

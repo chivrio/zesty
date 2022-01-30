@@ -44,7 +44,7 @@ DefaultProperties
 
     ImpactSounds(ESWINGSOUND_Stab)={(
         light=SoundCue'A_Impacts_Melee.Light_stab_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_stab_Average',
+        medium=SoundCue'A_Impacts_Melee.Medium_stab_small',
         heavy=SoundCue'A_Impacts_Melee.Heavy_stab_small',
         wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',

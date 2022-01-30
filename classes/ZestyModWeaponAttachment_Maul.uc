@@ -30,7 +30,7 @@ simulated function float GetHandleTracerPercent(int i)
 DefaultProperties
 {
 
-KickOffset=(X=36, Y=0, Z=-42)
+KickOffset=(X=39, Y=0, Z=-42)
 	KickSize=18.f
 
 	Begin Object Name=SkeletalMeshComponent0
@@ -51,12 +51,12 @@ KickOffset=(X=36, Y=0, Z=-42)
 
 	WeaponStaticMeshScale=1
 
-	AttackTypeInfo(0)=(fBaseDamage=99.0, fForce=40000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=102.0, fForce=22500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
-	AttackTypeInfo(2)=(fBaseDamage=48.0, fForce=40000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=99.0, fForce=39000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=102.0, fForce=33000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(2)=(fBaseDamage=48.0, fForce=36000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=120.0, fForce=22500, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=1.0, fForce=40000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
-	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
+	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
 	Skins.empty;
 	Skins(0)={(

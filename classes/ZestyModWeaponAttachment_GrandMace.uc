@@ -29,7 +29,7 @@ simulated function float GetHandleTracerPercent(int i)
 DefaultProperties
 {
 
-KickOffset=(X=36, Y=0, Z=-42)
+KickOffset=(X=39, Y=0, Z=-42)
 	KickSize=18.f
 
 
@@ -47,12 +47,12 @@ KickOffset=(X=36, Y=0, Z=-42)
 
 	bUseAlternativeKick=true
 
-	AttackTypeInfo(0)=(fBaseDamage=93,0 fForce=32500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=99.0, fForce=32500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
-	AttackTypeInfo(2)=(fBaseDamage=63.0, fForce=32500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=93,0 fForce=38000, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=99.0, fForce=32000, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
+	AttackTypeInfo(2)=(fBaseDamage=66.0, fForce=35000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=32500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
-	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=45500.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
+	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
 	Skins.empty;
 	Skins(0)={(

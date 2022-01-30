@@ -50,9 +50,9 @@ DefaultProperties
      // 4 - Javelin
      // 5 - Default
     // 6 - Warbow arrow
-	ConfigProjectileBaseDamage[0]=(Damage=75,InitialSpeed=7800.0,MaxSpeed=8100.0,AmmoCount=5,InitialGravityScale=0.35,Drag=0.0000025,PitchCorrection=50)
-	ConfigProjectileBaseDamage[1]=(Damage=75,InitialSpeed=7800.0,MaxSpeed=8100.0,AmmoCount=5,InitialGravityScale=0.35,Drag=0.0000025,PitchCorrection=50)
-	ConfigProjectileBaseDamage[2]=(Damage=75,InitialSpeed=7800.0,MaxSpeed=8100.0,AmmoCount=5,InitialGravityScale=0.55,Drag=0.000005,PitchCorrection=240.0)
+	ConfigProjectileBaseDamage[0]=(Damage=75,InitialSpeed=7500.0,MaxSpeed=8100.0,AmmoCount=5,InitialGravityScale=0.4,Drag=0.000003,PitchCorrection=50)
+	ConfigProjectileBaseDamage[1]=(Damage=75,InitialSpeed=7500.0,MaxSpeed=8100.0,AmmoCount=5,InitialGravityScale=0.4,Drag=0.000003,PitchCorrection=50)
+	ConfigProjectileBaseDamage[2]=(Damage=75,InitialSpeed=7500.0,MaxSpeed=8100.0,AmmoCount=5,InitialGravityScale=0.4,Drag=0.000003,PitchCorrection=240.0)
 	ConfigProjectileBaseDamage[3]=(Damage=0,InitialSpeed=6000.0,MaxSpeed=8000.0,AmmoCount=6,InitialGravityScale=1.0,Drag=0.0000011,PitchCorrection=300.0)
 	ConfigProjectileBaseDamage[4]=(Damage=0,InitialSpeed=6000.0,MaxSpeed=8000.0,AmmoCount=6,InitialGravityScale=1.0,Drag=0.0000011,PitchCorrection=300.0)
 	ConfigProjectileBaseDamage[5]=(Damage=0,InitialSpeed=6000.0,MaxSpeed=8000.0,AmmoCount=6,InitialGravityScale=1.0,Drag=0.0000011,PitchCorrection=300.0)

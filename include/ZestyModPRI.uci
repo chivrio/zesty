@@ -1,4 +1,4 @@
-var string OriginalName, NewName;
+var string OriginalName;
 var int AllDamageTaken,
         TeamDamageTaken,
         EnemyStaminaDamageDealt,
@@ -177,66 +177,58 @@ function RestoreOriginalName()
 
 simulated function string GetPlayerNameForMarkup()
 {
-
-    local string colour;
+    local string NewName;
+    //local string colour;
 
     //LogAlwaysInternal("GetPlayerNameForMarkupZesty");
 
-	NewName = PlayerName;
-	NewName = Repl(NewName, "&", "&#38;");
-	NewName = Repl(NewName, "<", "&#60;");
-	NewName = Repl(NewName, ">", "&#62;");
-	NewName = Repl(NewName, "\\", "&#92;");
+    NewName = PlayerName;
+    NewName = Repl(NewName, "&", "&#38;");
+    NewName = Repl(NewName, "<", "&#60;");
+    NewName = Repl(NewName, ">", "&#62;");
+    NewName = Repl(NewName, "\\", "&#92;");
 
 
+    if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true)
+    {
+        //LogAlwaysInternal("GetPlayerNameForMarkupZesty");
 
-        if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
+        if (elo <= 0)
+            NewName = "<font color=\"#777777\">["$ elo $"]</font>" @ NewName;
+        else if (elo > 0 && elo <= 499)
+            NewName = "<font color=\"#706057\">["$ elo $"]</font>" @ NewName;
+        else if (elo >= 500 && elo <= 999)
+            NewName = "<font color=\"#bf8559\">["$ elo $"]</font>" @ NewName;
+        else if (elo >= 1000 && elo <= 1499)
+            NewName = "<font color=\"#c4c4c4\">["$ elo $"]</font>" @ NewName;
+        else if (elo >= 1500 && elo <= 1999)
+            NewName = "<font color=\"#ffd154\">["$ elo $"]</font>" @ NewName;
+        else if (elo >= 2000 && elo <= 2499)
+            NewName = "<font color=\"#15aac0\">["$ elo $"]</font>" @ NewName;
+        else if (elo >= 2500 && elo <= 2999)
+            NewName = "<font color=\"#3875b9\">["$ elo $"]</font>" @ NewName;
+        else if (elo >= 3000 && elo <= 3499)
+            NewName = "<font color=\"#af1346\">["$ elo $"]</font>" @ NewName;
+        else if (elo >= 3500)
+            NewName = "<font color=\"#9545c7\">["$ elo $"]</font>" @ NewName;
 
-            //LogAlwaysInternal("GetPlayerNameForMarkupZesty");
-
-     if (elo <= 0) {
-      NewName = "<font color=\"#777777\">["$ elo $"]</font>" @ PlayerName;
-    } else if (elo > 0 && elo <= 499) {
-      NewName = "<font color=\"#706057\">["$ elo $"]</font>" @ PlayerName;
-    } else if (elo >= 500 && elo <= 999) {
-      NewName = "<font color=\"#bf8559\">["$ elo $"]</font>" @ PlayerName;
-    } else if (elo >= 1000 && elo <= 1499) {
-      NewName = "<font color=\"#c4c4c4\">["$ elo $"]</font>" @ PlayerName;
-    } else if (elo >= 1500 && elo <= 1999) {
-      NewName = "<font color=\"#ffd154\">["$ elo $"]</font>" @ PlayerName;
-    } else if (elo >= 2000 && elo <= 2499) {
-      NewName = "<font color=\"#15aac0\">["$ elo $"]</font>" @ PlayerName;
-    } else if (elo >= 2500 && elo <= 2999) {
-      NewName = "<font color=\"#3875b9\">["$ elo $"]</font>" @ PlayerName;
-    } else if (elo >= 3000 && elo <= 3499) {
-      NewName = "<font color=\"#af1346\">["$ elo $"]</font>" @ PlayerName;
-    } else if (elo >= 3500) {
-      NewName = "<font color=\"#9545c7\">["$ elo $"]</font>" @ PlayerName;
+        //NewName = "<font color=\""colour"\">["$ elo $"]</font>" @ NewName;
+        //LogAlwaysInternal("UpdateName"@NewName);
     }
 
 
-
-
-            //NewName = "<font color=\""colour"\">["$ elo $"]</font>" @ PlayerName;
-
-            //LogAlwaysInternal("UpdateName"@NewName);
-
-        }
-
-
-  if(bIsBot)
-	{
-		NewName = Repl(NewName, "BOT", "<font color=\"#B27500\">BOT</font>");
-	}
+    if (bIsBot)
+        NewName = Repl(NewName, "BOT", "<font color=\"#B27500\">BOT</font>");
 
 
     if (CharacterCustomization.FactionSupportId != EFAC_None && !bIsBot)
-	{
-		if(CharacterCustomization.FactionSupportId == EFAC_Agatha)
-			NewName $= "<font color=\"#4872B6\">"$Chr(9005)$"</font>";
-		else if(CharacterCustomization.FactionSupportId == EFAC_Mason)
-			NewName $= "<font color=\"#924242\">"$Chr(9006)$"</font>";
-	}
+    {
+        if (CharacterCustomization.FactionSupportId == EFAC_Agatha)
+            NewName $= "<font color=\"#4872B6\">"$Chr(9005)$"</font>";
+        else if (CharacterCustomization.FactionSupportId == EFAC_Mason)
+            NewName $= "<font color=\"#924242\">"$Chr(9006)$"</font>";
+    }
 
-	return NewName;
+
+    return NewName;
 }

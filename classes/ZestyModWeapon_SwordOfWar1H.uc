@@ -16,7 +16,7 @@ DefaultProperties
     ImpactSounds(ESWINGSOUND_Slash)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
         medium=SoundCue'A_Impacts_Melee.Medium_Slash_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
@@ -27,7 +27,7 @@ DefaultProperties
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
         medium=SoundCue'A_Impacts_Melee.Medium_Slash_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
@@ -61,7 +61,7 @@ DefaultProperties
     ImpactSounds(ESWINGSOUND_Overhead)={(
         light=SoundCue'A_Impacts_Melee.Light_Slash_Average',
         medium=SoundCue'A_Impacts_Melee.Medium_Slash_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Slash_Average',
         wood=SoundCue'A_Phys_Mat_Impacts.Dagesse_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Dagesse_Dirt',
@@ -137,8 +137,9 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_SwordOfWar1H]
      */
 	iFeintStaminaCost=15
-	FeintTime=0.39
-	TertiaryFeintTime=0.45
+	FeintTime=0.42
+	TertiaryFeintTime=0.475
+	ComboFeintTime=0.52
 	fParryNegation=13
 	ParryDrain(0)=26
 	ParryDrain(1)=27
@@ -147,17 +148,17 @@ DefaultProperties
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_broadsword"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_swordofwar_png"
 	WeaponReach=100
-	HorizontalRotateSpeed=55000.0
-	VerticalRotateSpeed=55000.0
+	HorizontalRotateSpeed=65000.0
+	VerticalRotateSpeed=56000.0
 	AttackHorizRotateSpeed=65000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_1hsharp_slash01downtoup,ComboAnimation=3p_1hsharp_slash011downtoup,AlternateAnimation=3p_1hsharp_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broadsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.48,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false,fShieldAnimLength=0.0)
 	WindupAnimations(1)=(AnimationName=3p_1hsharp_slash02downtoup,ComboAnimation=3p_1hsharp_slash021downtoup,AlternateAnimation=3p_1hsharp_slash021altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broadsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.49,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
-	WindupAnimations(2)=(AnimationName=3p_1hsharp_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broadsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.59,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
+	WindupAnimations(2)=(AnimationName=3p_1hsharp_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broadsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.575,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(3)=(AnimationName=3p_1hsharp_sattackdowntoup_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Footsteps.Vanguard_Dirt_Jump',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)
 	WindupAnimations(4)=(AnimationName=3p_1hsharp_parryib,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.Broadsword_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.1,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	WindupAnimations(5)=(AnimationName=3p_1hsharp_shovestart,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broadsword_windup',bFullBody=True,bCombo=False,bLoop=False,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.57,fBlendInTime=0.05,fBlendOutTime=0.00,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true)
+	WindupAnimations(5)=(AnimationName=3p_1hsharp_shovestart,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broadsword_windup',bFullBody=True,bCombo=False,bLoop=False,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.54,fBlendInTime=0.05,fBlendOutTime=0.00,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true)
 	WindupAnimations(6)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(8)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
@@ -172,8 +173,8 @@ DefaultProperties
 	ReleaseAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.0,fBlendOutTime=0.0,bLastAnimation=false)
 	ReleaseAnimations(8)=(AnimationName=3p_1hsharp_equipup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broadsword_draw',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
 	ReleaseAnimations(9)=(AnimationName=3p_1hsharp_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broadsword_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
-	RecoveryAnimations(0)=(AnimationName=3p_1hsharp_slash01recover,ComboAnimation=3p_1hsharp_slash011recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.1,bLastAnimation=true)
-	RecoveryAnimations(1)=(AnimationName=3p_1hsharp_slash02recover,ComboAnimation=3p_1hsharp_slash021recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.75,fBlendInTime=0.00,fBlendOutTime=0.1,bLastAnimation=true)
+	RecoveryAnimations(0)=(AnimationName=3p_1hsharp_slash01recover,ComboAnimation=3p_1hsharp_slash011recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.66,fBlendInTime=0.00,fBlendOutTime=0.1,bLastAnimation=true)
+	RecoveryAnimations(1)=(AnimationName=3p_1hsharp_slash02recover,ComboAnimation=3p_1hsharp_slash021recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.67,fBlendInTime=0.00,fBlendOutTime=0.1,bLastAnimation=true)
 	RecoveryAnimations(2)=(AnimationName=3p_1hsharp_stabrecover,ComboAnimation=3p_1hsharp_stabrecover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.0,bLastAnimation=true)
 	RecoveryAnimations(3)=(AnimationName=3p_1hsharp_sattackrecover_new,ComboAnimation=,AssociatedSoundCue=,bFullBody=true,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.0,bLastAnimation=true,bUseAltBoneBranch=true)
 	RecoveryAnimations(4)=(AnimationName=3p_1hsharp_parryrecover,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.0,bLastAnimation=true)
@@ -203,11 +204,11 @@ DefaultProperties
 	TransitionAnimations(12)=(AnimationName=3p_1hsharp_slash02tostab,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.67,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	TransitionAnimations(13)=(AnimationName=3p_1hsharp_slash021tostab,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.67,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	TransitionAnimations(14)=(AnimationName=THIS_LINE_IS_UNUSED,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	TransitionAnimations(15)=(AnimationName=3p_1hsharp_slash01toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.25,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	TransitionAnimations(16)=(AnimationName=3p_1hsharp_slash011toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.25,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	TransitionAnimations(17)=(AnimationName=3p_1hsharp_slash02toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.25,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	TransitionAnimations(18)=(AnimationName=3p_1hsharp_slash021toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.25,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	TransitionAnimations(19)=(AnimationName=3p_1hsharp_stabtoparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.25,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	TransitionAnimations(15)=(AnimationName=3p_1hsharp_slash01toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.12,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	TransitionAnimations(16)=(AnimationName=3p_1hsharp_slash011toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.12,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	TransitionAnimations(17)=(AnimationName=3p_1hsharp_slash02toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.12,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	TransitionAnimations(18)=(AnimationName=3p_1hsharp_slash021toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.12,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	TransitionAnimations(19)=(AnimationName=3p_1hsharp_stabtoparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.12,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	OtherParryAnimations(0)=(AnimationName=3p_1hsharp_parryhit01,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true,bUseAltNode=true)
 	OtherParryAnimations(1)=(AnimationName=3p_1hsharp_parryhit02,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true,bUseAltNode=true)
 	OtherParryAnimations(2)=(AnimationName=3p_1hsharp_parryhit03,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.3,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true,bUseAltNode=true)

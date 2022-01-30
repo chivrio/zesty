@@ -38,7 +38,7 @@ DefaultProperties
 	ConfigProjectileBaseDamage[0]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[1]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[2]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
-	ConfigProjectileBaseDamage[3]=(Damage=51,InitialSpeed=7200.0,MaxSpeed=5400.0,AmmoCount=6,InitialGravityScale=0.35,Drag=0.000003,PitchCorrection=0)
+	ConfigProjectileBaseDamage[3]=(Damage=51,InitialSpeed=6900.0,MaxSpeed=5400.0,AmmoCount=6,InitialGravityScale=0.3,Drag=0.000003,PitchCorrection=0)
 	ConfigProjectileBaseDamage[4]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
 	ConfigProjectileBaseDamage[5]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
     iFeintStaminaCost=0
