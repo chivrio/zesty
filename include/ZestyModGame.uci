@@ -146,6 +146,7 @@ function GenericPlayerInitialization(Controller C)
         // Connect player to remote service and rename them to display their elo
         class'RankedAPI'.static.OnUserConnect(OnlineSubsystemSteamworks(OnlineSub).UniqueNetIdToInt64(C.PlayerReplicationInfo.UniqueId),
                                               PlayerController(C).GetPlayerNetworkAddress(),
+                                              string(WorldInfo.GetPackageName()),
                                               OnUserConnectOnComplete);
     }
     else
@@ -1035,7 +1036,7 @@ function RankedModeAttemptToStartMatch()
     if (AOCFFAGRI(GameReplicationInfo) != none ||
         AOCDuelGRI(GameReplicationInfo) != none ||
         CDWDuelGRI(GameReplicationInfo) != none ||
-        AOCTOGRI(GameReplicationInfo) != none // TODO: Remove when TO is ready
+        AOCCTFGRI(GameReplicationInfo) != none
     )
     {
         BroadcastMessageToAll("Unsupported gamemode.", sRankedModeChatColour);
@@ -1232,10 +1233,13 @@ function RankedModeEndGame()
         // Round time still ticks down in LTS which makes winning team go to 8 rounds won
         TimeLeft = 3600;
 
-        // Keep on trying to send game results
+        // Register a timer to keep on trying to send game results
         SetTimer(fRankedModeAttemptToSendResultsInterval, true, 'RankedModeAttemptToSendResults');
 
         BroadcastMessageToAll("Sending game results to the remote service...", sRankedModeChatColour);
+
+        // Try to send game results instantly
+        RankedModeAttemptToSendResults();
     }
     else
     {
