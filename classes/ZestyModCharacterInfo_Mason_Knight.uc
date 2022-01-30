@@ -21,7 +21,7 @@ Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_halo", StaticMeshPath="CH_Warlock.S
 Helmets.Add((SkeletalMeshPath="CH_Warlock.sk_LeafCrown", StaticMeshPath="CH_Warlock.SM_LeafCrown", MaterialPath="CH_Warlock.M_Leaves2", GearData=(GroupHexID="1700000027D57C8", GearNameID=GoldLaurels, bVisibleInSelectorIfUnowned=false)))
 
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_helmcrest_mason_knight", StaticMeshPath="CH_Warlock.SM_helmcrest", GearData=(GroupHexID="1700000027D301B", GearNameID=TournamentWinnerHat, bVisibleInSelectorIfUnowned=false)))
-Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_mask", StaticMeshPath="CH_Warlock.SM_Mask", MaterialPath="CH_Warlock.M_SpartaHelm_Mason_INST",   GearData=(GroupHexID="1700000027D5452", GearNameID=DMKS, bVisibleInSelectorIfUnowned=false)))
+Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_mask", StaticMeshPath="CH_Warlock.SM_Mask",  GearData=(GroupHexID="1700000027D5452", GearNameID=DMKS, bVisibleInSelectorIfUnowned=false)))
 
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_pughat", StaticMeshPath="CH_Warlock.SM_pughat", GearData=(GroupHexID="1700000027D6646", GearNameID=PugPeasant, bVisibleInSelectorIfUnowned=false)))
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_Cowboy", StaticMeshPath="CH_Warlock.SM_Cowboy", GearData=(GroupHexID="1700000027DC808", GearNameID=Cowboy, bVisibleInSelectorIfUnowned=false)))
