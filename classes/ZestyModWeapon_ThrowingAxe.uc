@@ -9,7 +9,7 @@ DefaultProperties
     MaxAmmoCount=1
     AIRange=5000
 
-    WeaponProjectiles(0)=class'AOCProj_ThrownAxe'
+    WeaponProjectiles(0)=class'ZestyModProj_ThrownAxe'
 
     AttachmentClass=class'AOCWeaponAttachment_ThrownAxe'
     // should never be part of inventory attachment
