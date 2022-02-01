@@ -851,8 +851,8 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
                 StaminaDamage = Info.HitActor.Stamina;
                 Info.HitActor.ConsumeStamina(StaminaDamage);
 
-                // Regain 33 stamina
-                Info.HitActor.ConsumeStamina(-33.f);
+                // Regain 31 stamina
+                Info.HitActor.ConsumeStamina(-31.f);
                 AOCWeapon(Info.HitActor.Weapon).ActivateFlinch(true, Info.HitActor.GetHitDirection(Location), true, true, AOCWeapon(Weapon).bTwoHander);
 
                 // The hit does zero damage
