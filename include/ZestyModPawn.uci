@@ -711,9 +711,9 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
 
         // MAA gets extra stamina on kill
         if (PawnInfo.myFamily.ClassReference == ECLASS_ManAtArms) {
-                Info.Instigator.ConsumeStamina(-45.f);
+                Info.Instigator.ConsumeStamina(-39.f);
         } else {
-            Info.Instigator.ConsumeStamina(-36.f);
+            Info.Instigator.ConsumeStamina(-31.f);
         }
         StaminaAtKill = Info.Instigator.Stamina;
 
@@ -851,8 +851,8 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
                 StaminaDamage = Info.HitActor.Stamina;
                 Info.HitActor.ConsumeStamina(StaminaDamage);
 
-                // Regain 36 stamina
-                Info.HitActor.ConsumeStamina(-36.f);
+                // Regain 33 stamina
+                Info.HitActor.ConsumeStamina(-33.f);
                 AOCWeapon(Info.HitActor.Weapon).ActivateFlinch(true, Info.HitActor.GetHitDirection(Location), true, true, AOCWeapon(Weapon).bTwoHander);
 
                 // The hit does zero damage
@@ -1410,8 +1410,8 @@ DefaultProperties
     bIsInSmoke=false
 
     CustomizationClass=class'ZestyModCustomization'
-
-    fStaminaRegenCooldown=1.6
+    
+    fStaminaRegenCooldown=1.5
     fLowStaminaThreshold=15.0
     fJumpStaminaCost=3.0
 
