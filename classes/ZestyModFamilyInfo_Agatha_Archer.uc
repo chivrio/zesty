@@ -13,6 +13,7 @@ DefaultProperties
     NewPrimaryWeapons(7)=(CWeapon=class'ZestyModWeapon_JavelinMelee',CForceTertiary=(class'ZestyModWeapon_Buckler_Agatha'))
     NewPrimaryWeapons(8)=(CWeapon=class'ZestyModWeapon_HeavyJavelinMelee',CForceTertiary=(class'ZestyModWeapon_Buckler_Agatha'))
     NewPrimaryWeapons(9)=(CWeapon=class'ZestyModWeapon_Sling',CForceTertiary=(class'AOCWeapon_ProjPebble',class'AOCWeapon_ProjLeadBall'))
+    NewPrimaryWeapons(10)=(CWeapon=class'ZestyModWeapon_Hatchet',CForceTertiary=(class'ZestyModWeapon_ThrowingAxeArcher'))
 
     NewSecondaryWeapons.empty;
     NewSecondaryWeapons(0)=(CWeapon=class'ZestyModWeapon_Dagesse')
@@ -30,7 +31,8 @@ DefaultProperties
     NewTertiaryWeapons(5)=(CWeapon=class'ZestyModWeapon_Buckler_Agatha',bEnabledDefault=false)
     NewTertiaryWeapons(6)=(CWeapon=class'ZestyModWeapon_SmokePot',bEnabledDefault=false)
     NewTertiaryWeapons(7)=(CWeapon=class'AOCWeapon_ProjPebble',bEnabledDefault=false) 
-    NewTertiaryWeapons(8)=(CWeapon=class'AOCWeapon_ProjLeadBall',bEnabledDefault=false) 
+    NewTertiaryWeapons(8)=(CWeapon=class'AOCWeapon_ProjLeadBall',bEnabledDefault=false)
+    NewTertiaryWeapons(9)=(CWeapon=class'ZestyModWeapon_ThrowingAxeArcher',bEnabledDefault=false)
 
 	ProjectileLocationModifiers(EHIT_Head) = 2
 	ProjectileLocationModifiers(EHIT_Torso) = 1.5
