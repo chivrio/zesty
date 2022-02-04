@@ -137,7 +137,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Bill]
      */
-	iFeintStaminaCost=18
+	iFeintStaminaCost=16
 	FeintTime=0.3
 	TertiaryFeintTime=0.45
 	ComboFeintTime=0.55
@@ -201,7 +201,7 @@ DefaultProperties
 	TransitionAnimations(4)=(AnimationName=3p_halberd_stabtoslash01,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.72,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	TransitionAnimations(5)=(AnimationName=3p_halberd_slash01toslash021,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.72,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	TransitionAnimations(6)=(AnimationName=3p_halberd_slash021downtoup,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.73,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
-	TransitionAnimations(7)=(AnimationName=3p_halberd_slash011toslash02,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.71,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
+	TransitionAnimations(7)=(AnimationName=3p_halberd_slash011toslash02,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.72,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	TransitionAnimations(8)=(AnimationName=3p_halberd_slash021toslash02,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.71,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	TransitionAnimations(9)=(AnimationName=3p_halberd_stabtoslash02,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.71,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	TransitionAnimations(10)=(AnimationName=3p_halberd_slash01tostab,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.7,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)

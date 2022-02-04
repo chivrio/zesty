@@ -84,7 +84,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_ShortSpearMelee]
      */
-	iFeintStaminaCost=12
+	iFeintStaminaCost=13
 	FeintTime=0.22
 	TertiaryFeintTime=0.45
 	fParryNegation=14

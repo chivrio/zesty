@@ -132,7 +132,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_PoleAxe]
      */
-	iFeintStaminaCost=18
+	iFeintStaminaCost=16
 	FeintTime=0.22
 	TertiaryFeintTime=0.42
 	ComboFeintTime=0.51

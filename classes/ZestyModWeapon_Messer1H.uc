@@ -136,7 +136,7 @@ DefaultProperties
     /*
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Messer1H]
      */
-	iFeintStaminaCost=15
+	iFeintStaminaCost=14
 	FeintTime=0.45
 	TertiaryFeintTime=0.475
 	ComboFeintTime=0.53
