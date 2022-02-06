@@ -25,7 +25,7 @@ Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_Cowboy", StaticMeshPath="CH_Warlock
 Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_StrawHat", StaticMeshPath="CH_Warlock.SM_StrawHat", GearData=(GroupHexID="1700000027F2901", GearNameID=StrawHat, bVisibleInSelectorIfUnowned=false)))
 
 
-Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_Sparta", StaticMeshPath="CH_Warlock.SM_Sparta", GearData=(GroupHexID="1700000027F2901", GearNameID=Season1_GM_Reward, bVisibleInSelectorIfUnowned=false)))
+Helmets.Add((SkeletalMeshPath="CH_Warlock.SK_Sparta", StaticMeshPath="CH_Warlock.SM_Sparta", GearData=(GroupHexID="1700000027F297B", GearNameID=Season1_GM_Reward, bVisibleInSelectorIfUnowned=false)))
 
 
 }
