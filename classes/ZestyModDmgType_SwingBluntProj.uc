@@ -10,8 +10,9 @@ class ZestyModDmgType_SwingBluntProj extends AOCDmgType_PierceBluntProj;
 DefaultProperties
 {
 	bIsProjectile =true
-	DamageType(EDMG_Swing)  = 0.9f
+	bCanHeadExplode=false
+	DamageType(EDMG_Swing)  = 0.75f
 	DamageType(EDMG_Pierce) = 0.0f
-	DamageType(EDMG_Blunt)  = 0.1f
+	DamageType(EDMG_Blunt)  = 0.25f
 	DamageType(EDMG_Generic)= 0.0f
 }
