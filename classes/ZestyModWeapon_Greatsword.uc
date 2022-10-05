@@ -136,9 +136,9 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_Greatsword]
      */
 	iFeintStaminaCost=16
-	FeintTime=0.33
-	TertiaryFeintTime=0.45
-	ComboFeintTime=0.54
+	FeintTime=0.325
+	TertiaryFeintTime=0.435
+	ComboFeintTime=0.535
 	fParryNegation=15
 	ParryDrain(0)=27
 	ParryDrain(1)=29
@@ -154,7 +154,7 @@ DefaultProperties
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_longsword_slash01downtoup,ComboAnimation=3p_longsword_slash011downtoup,AlternateAnimation=3p_longsword_slash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.585,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,fShieldAnimLength=0.0)
 	WindupAnimations(1)=(AnimationName=3p_longsword_slash02downtoup,ComboAnimation=3p_longsword_slash021downtoup,AlternateAnimation=3p_longsword_slash021altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.585,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	WindupAnimations(2)=(AnimationName=3p_longsword_stabdowntoup,ComboAnimation=,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.685,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	WindupAnimations(2)=(AnimationName=3p_longsword_stabdowntoup,ComboAnimation=,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.68,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(3)=(AnimationName=3p_longsword_sattackdowntoup_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Footsteps.Vanguard_Dirt_Jump',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true,bUseRMM=true)
 	WindupAnimations(4)=(AnimationName=3p_longsword_parryib,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.longsword_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltNode=true)
 	WindupAnimations(5)=(AnimationName=3p_longsword_shovestart,ComboAnimation=,AssociatedSoundCue=,bFullBody=True,bCombo=False,bLoop=False,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.54,fBlendInTime=0.05,fBlendOutTime=0.00,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true)
@@ -200,7 +200,7 @@ DefaultProperties
 	TransitionAnimations(9)=(AnimationName=3p_longsword_stabtoslash02,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.71,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	TransitionAnimations(10)=(AnimationName=3p_longsword_slash01tostab,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.7,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	TransitionAnimations(11)=(AnimationName=3p_longsword_slash011tostab,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.68,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	TransitionAnimations(12)=(AnimationName=3p_longsword_slash02tostab,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.69,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+	TransitionAnimations(12)=(AnimationName=3p_longsword_slash02tostab,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.7,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	TransitionAnimations(13)=(AnimationName=3p_longsword_slash021tostab,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.68,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	TransitionAnimations(14)=(AnimationName=THIS_LINE_IS_UNUSED,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.8,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	TransitionAnimations(15)=(AnimationName=3p_longsword_slash01toparry,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.12,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)

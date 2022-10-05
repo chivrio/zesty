@@ -57,6 +57,27 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_pol_Halberd.sm_Halberd",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="ui_custweaponimages_swf.skin_halberd_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_pol_Halberd_Variant_01.WEP_KrakenHalberd",
+		StaticMeshPath="WP_pol_Halberd_Variant_01.SM_KrakenHalberd",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_kraken_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="Wp_pol_Halberd_Variant_02.WEP_Halberd_Variant_01",
+		StaticMeshPath="Wp_pol_Halberd_Variant_02.SM_Halberd_Variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_royalHalberd_png"
+		)};
+	Skins(4)={(
+		SkeletalMeshPath="WP_15hs_Halberd_Variant_05.Wep_halberd_variation_01",
+		StaticMeshPath="WP_15hs_Halberd_Variant_05.SM_halberd_variation_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_butchers_halberd_png"
 		)};
 }

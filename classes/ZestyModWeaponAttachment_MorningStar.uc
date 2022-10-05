@@ -59,6 +59,22 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_1hb_Morning_Star.SM_MorningStar",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_morning_star_png"
 		)};
+		
+	Skins(1)={(
+		SkeletalMeshPath="WP_depth.wep_Deepfang",
+		StaticMeshPath="WP_depth.sm_deepfang",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_shark_tooth_mace_png"
+		)};
+		
+	Skins(2)={(
+		SkeletalMeshPath="WP_1hb_Morning_Star_Var_01.WEP_MorningStar_Var_01",
+		StaticMeshPath="WP_1hb_Morning_Star_Var_01.SM_MorningStar_Var_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_headBanger_png"
+		)};		
 }

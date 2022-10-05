@@ -61,6 +61,41 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_15hs_SwordOfWar.swordofwar",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="ui_custweaponimages_swf.skin_sword_of_war_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="wp_15hs_swordofwar_varaint_02.wep_swordofwar_variant_01",
+		StaticMeshPath="wp_15hs_swordofwar_varaint_02.sm_swordofwar_variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_winterSoldier_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_15hs_SwordOfWar_Variant_04.wep_wkswordofwar",
+		StaticMeshPath="WP_15hs_SwordOfWar_Variant_04.SM_wkswordofwar",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_whiteKnight_swordofWar_png"
+		)};
+	Skins(4)={(
+		SkeletalMeshPath="WP_15hs_SwordOfWar_Variant_05.WEP_DuererSword",
+		StaticMeshPath="WP_15hs_SwordOfWar_Variant_05.SM_DuererSword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_durer_sword_png"
+		)};
+	Skins(5)={(
+		SkeletalMeshPath="WP_15hs_SwordOfWar_Varaint_05.WEP_WWolf_SoW",
+		StaticMeshPath="WP_15hs_SwordOfWar_Varaint_05.SM_WWolf_SoW",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_whitewolf_png"
+		)};
+	Skins(6)={(
+		SkeletalMeshPath="Wp_15hs_SwordOfWar_Variant_06.wep_swordofwar_Reva",
+		StaticMeshPath="Wp_15hs_SwordOfWar_Variant_06.SM_swordofwar_Reva",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_revenantsword_png"
 		)};
 }

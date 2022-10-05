@@ -53,12 +53,54 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=32500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-Skins.empty;
-Skins(0)={(
+    Skins.empty;
+	Skins(0)={(
 		SkeletalMeshPath="WP_15hs_Longsword.WEP_Longsword",
 		StaticMeshPath="WP_15hs_Longsword.sm_Longsword",
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_longsword_png"
 		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_15hs_Longsword_Variant_01.Materials.WEP_Longsword",
+		StaticMeshPath="WP_15hs_Longsword_Variant_01.sm_Longsword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_hounds_longsword_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_15hs_Longsword_Variant_02.WEP_15hs_Longsword_Variant_01",
+		StaticMeshPath="WP_15hs_Longsword_Variant_02.SM_15hs_Longsword_Variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_styrian_png"
+		)};		
+	Skins(3)={(
+		SkeletalMeshPath="WP_15hs_Longsword_Variant_03.Meshes.Wep_SK_OrnamentalLongsword",
+		StaticMeshPath="WP_15hs_Longsword_Variant_03.Meshes.Wep_SM_OrnamentalLongsword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_ornamental_png"
+		)};	
+	Skins(4)={(
+		SkeletalMeshPath="WP_15hs_Longsword_Variant_04.WEP_XII_Bastard",
+		StaticMeshPath="WP_15hs_Longsword_Variant_04.SM_XII_Bastard",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_XII_png"
+		)};
+	Skins(6)={(
+		SkeletalMeshPath="WP_15hs_Longsword_Variant_06.WEP_LongSwordDrac",
+		StaticMeshPath="WP_15hs_Longsword_Variant_06.SM_LongSwordDrac",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_dracul_png"
+		)};	
+	Skins(7)={(
+		SkeletalMeshPath="WP_15hs_Longsword_Variant_07.WP_15hs_LongswordArbiter",
+		StaticMeshPath="WP_15hs_Longsword_Variant_07.SW_LongswordArbiter",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_arbitersword_png"
+		)};	
 }

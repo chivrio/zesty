@@ -38,6 +38,20 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_aux_Cudgel.SM_Cudgel",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath=""
+		ImagePath="UI_CustWeaponImages_SWF.skin_cudgel_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_aux_cudgel_variant_01.WEP_cudgel_v01",
+		StaticMeshPath="WP_aux_cudgel_variant_01.SM_cudgel_v01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_skullCrusher_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_aux_cudgel_variant_02.Wep_cudgel_variation_01",
+		StaticMeshPath="WP_aux_cudgel_variant_02.SM_cudgel_variation_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_block_knocker_png"
 		)};
 }

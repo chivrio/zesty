@@ -66,4 +66,32 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_maul_png"
 		)};
+	Skins(2)={(
+		SkeletalMeshPath="wp_hbl_maul_variant_02.WEP_PointyHammer",
+		StaticMeshPath="wp_hbl_maul_variant_02.SM_PointyHammer",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_pulverizer_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="wp_hbl_maul_variant_03.WEP_GuiltyGavel",
+		StaticMeshPath="wp_hbl_maul_variant_03.SM_GuiltyGavel",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_guiltyGavel_png"
+		)};
+	Skins(4)={(
+		SkeletalMeshPath="WP_hbl_Maul_Variant_04.WEP_Maul_Variant",
+		StaticMeshPath="WP_hbl_Maul_Variant_04.SM_Maul_Variant",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_maulverizer_png"
+		)};
+	Skins(6)={(
+		SkeletalMeshPath="WP_hbl_Maul_Variant_06.WEP_gothicmaul",
+		StaticMeshPath="WP_hbl_Maul_Variant_06.SM_gothicmaul",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_gothic_maul_png"
+		)};
 }

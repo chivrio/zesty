@@ -44,4 +44,18 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_quarterstaff_png"
 		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_DL1_quarterstaff_variant_02.WEP_quarterstaff_variant_01",
+		StaticMeshPath="WP_DL1_quarterstaff_variant_02.SM_quarterstaff",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_thornstaff_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_DL1_quarterstaff_Var_03.WEP_quarterstaff_var_03",
+		StaticMeshPath="WP_DL1_quarterstaff_Var_03.SM_quarterstaff_var_03",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_oilystool_qstaff_png"
+		)};		
 }

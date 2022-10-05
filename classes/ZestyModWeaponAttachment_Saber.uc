@@ -40,6 +40,27 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_aux_Saber.SM_Saber",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_sabreDefault_png"
 		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_aux_saber_variant_01.WEP_aux_saber_variant_01",
+		StaticMeshPath="WP_aux_saber_variant_01.SM_aux_saber_variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_ottoman_sabre_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_aux_saber_variant_02.WEP_saber_variant_01",
+		StaticMeshPath="WP_aux_saber_variant_02.SM_saber_variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_vicomte_sabre_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_aux_saber_variant_03.WEP_Scimitar",
+		StaticMeshPath="WP_aux_saber_variant_03.SM_Scimitar",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_vypress_scimitar_png"
+		)};		
 }

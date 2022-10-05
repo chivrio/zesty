@@ -59,6 +59,22 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_2hs_Claymore.sm_claymore",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath=""
+		ImagePath="UI_CustWeaponImages_SWF.skin_claymore_png"
+		)};
+
+	Skins(1)={(
+		SkeletalMeshPath="WP_2hs_claymore_variant_01.Meshes.wep_claymore_variant_01",
+		StaticMeshPath="WP_2hs_claymore_variant_01.SM_claymore_variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_fiorCharaid_png"
+		)};
+
+	Skins(2)={(
+		SkeletalMeshPath="WP_15hs_Claymore_Variant_05.wep_claymore_variant_02",
+		StaticMeshPath="WP_15hs_Claymore_Variant_05.wep_claymore_variant_02",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_highlander_claymore_png"
 		)};
 }

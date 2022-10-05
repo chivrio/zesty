@@ -54,11 +54,25 @@ KickOffset=(X=39, Y=0, Z=-42)
     AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
 	Skins.empty;
-    Skins(0)={(
+	Skins(0)={(
 		SkeletalMeshPath="WP_1hb_Mace.WEP_mace",
 		StaticMeshPath="WP_1hb_Mace.sm_Mace",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_mace_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_1hb_Mace_Variant_01.wep_wkmace",
+		StaticMeshPath="WP_1hb_Mace_Variant_01.sm_wkmace",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_whiteknight_mace_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_1hb_Mace_Variant_02.WEP_RBMace",
+		StaticMeshPath="WP_1hb_Mace_Variant_02.SM_RBMace",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_robberBaron_mace_png"
 		)};
 }

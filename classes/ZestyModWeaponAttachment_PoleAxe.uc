@@ -61,6 +61,35 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_2ha_Pollaxe.sm_Pollaxe",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="ui_custweaponimages_swf.skin_pollaxe_png"
+		)};
+
+	Skins(1)={(
+		SkeletalMeshPath="WP_2ha_Pollaxe_variant_01.SK_WEP_LeoPoleaxe",
+		StaticMeshPath="WP_2ha_Pollaxe_variant_01.SM_WEP_LeoPoleaxe",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_leo_axe_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_2ha_Pollaxe_variant_02.WEP_TheWarbringer",
+		StaticMeshPath="WP_2ha_Pollaxe_variant_02.SM_TheWarbringer",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_warbringer_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_poleaxe_Variant_03.WEP_2ha_pollaxe_variant_03",
+		StaticMeshPath="WP_poleaxe_Variant_03.SM_2ha_pollaxe_variant_03",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_pollax_png"
+		)};
+	Skins(4)={(
+		SkeletalMeshPath="WP_2ha_Pollaxe_variant_03.WEP_goldenage",
+		StaticMeshPath="WP_2ha_Pollaxe_variant_03.SM_goldenage",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_goldenage_png"
 		)};
 }

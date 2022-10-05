@@ -63,6 +63,21 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_2ha_doubleaxe.SM_Double_Axe",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath=""
+		ImagePath="ui_custweaponimages_swf.skin_doubleaxe_png"
+		)};
+
+	Skins(1)={(
+		SkeletalMeshPath="WP_2ha_doubleaxe_Variant_01.WEP_Hengest_and_Horsa",
+		StaticMeshPath="WP_2ha_doubleaxe_Variant_01.SM_HengestAndHorsa",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_hengest_horsa_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_2ha_doubleaxe_Variant_02.WEP_doubleaxe",
+		StaticMeshPath="WP_2ha_doubleaxe_Variant_02.SM_DoubleAxe",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_ironsplitter_png"
 		)};
 }

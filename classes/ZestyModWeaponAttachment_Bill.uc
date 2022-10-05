@@ -45,9 +45,9 @@ KickOffset=(X=39, Y=0, Z=-42)
 	WeaponClass=class'ZestyModWeapon_Bill'
 	WeaponSocket=wepPolepoint
 
-	AttackTypeInfo(0)=(fBaseDamage=66.0, fForce=34000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=72.0, fForce=33000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
-	AttackTypeInfo(2)=(fBaseDamage=69.0, fForce=33500, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=66.0, fForce=35000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=72.0, fForce=34000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
+	AttackTypeInfo(2)=(fBaseDamage=69.0, fForce=34500, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=100.0, fForce=65000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=25500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
@@ -58,6 +58,20 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_pol_Bill.sm_Bill",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath=""
+		ImagePath="ui_custweaponimages_swf.skin_billhook_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_pol_Bill_Variant_01.WEP_bill_shark",
+		StaticMeshPath="WP_pol_Bill_Variant_01.SM_bill_shark",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_shark_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_Pol_Bill_Variant_02.wep_bill_var_03",
+		StaticMeshPath="WP_Pol_Bill_Variant_02.sm_bill_var_03",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_reaperbillhook_png"
 		)};
 }

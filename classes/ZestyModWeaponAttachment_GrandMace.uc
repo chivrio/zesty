@@ -62,4 +62,25 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_grand_mace_png"
 		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_hbl_grandmace_variant_01.Mesh.wep_grand-mace_variant_01",
+		StaticMeshPath="WP_hbl_grandmace_variant_01.Mesh.SM_grandmace_variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_crushing_mace_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_hbl_grandmace_variant_02.WEP_hbl_grandmace_variant_02",
+		StaticMeshPath="WP_hbl_grandmace_variant_02.SM_hbl_grandmace_variant_02",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_devastator_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_hbl_grandmace_variant_03.WEP_Pathmaker",
+		StaticMeshPath="WP_hbl_grandmace_variant_03.SM_Pathmaker",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_pathmaker_png"
+		)};
 }

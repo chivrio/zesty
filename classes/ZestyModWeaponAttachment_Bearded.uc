@@ -51,7 +51,7 @@ KickOffset=(X=39, Y=0, Z=-42)
 
 	AttackTypeInfo(0)=(fBaseDamage=111.0, fForce=36000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(1)=(fBaseDamage=111.0, fForce=30000, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
-	AttackTypeInfo(2)=(fBaseDamage=33.0, fForce=33000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(2)=(fBaseDamage=36.0, fForce=33000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=40500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
@@ -63,5 +63,29 @@ KickOffset=(X=39, Y=0, Z=-42)
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_bearded_axe_png"
+		)};
+
+	Skins(1)={(
+		SkeletalMeshPath="WP_2ha_bearded_Variant_01.WEP_bearded_axe",
+		StaticMeshPath="WP_2ha_bearded_Variant_01.sm_bearded_axe",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_judgement_axe_png"
+		)};
+
+	Skins(2)={(
+		SkeletalMeshPath="WP_2ha_bearded_Variant_02.WEP_ChickenAxe",
+		StaticMeshPath="WP_2ha_bearded_Variant_02.SM_ChickenAxe",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_chicken_axe_png"
+		)};
+
+	Skins(3)={(
+		SkeletalMeshPath="WP_2ha_bearded_Variant_03.WEP_BEARAXE",
+		StaticMeshPath="WP_2ha_bearded_Variant_03.sm_BEARAXE",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_bear_axe_png"
 		)};
 }

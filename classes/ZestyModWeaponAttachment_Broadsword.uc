@@ -40,4 +40,44 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_broadsword_png"
 		)};
+		
+	Skins(3)={(
+		SkeletalMeshPath="WP_1hs_Broadsword_Variant_03.WEP_KinSlayer",
+		StaticMeshPath="WP_1hs_Broadsword_Variant_03.SM_KinSlayer",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_kinslayer_png"
+		)};
+
+	Skins(4)={(
+		SkeletalMeshPath="WP_1hs_Broadsword_Variant_04.WEP_Bohemiansword",
+		StaticMeshPath="WP_1hs_Broadsword_Variant_04.SM_Bohemiansword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_bohemian_broadsword_png"
+		)};
+
+	Skins(5)={(
+		SkeletalMeshPath="WP_1hs_Broadsword_Variant_06.WEP_Broadsword",
+		StaticMeshPath="WP_1hs_Broadsword_Variant_06.sm_Broadsword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_ice_breaker_png"
+		)};
+
+	Skins(6)={(
+		SkeletalMeshPath="WP_1hs_Broadsword_Variant_05.WEP_Tsword",
+		StaticMeshPath="StaticMesh'WP_1hs_Broadsword_Variant_05.SM_Tsword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_squire_trainer_png"
+		)};
+		
+	Skins(7)={(
+		SkeletalMeshPath="WP_1hs_Broadsword_Variant_07.WEP_XIIBroadsword",
+		StaticMeshPath="WP_1hs_Broadsword_Variant_07.SM_XIIBroadsword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_xiibroadsword_png"
+		)};
 }

@@ -60,6 +60,28 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_1ha_Waraxe.Meshes.SM_WarAxe",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_warAxe_png"
+		)};
+
+	Skins(1)={(
+		SkeletalMeshPath="WP_1ha_Waraxe_Variant_02.WEP_Trusty_Battle_Axe",
+		StaticMeshPath="WP_1ha_Waraxe_Variant_02.SM_Trusty_Battle_Axe",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_sunder_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_1ha_WarAxe_Variant_01.WEP_1ha_WarAxe_Variant_01",
+		StaticMeshPath="WP_1ha_WarAxe_Variant_01.SM_1ha_WarAxe_Variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_reiver_warAxe_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_1ha_Waraxe_variant_03.WEP_Waraxe_v01",
+		StaticMeshPath="WP_1ha_Waraxe_variant_03.SM_Waraxe_v01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_campaigner_png"
 		)};
 }

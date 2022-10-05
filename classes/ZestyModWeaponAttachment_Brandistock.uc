@@ -40,4 +40,20 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_brandistock_png"
 		)};
+
+	Skins(2)={(
+		SkeletalMeshPath="WP_spr_Brandistock_variant_02.WEP_brandistock_variant_02",
+		StaticMeshPath="WP_spr_Brandistock_variant_02.SM_brandistock_variant_02",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_sharp_claw_png"
+		)};
+	
+	Skins(3)={(
+		SkeletalMeshPath="WP_spr_brandistock_variant_03.WEP_brandistock_variation_03",
+		StaticMeshPath="WP_spr_brandistock_variant_03.SM_brandistock_variation_03",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_bloodiron_png"
+		)};
 }

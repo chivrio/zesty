@@ -59,6 +59,13 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_1hb_HolyWaterSprinkler.SM_HWS",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="ui_custweaponimages_swf.skin_watersprinkler_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WB_1hb_HolyWaterSprinkler_Variant_01.SK_flight_weapon_lod0",
+		StaticMeshPath="WB_1hb_HolyWaterSprinkler_Variant_01.SM_flight_weapon_lod0",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_winged_wrath_sprinkler_png"
 		)};
 }

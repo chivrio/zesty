@@ -48,8 +48,8 @@ KickOffset=(X=39, Y=0, Z=-42)
 
 	WeaponStaticMeshScale=1
 
-	AttackTypeInfo(0)=(fBaseDamage=87, fForce=35000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
-	AttackTypeInfo(1)=(fBaseDamage=93, fForce=34000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(0)=(fBaseDamage=90, fForce=35000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
+	AttackTypeInfo(1)=(fBaseDamage=96, fForce=34000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(2)=(fBaseDamage=69, fForce=34500, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(3)=(fBaseDamage=100.0, fForce=65000, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_Pierce", iWorldHitLenience=6)
@@ -61,6 +61,20 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_dl1_PoleHammer.SM_polehammer",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_polehammer_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_dl1_PoleHammer_Variant_01.WEP_polehammer_variation_01",
+		StaticMeshPath="WP_dl1_PoleHammer_Variant_01.SM_polehammer_variation_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_adeptusmalleum_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_dl1_PoleHammer_Variant_02.WEP_julionicolettiPolehammer01",
+		StaticMeshPath="WP_dl1_PoleHammer_Variant_02.SM_julionicolettiPolehammer01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_heavyheadpolehammer_png"
 		)};
 }

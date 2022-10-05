@@ -42,4 +42,32 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_norse_sword_png"
 		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_1hs_Norse_Sword_Variant.wep_norsesword_Variant_01",
+		StaticMeshPath="WP_1hs_Norse_Sword_Variant.sm_NorseSword_Variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_wulfrics_sword_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_1hs_Norse_Sword_Variant_02.WEP_RenaissanceSword",
+		StaticMeshPath="WP_1hs_Norse_Sword_Variant_02.SM_RenaissanceSword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_renaissance_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_1hs_norsesword_variant_03.WEP_Sunsword",
+		StaticMeshPath="WP_1hs_norsesword_variant_03.SM_Sunsword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_sun_sword_png"
+		)};
+	Skins(4)={(
+		SkeletalMeshPath="WP_1hs_Norse_Sword_Variant_05.WEP_Germanic_Spatha",
+		StaticMeshPath="WP_1hs_Norse_Sword_Variant_05.SM_Germanic_Spatha",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_chieftansSpatha_png"
+		)};
 }

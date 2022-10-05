@@ -39,6 +39,30 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_spr_Fork.sm_Fork",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_fork_png"
+		)};
+
+	Skins(1)={(
+		SkeletalMeshPath="wp_spr_fork_variant01.Wep_Rustypitchfork",
+		StaticMeshPath="wp_spr_fork_variant01.SM_Rustypitchfork",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_peasants_pitchfork_png"
+		)};
+
+	Skins(2)={(
+		SkeletalMeshPath="WP_spr_Fork_Variant_02.WEP_ROYALFORK",
+		StaticMeshPath="WP_spr_Fork_Variant_02.SM_ROYALFORK",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_royal_fork_png"
+		)};
+		
+	Skins(3)={(
+		SkeletalMeshPath="WP_spr_Fork_Variant_03.WEP_fork_v01",
+		StaticMeshPath="WP_spr_Fork_Variant_03.SM_fork_v01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_fleshdivider_png"
 		)};
 }

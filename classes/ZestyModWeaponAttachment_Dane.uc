@@ -39,6 +39,13 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_1ha_Dane.sm_dane",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath=""
+		ImagePath="UI_CustWeaponImages_SWF.skin_dane_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_1ha_dane_Variant_01.WEP_1ha_dane_Variant_01",
+		StaticMeshPath="WP_1ha_dane_Variant_01.SM_1ha_dane_Variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_gefjon_png"
 		)};
 }

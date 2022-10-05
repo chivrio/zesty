@@ -59,6 +59,13 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_hbl_WarHammer.SM_Warhammer",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_warhammer_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_15hs_Warhammer_Variant_06.WEP_Warhammer_Variant_01",
+		StaticMeshPath="WP_15hs_Warhammer_Variant_06.WEP_Warhammer_Variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_skullcracker_png"
 		)};
 }

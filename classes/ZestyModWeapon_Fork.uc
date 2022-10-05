@@ -142,7 +142,7 @@ DefaultProperties
      */
 	iFeintStaminaCost=16
 	FeintTime=0.33
-	TertiaryFeintTime=0.42
+	TertiaryFeintTime=0.41
 	fParryNegation=15
 	ParryDrain(0)=27
 	ParryDrain(1)=26
@@ -151,9 +151,9 @@ DefaultProperties
 	WeaponReach=100
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_fork"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_fork_png"
-	HorizontalRotateSpeed=57000.0
-	VerticalRotateSpeed=50000.0
-	AttackHorizRotateSpeed=57000.0
+	HorizontalRotateSpeed=60000.0
+	VerticalRotateSpeed=51000.0
+	AttackHorizRotateSpeed=60000.0
 	SprintAttackHorizRotateSpeed=25000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_spear_smashdowntoup,ComboAnimation=3p_spear_smash011altdowntoup,AlternateAnimation=3p_spear_smash011altdowntoup,AssociatedSoundCue=,bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.56,fBlendInTime=0.10,fBlendOutTime=0.00,bLastAnimation=false)
@@ -167,7 +167,7 @@ DefaultProperties
 	WindupAnimations(8)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	WindupAnimations(9)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(0)=(AnimationName=3p_spear_smashrelease,ComboAnimation=3p_spear_smash011release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_attack_01',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.33,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
-	ReleaseAnimations(1)=(AnimationName=3p_spear_stab02release,ComboAnimation=3p_spear_stab021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.38,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
+	ReleaseAnimations(1)=(AnimationName=3p_spear_stab02release,ComboAnimation=3p_spear_stab021release,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Attack_02',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.385,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	ReleaseAnimations(2)=(AnimationName=3p_spear_stab01release,ComboAnimation=3p_spear_smashrelease,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Attack_03',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.32,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(3)=(AnimationName=3p_spear_sattackrelease_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_sprint_attack',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true)
 	ReleaseAnimations(4)=(AnimationName=3p_spear_parryup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.halberd_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)

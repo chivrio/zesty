@@ -138,7 +138,7 @@ DefaultProperties
      */
 	iFeintStaminaCost=16
 	FeintTime=0.3
-	TertiaryFeintTime=0.45
+	TertiaryFeintTime=0.445
 	ComboFeintTime=0.55
 	fParryNegation=15
 	ParryDrain(0)=28
@@ -155,7 +155,7 @@ DefaultProperties
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_halberd_slash01downtoup,ComboAnimation=3p_halberd_slash011downtoup,AlternateAnimation=3p_halberd_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.605,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	WindupAnimations(1)=(AnimationName=3p_halberd_slash02downtoup,ComboAnimation=3p_halberd_slash021downtoup,AlternateAnimation=3p_halberd_slash021altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.605,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
-	WindupAnimations(2)=(AnimationName=3p_halberd_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.67,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
+	WindupAnimations(2)=(AnimationName=3p_halberd_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.665,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	WindupAnimations(3)=(AnimationName=3p_halberd_sattackdowntoup_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Footsteps.Paladin_Dirt_Jump',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true,bUseRMM=true)
 	WindupAnimations(4)=(AnimationName=3p_halberd_parryib,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	WindupAnimations(5)=(AnimationName=3p_halberd_shovestart,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=True,bCombo=False,bLoop=False,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.54,fBlendInTime=0.05,fBlendOutTime=0.00,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true)

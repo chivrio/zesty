@@ -40,4 +40,20 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshScale=1.0,
 		ImagePath="ui_custweaponimages_swf.skin_shortsword_png"
 		)};
+
+	Skins(1)={(
+		SkeletalMeshPath="WP_aux_Shortsword_Variant_01.wep_shortsword_variant_01",
+		StaticMeshPath="WP_aux_Shortsword_Variant_01.SM_Shortsword_Variant_01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_seax_png"
+		)};
+		
+	Skins(2)={(
+		SkeletalMeshPath="WP_aux_Shortsword_variant_02.WEP_julionicolettiShortsword01",
+		StaticMeshPath="WP_aux_Shortsword_variant_02.SM_julionicolettiShortsword01",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_victory_png"
+		)};
 }

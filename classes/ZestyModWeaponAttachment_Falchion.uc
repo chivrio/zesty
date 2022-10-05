@@ -38,6 +38,13 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshPath="WP_1hs_Falchion.sm_falchion",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath=""
+		ImagePath="UI_CustWeaponImages_SWF.skin_falchion_png"
+		)};
+	Skins(1)={(
+		SkeletalMeshPath="WP_1hs_Falchion_Variant_01.WEP_falchion",
+		StaticMeshPath="WP_1hs_Falchion_Variant_01.sm_falchion",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_assault_falchion_png"
 		)};
 }
