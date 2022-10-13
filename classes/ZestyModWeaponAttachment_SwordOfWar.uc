@@ -55,8 +55,15 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=32500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
 	Skins(0)={(
+		SkeletalMeshPath="WP_15hs_SwordOfWar.WEP_SwordOfWar",
+		StaticMeshPath="WP_15hs_SwordOfWar.swordofwar",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_sword_of_war_png"
+		)};
+
+	Skins(1)={(
 		SkeletalMeshPath="WP_15hs_SwordOfWar.WEP_SwordOfWar",
 		StaticMeshPath="WP_15hs_SwordOfWar.swordofwar",
 		MaterialPath="",
@@ -85,17 +92,17 @@ KickOffset=(X=39, Y=0, Z=-42)
 		ImagePath="ui_custweaponimages_swf.skin_durer_sword_png"
 		)};
 	Skins(5)={(
-		SkeletalMeshPath="WP_15hs_SwordOfWar_Varaint_05.WEP_WWolf_SoW",
-		StaticMeshPath="WP_15hs_SwordOfWar_Varaint_05.SM_WWolf_SoW",
+		SkeletalMeshPath="WP_15hs_SwordOfWar.WEP_SwordOfWar",
+		StaticMeshPath="WP_15hs_SwordOfWar.swordofwar",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="ui_custweaponimages_swf.skin_whitewolf_png"
+		ImagePath="ui_custweaponimages_swf.skin_sword_of_war_png"
 		)};
 	Skins(6)={(
-		SkeletalMeshPath="Wp_15hs_SwordOfWar_Variant_06.wep_swordofwar_Reva",
-		StaticMeshPath="Wp_15hs_SwordOfWar_Variant_06.SM_swordofwar_Reva",
+		SkeletalMeshPath="WP_15hs_SwordOfWar.WEP_SwordOfWar",
+		StaticMeshPath="WP_15hs_SwordOfWar.swordofwar",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="ui_custweaponimages_swf.skin_revenantsword_png"
+		ImagePath="ui_custweaponimages_swf.skin_sword_of_war_png"
 		)};
 }

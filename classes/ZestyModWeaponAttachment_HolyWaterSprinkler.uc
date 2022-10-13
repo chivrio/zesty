@@ -53,7 +53,6 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=22500, cDamageType="AOC.AOCDmgType_PierceBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_1hb_HolyWaterSprinkler.SK_HWS",
 		StaticMeshPath="WP_1hb_HolyWaterSprinkler.SM_HWS",
@@ -67,5 +66,12 @@ KickOffset=(X=39, Y=0, Z=-42)
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="ui_custweaponimages_swf.skin_winged_wrath_sprinkler_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_1hb_HolyWaterSprinkler.SK_HWS",
+		StaticMeshPath="WP_1hb_HolyWaterSprinkler.SM_HWS",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_watersprinkler_png"
 		)};
 }

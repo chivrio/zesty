@@ -32,7 +32,7 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=25500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
+
 	Skins(0)={(
 		SkeletalMeshPath="WP_1hs_Falchion.WEP_falchion",
 		StaticMeshPath="WP_1hs_Falchion.sm_falchion",

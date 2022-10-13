@@ -55,7 +55,7 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=35500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
+
 	Skins(0)={(
 		SkeletalMeshPath="WP_2ha_Pollaxe.WEP_Pollaxe",
 		StaticMeshPath="WP_2ha_Pollaxe.sm_Pollaxe",

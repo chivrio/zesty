@@ -54,7 +54,6 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=32500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_hbl_grandmace.WEP_grand-mace",
 		StaticMeshPath="WP_hbl_grandmace.SM_grandmace",
@@ -77,10 +76,10 @@ KickOffset=(X=39, Y=0, Z=-42)
 		ImagePath="UI_CustWeaponImages_SWF.skin_devastator_png"
 		)};
 	Skins(3)={(
-		SkeletalMeshPath="WP_hbl_grandmace_variant_03.WEP_Pathmaker",
-		StaticMeshPath="WP_hbl_grandmace_variant_03.SM_Pathmaker",
+		SkeletalMeshPath="WP_hbl_grandmace.WEP_grand-mace",
+		StaticMeshPath="WP_hbl_grandmace.SM_grandmace",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_pathmaker_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_grand_mace_png"
 		)};
 }

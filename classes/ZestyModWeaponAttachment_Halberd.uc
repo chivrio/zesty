@@ -51,8 +51,7 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=1.0, fForce=35500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
-	Skins(0)={(
+    Skins(0)={(
 		SkeletalMeshPath="WP_pol_Halberd.WEP_Halberd",
 		StaticMeshPath="WP_pol_Halberd.sm_Halberd",
 		MaterialPath="",
@@ -72,6 +71,13 @@ KickOffset=(X=39, Y=0, Z=-42)
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="ui_custweaponimages_swf.skin_royalHalberd_png"
+		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_pol_Halberd.WEP_Halberd",
+		StaticMeshPath="WP_pol_Halberd.sm_Halberd",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_halberd_png"
 		)};
 	Skins(4)={(
 		SkeletalMeshPath="WP_15hs_Halberd_Variant_05.Wep_halberd_variation_01",

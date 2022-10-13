@@ -55,7 +55,6 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=35500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_pol_Bardiche.WEP_bardiche",
 		StaticMeshPath="WP_pol_Bardiche.sm_bardiche",
@@ -69,5 +68,12 @@ KickOffset=(X=39, Y=0, Z=-42)
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_lacerating_volge_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_pol_Bardiche.WEP_bardiche",
+		StaticMeshPath="WP_pol_Bardiche.sm_bardiche",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_bardiche_png"
 		)};
 }

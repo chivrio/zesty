@@ -57,7 +57,6 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=40500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
 	Skins(0)={(
 		SkeletalMeshPath="WP_2ha_doubleaxe.WEP_doubleaxe",
 		StaticMeshPath="WP_2ha_doubleaxe.SM_Double_Axe",
@@ -72,6 +71,13 @@ KickOffset=(X=39, Y=0, Z=-42)
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="ui_custweaponimages_swf.skin_hengest_horsa_png"
+		)};
+	Skins(2)={(
+		SkeletalMeshPath="WP_2ha_doubleaxe.WEP_doubleaxe",
+		StaticMeshPath="WP_2ha_doubleaxe.SM_Double_Axe",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="ui_custweaponimages_swf.skin_doubleaxe_png"
 		)};
 	Skins(3)={(
 		SkeletalMeshPath="WP_2ha_doubleaxe_Variant_02.WEP_doubleaxe",

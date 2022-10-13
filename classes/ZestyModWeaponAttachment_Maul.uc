@@ -58,8 +58,14 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=1.0, fForce=40000, cDamageType="AOC.AOCDmgType_Blunt", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
 	Skins(0)={(
+		SkeletalMeshPath="WP_hbl_Maul.WEP_Maul",
+		StaticMeshPath="WP_hbl_Maul.SM_Maul",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_maul_png"
+		)};
+	Skins(1)={(
 		SkeletalMeshPath="WP_hbl_Maul.WEP_Maul",
 		StaticMeshPath="WP_hbl_Maul.SM_Maul",
 		MaterialPath="",
@@ -86,6 +92,13 @@ KickOffset=(X=39, Y=0, Z=-42)
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_maulverizer_png"
+		)};
+	Skins(5)={(
+		SkeletalMeshPath="WP_hbl_Maul.WEP_Maul",
+		StaticMeshPath="WP_hbl_Maul.SM_Maul",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_maul_png"
 		)};
 	Skins(6)={(
 		SkeletalMeshPath="WP_hbl_Maul_Variant_06.WEP_gothicmaul",

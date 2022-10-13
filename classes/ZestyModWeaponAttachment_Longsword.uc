@@ -53,8 +53,7 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=32500, cDamageType="AOC.AOCDmgType_Swing", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-    Skins.empty;
-	Skins(0)={(
+    Skins(0)={(
 		SkeletalMeshPath="WP_15hs_Longsword.WEP_Longsword",
 		StaticMeshPath="WP_15hs_Longsword.sm_Longsword",
 		MaterialPath="",
@@ -88,7 +87,14 @@ KickOffset=(X=39, Y=0, Z=-42)
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_XII_png"
-		)};
+		)};	
+	Skins(5)={(
+		SkeletalMeshPath="WP_15hs_Longsword.WEP_Longsword",
+		StaticMeshPath="WP_15hs_Longsword.sm_Longsword",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_longsword_png"
+		)};	
 	Skins(6)={(
 		SkeletalMeshPath="WP_15hs_Longsword_Variant_06.WEP_LongSwordDrac",
 		StaticMeshPath="WP_15hs_Longsword_Variant_06.SM_LongSwordDrac",
@@ -97,10 +103,10 @@ KickOffset=(X=39, Y=0, Z=-42)
 		ImagePath="UI_CustWeaponImages_SWF.skin_dracul_png"
 		)};	
 	Skins(7)={(
-		SkeletalMeshPath="WP_15hs_Longsword_Variant_07.WP_15hs_LongswordArbiter",
-		StaticMeshPath="WP_15hs_Longsword_Variant_07.SW_LongswordArbiter",
+		SkeletalMeshPath="WP_15hs_Longsword.WEP_Longsword",
+		StaticMeshPath="WP_15hs_Longsword.sm_Longsword",
 		MaterialPath="",
 		StaticMeshScale=1.0,
-		ImagePath="UI_CustWeaponImages_SWF.skin_arbitersword_png"
+		ImagePath="UI_CustWeaponImages_SWF.skin_longsword_png"
 		)};	
 }

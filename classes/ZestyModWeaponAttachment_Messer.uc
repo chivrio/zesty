@@ -55,8 +55,14 @@ KickOffset=(X=39, Y=0, Z=-42)
 	AttackTypeInfo(4)=(fBaseDamage=0.0, fForce=35500, cDamageType="AOC.AOCDmgType_SwingBlunt", iWorldHitLenience=6)
 	AttackTypeInfo(5)=(fBaseDamage=6.0, fForce=48000.0, cDamageType="AOC.AOCDmgType_Shove", iWorldHitLenience=12)
 
-	Skins.empty;
-	Skins(0)={(
+    Skins(0)={(
+		SkeletalMeshPath="WP_15hs_Messer.Messer.wep_messer",
+		StaticMeshPath="WP_15hs_Messer.Messer.sm_messer",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_messer_png"
+		)};
+	Skins(1)={(
 		SkeletalMeshPath="WP_15hs_Messer.Messer.wep_messer",
 		StaticMeshPath="WP_15hs_Messer.Messer.sm_messer",
 		MaterialPath="",
@@ -83,6 +89,13 @@ KickOffset=(X=39, Y=0, Z=-42)
 		MaterialPath="",
 		StaticMeshScale=1.0,
 		ImagePath="ui_custweaponimages_swf.skin_chaos_blade_png"
+		)};
+	Skins(5)={(
+		SkeletalMeshPath="WP_15hs_Messer.Messer.wep_messer",
+		StaticMeshPath="WP_15hs_Messer.Messer.sm_messer",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_messer_png"
 		)};
 	Skins(6)={(
 		SkeletalMeshPath="WP_15hs_Messer_Variant_06.WEP_Messer_Variant_06",
