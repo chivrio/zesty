@@ -57,4 +57,25 @@ KickOffset=(X=39, Y=0, Z=-42)
 		StaticMeshScale=1.0,
 		ImagePath="UI_CustWeaponImages_SWF.skin_honors_guard_spear_png"
 		)};
+	Skins(3)={(
+		SkeletalMeshPath="WP_spr_Spear.WEP_spear",
+		StaticMeshPath="WP_spr_Spear.sm_spear",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_spear_png"
+		)};
+	Skins(4)={(
+		SkeletalMeshPath="WP_spr_Spear.WEP_spear",
+		StaticMeshPath="WP_spr_Spear.sm_spear",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_spear_png"
+		)};
+	Skins(5)={(
+		SkeletalMeshPath="WP_spr_Spear.WEP_spear",
+		StaticMeshPath="WP_spr_Spear.sm_spear",
+		MaterialPath="",
+		StaticMeshScale=1.0,
+		ImagePath="UI_CustWeaponImages_SWF.skin_spear_png"
+		)};
 }
