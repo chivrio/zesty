@@ -30,7 +30,7 @@ defaultproperties
 	/** Ownership info **/
 
 	//GearData=(GearNameID=MasonManAtArms,AppID=222360,bVisibleInSelectorIfUnowned=false)
-	GearData=(GearNameID=BarbMasonMAA, GearStoreDescriptionID=Barb_MAA_Bundle_1, bVisibleInSelectorIfUnowned=true, bPartOfBundle=true, BundleNameID=Barb_MAA_Bundle_1)
+	GearData=(GearNameID=BarbMasonMAA)
 
 	AllowedTeams.Add(1)
 
