@@ -3,6 +3,9 @@ class ZestyModWeapon_ThrowingKnife extends AOCWeapon_ThrowingKnife;
 
 DefaultProperties
 {
+    
+	WeaponProjectiles(0)=class'ZestyModProj_ThrownDagger'
+
     ConfigProjectileBaseDamage[0]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
     ConfigProjectileBaseDamage[1]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
     ConfigProjectileBaseDamage[2]=(Damage=0,InitialSpeed=0,MaxSpeed=0,AmmoCount=0,InitialGravityScale=0,Drag=0,PitchCorrection=0.0)
@@ -20,7 +23,7 @@ DefaultProperties
     SprintAttackHorizRotateSpeed=20000.0
     SprintAttackVerticalRotateSpeed=20000.0
     BattleCryAnim=(AnimationName=3p_throwingknife_battlecry,ComboAnimation=,AssociatedSoundCue=,bFullBody=true,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=true)
-    WindupAnimations(0)=(AnimationName=3p_throwingknife_downtoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.shortsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.39,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
+    WindupAnimations(0)=(AnimationName=3p_throwingknife_downtoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.shortsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.36,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
     WindupAnimations(1)=(AnimationName=3p_throwingknife_slash02downtoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.shortsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
     WindupAnimations(2)=(AnimationName=3p_throwingknife_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.shortsword_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
     ReleaseAnimations(0)=(AnimationName=3p_throwingknife_release,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.broaddagger_attack_01',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
