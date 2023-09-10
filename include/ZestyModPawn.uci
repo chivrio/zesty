@@ -389,7 +389,7 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
     if (Info.DamageType.default.bIsProjectile && !bParry)
         AOCPRI(PRI).NumHits += 1;
         if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-        //AOCPRI(PRI).Score += 5;
+        //AOCPRI(PRI).Score += 2;
         }
 
     // Check for passive shield block
@@ -598,97 +598,29 @@ reliable server function AttackOtherPawn(HitInfo Info, string DamageString, opti
     Info.HitForce.Z = 0.f;
     Info.HitForce = Normal(Info.HitForce) * HitForceMag;
 
-    // Track statistics for each weapon
-    if (PRI != none) {
+    	// Track statistics for each weapon
+	if (PRI != none) {
+		// Register non-team damage
+		if (!bSameTeam)
+			AOCPRI(PRI).EnemyDamageDealt += ActualDamage;
+		// Register team damage with the PlayerController
+		else
+			if (Info.HitActor.PawnInfo.myFamily.ClassReference != ECLASS_Peasant
+				&& Info.HitActor.PlayerReplicationInfo != PRI) {
+				AOCPRI(PRI).TeamDamageDealt += ActualDamage;
+				AOCPlayerController(Controller).TeamDamageDealt += ActualDamage;
+			}
 
-        // Melee hits
-        if (!Info.DamageType.default.bIsProjectile &&
-            (Info.AttackType == Attack_Slash ||
-            Info.AttackType == Attack_Overhead ||
-            Info.AttackType == Attack_Stab ||
-            Info.AttackType == Attack_AltSlash ||
-            Info.AttackType == Attack_AltOverhead)
-        ) {
-            `{GAMEMODE}PRI(PRI).MeleeHits += 1;
-            if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-            AOCPRI(PRI).Score += 5;
-            }
+		// Force an update
+		AOCPRI(PRI).bForceNetUpdate = TRUE;
+	}
 
-        }
-        // Projectiles
-        else if (Info.DamageType.default.bIsProjectile)
-        {
-            `{GAMEMODE}PRI(PRI).ProjectileHits += 1;
-            if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-            AOCPRI(PRI).Score += 5;
-            }
-        }
-        // Kicks
-        else if (Info.AttackType == Attack_Shove)
-        {
-            if (bQuickKick) {
-                `{GAMEMODE}PRI(PRI).LightShoveHits += 1;
-                if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-                AOCPRI(PRI).Score += 5;
-                }
-            }
-            else
-                {
-                    `{GAMEMODE}PRI(PRI).HeavyShoveHits += 1;
-                    if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-                    AOCPRI(PRI).Score += 5;
-                    }
-                }
-        }
+	// Replicate this information
+	if (Info.HitActor.PlayerReplicationInfo != none) {
+		AOCPRI(Info.HitActor.PlayerReplicationInfo).DamageTaken += ActualDamage;
+		AOCPRI(Info.HitActor.PlayerReplicationInfo).bForceNetUpdate = TRUE;
+	}
 
-        // Register non-team damage
-        if (!bSameTeam) {
-            AOCPRI(PRI).EnemyDamageDealt += ActualDamage;
-            if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-                if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-            AOCPRI(PRI).Score += ActualDamage;
-                }
-            }
-        }
-        // Register team damage with the PlayerController
-        else
-            if (Info.HitActor.PawnInfo.myFamily.ClassReference != ECLASS_Peasant
-                && Info.HitActor.PlayerReplicationInfo != PRI) {
-                AOCPRI(PRI).TeamDamageDealt += ActualDamage;
-                AOCPlayerController(Controller).TeamDamageDealt += ActualDamage;
-
-                if (AOCGame(WorldInfo.Game).bIsTeamMode) {
-                    if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-                AOCPRI(PRI).Score -= (ActualDamage * 1.75);
-                    }
-                }
-            }
-
-        // Force an update
-        AOCPRI(PRI).bForceNetUpdate = TRUE;
-    }
-
-    // Replicate this information
-    if (Info.HitActor.PlayerReplicationInfo != none) {
-        // Non-team damage
-        if (!bSameTeam) {
-            AOCPRI(Info.HitActor.PlayerReplicationInfo).DamageTaken += ActualDamage;
-        }
-            
-        // Team damage
-        else {
-             `{GAMEMODE}PRI(Info.HitActor.PlayerReplicationInfo).TeamDamageTaken += ActualDamage;
-            
-            if (AOCGame(WorldInfo.Game).bIsTeamMode) {
-                if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-                `{GAMEMODE}PRI(Info.HitActor.PlayerReplicationInfo).Score += (ActualDamage * 1.25);
-                }
-            }
-        }
-           
-        AOCPRI(Info.HitActor.PlayerReplicationInfo).bForceNetUpdate = TRUE;
-        
-    }
 
     // Is the target burning?
     bOnFire = Info.HitActor.bIsBurning;
@@ -880,7 +812,7 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
 
                 // Blocks
                 `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Blocks += 1;
-                `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 15;
+                `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 2;
 
                 // Stamina damage received
                 if (!bSameTeam)
@@ -948,7 +880,7 @@ simulated function bool DetectSuccessfulParry(out HitInfo Info, out int bParry, 
 
             // Parries
             `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Parries += 1;
-            `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 15;
+            `{GAMEMODE}PRI(Info.HitActor.Controller.PlayerReplicationInfo).Score += 2;
 
             // Stamina damage received
             if (!bSameTeam)
@@ -1350,29 +1282,6 @@ function bool Died(Controller Killer, class<DamageType> DamageType, vector HitLo
 	else if (AOCAIController(Controller) != none)
 		KilledTeam = AOCAIController(Controller).myPawnClass.default.FamilyFaction;
  
-	// Distribute assists points as necessary
-	foreach ContributingDamagers(PRI)
-	{
-		if (PRI != AOCPRI(PlayerReplicationInfo) && PRI != AOCPRI(Killer.PlayerReplicationInfo))
-		{
-			// Make sure not on same team or the game is a FFA game
-			if (KilledTeam != KillerTeam && AOCFFA(WorldInfo.Game) == none )//AOCGame(WorldInfo.Game).CurrentGametypeNum != AOC_GAMETYPE_FFA)
-			{
-				//PRI.NumAssists += 1;
-				PRI.ObjPoints += PawnFamily.AssistBonus;
-                if (`{GAMEMODE} (WorldInfo.Game).bRankedMode == true) {
-				PRI.Score += 75 + PawnFamily.AssistBonus;
-                } else {
-                  PRI.Score += 5 + PawnFamily.AssistBonus;  
-                }
-
-				if (PRI.OwnerController.StatWrapper != none)
-				{
-					PRI.OwnerController.StatWrapper.IncrementAssistStat();
-				}
-			}
-		}
-	}
 
 	// Spawn les ammos
 	for (i = 0; i < MAXIMUM_STORED_PROJECTILE_TYPES; i++)
@@ -1419,7 +1328,7 @@ DefaultProperties
     HealAmount=3.0
 
     Begin Object Name=OuterCylinder
-        CollisionRadius=+0043.000000
+        CollisionRadius=+0042.000000
         CollisionHeight=+0060.000000
         BlockNonZeroExtent=true
         BlockZeroExtent=false

@@ -3,15 +3,15 @@ class ZestyModFamilyInfo_Agatha_Knight extends AOCFamilyInfo_Agatha_Knight;
 DefaultProperties
 {
     NewPrimaryWeapons.empty;
-    NewPrimaryWeapons(0)=(CWeapon=class'ZestyModWeapon_DoubleAxe')
-    NewPrimaryWeapons(1)=(CWeapon=class'ZestyModWeapon_PoleAxe')
-    NewPrimaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Bearded')
-    NewPrimaryWeapons(3)=(CWeapon=class'ZestyModWeapon_WarHammer')
-    NewPrimaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Maul')
-    NewPrimaryWeapons(5)=(CWeapon=class'ZestyModWeapon_GrandMace')
-    NewPrimaryWeapons(6)=(CWeapon=class'ZestyModWeapon_Longsword')
-    NewPrimaryWeapons(7)=(CWeapon=class'ZestyModWeapon_SwordOfWar')
-    NewPrimaryWeapons(8)=(CWeapon=class'ZestyModWeapon_Messer')
+    NewPrimaryWeapons(0)=(CWeapon=class'ZestyModWeapon_DoubleAxe',CForceTertiary=(class'ZestyModWeapon_ThrowingAxe',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
+    NewPrimaryWeapons(1)=(CWeapon=class'ZestyModWeapon_PoleAxe',CForceTertiary=(class'ZestyModWeapon_ThrowingAxe',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
+    NewPrimaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Bearded',CForceTertiary=(class'ZestyModWeapon_ThrowingAxeMAA',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
+    NewPrimaryWeapons(3)=(CWeapon=class'ZestyModWeapon_WarHammer',CForceTertiary=(class'ZestyModWeapon_ThrowingAxe',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
+    NewPrimaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Maul',CForceTertiary=(class'ZestyModWeapon_ThrowingAxe',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
+    NewPrimaryWeapons(5)=(CWeapon=class'ZestyModWeapon_GrandMace',CForceTertiary=(class'ZestyModWeapon_ThrowingAxe',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
+    NewPrimaryWeapons(6)=(CWeapon=class'ZestyModWeapon_Longsword',CForceTertiary=(class'ZestyModWeapon_ThrowingAxe',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
+    NewPrimaryWeapons(7)=(CWeapon=class'ZestyModWeapon_SwordOfWar',CForceTertiary=(class'ZestyModWeapon_ThrowingAxe',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
+    NewPrimaryWeapons(8)=(CWeapon=class'ZestyModWeapon_Messer',CForceTertiary=(class'ZestyModWeapon_ThrowingAxe',class'ZestyModWeapon_TowerShield_Agatha',class'ZestyModWeapon_Kite_Agatha',class'ZestyModWeapon_Buckler_Agatha',class'ZestyModWeapon_SmokePot'))
 
     NewSecondaryWeapons.empty;
     NewSecondaryWeapons(0)=(CWeapon=class'ZestyModWeapon_Mace')
@@ -25,12 +25,13 @@ DefaultProperties
     NewSecondaryWeapons(8)=(CWeapon=class'ZestyModWeapon_Dane')
 
     NewTertiaryWeapons.empty;
-    NewTertiaryWeapons(0)=(CWeapon=class'ZestyModWeapon_ThrowingAxe')
-    NewTertiaryWeapons(1)=(CWeapon=class'ZestyModWeapon_TowerShield_Agatha')
-    NewTertiaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Heater_Agatha')
-    NewTertiaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Kite_Agatha')
-    NewTertiaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Buckler_Agatha')
-    NewTertiaryWeapons(5)=(CWeapon=class'ZestyModWeapon_SmokePot')
+    NewTertiaryWeapons(0)=(CWeapon=class'ZestyModWeapon_ThrowingAxe',bEnabledDefault=false)
+    NewTertiaryWeapons(1)=(CWeapon=class'ZestyModWeapon_ThrowingAxeMAA',bEnabledDefault=false)
+    NewTertiaryWeapons(2)=(CWeapon=class'ZestyModWeapon_SmokePot',bEnabledDefault=false)    
+    NewTertiaryWeapons(3)=(CWeapon=class'ZestyModWeapon_TowerShield_Agatha',bEnabledDefault=false)
+    NewTertiaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Kite_Agatha',bEnabledDefault=false)
+    NewTertiaryWeapons(5)=(CWeapon=class'ZestyModWeapon_Buckler_Agatha',bEnabledDefault=false)
+  
 
     ProjectileLocationModifiers(EHIT_Head) = 2
     ProjectileLocationModifiers(EHIT_Torso) = 1

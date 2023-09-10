@@ -145,7 +145,7 @@ DefaultProperties
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_maul_png"
 	WeaponReach=100
 	HorizontalRotateSpeed=51000.0
-	VerticalRotateSpeed=45000.0
+	VerticalRotateSpeed=48000.0
 	AttackHorizRotateSpeed=51000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0

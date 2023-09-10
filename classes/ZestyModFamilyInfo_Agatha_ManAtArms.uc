@@ -4,22 +4,17 @@ DefaultProperties
 {
     NewPrimaryWeapons.empty;
     NewPrimaryWeapons(0)=(CWeapon=class'ZestyModWeapon_Broadsword')
-    NewPrimaryWeapons(1)=(CWeapon=class'ZestyModWeapon_NorseSword')
-    NewPrimaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Falchion',CorrespondingDuelProp=EDUEL_FalchionUse)
-    NewPrimaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Hatchet',CorrespondingDuelProp=EDUEL_HatchetUse)
-    NewPrimaryWeapons(4)=(CWeapon=class'ZestyModWeapon_WarAxe',CorrespondingDuelProp=EDUEL_WarAxeUse)
-    NewPrimaryWeapons(5)=(CWeapon=class'ZestyModWeapon_Dane',CorrespondingDuelProp=EDUEL_DaneUse)
-    NewPrimaryWeapons(6)=(CWeapon=class'ZestyModWeapon_Mace',CorrespondingDuelProp=EDUEL_MaceUse)
-    NewPrimaryWeapons(7)=(CWeapon=class'ZestyModWeapon_MorningStar',CorrespondingDuelProp=EDUEL_MorningStarUse)
-    NewPrimaryWeapons(8)=(CWeapon=class'ZestyModWeapon_HolyWaterSprinkler',CorrespondingDuelProp=EDUEL_HolyWaterSprinklerUse)
-    NewPrimaryWeapons(9)=(CWeapon=class'ZestyModWeapon_QuarterStaff',CorrespondingDuelProp=EDUEL_QStaffUse)
+    NewPrimaryWeapons(1)=(CWeapon=class'ZestyModWeapon_Dane')
+    NewPrimaryWeapons(2)=(CWeapon=class'ZestyModWeapon_MorningStar')
+    NewPrimaryWeapons(3)=(CWeapon=class'ZestyModWeapon_QuarterStaff')
 
     NewSecondaryWeapons.empty;
-    NewSecondaryWeapons(0)=(CWeapon=class'ZestyModWeapon_BroadDagger',CorrespondingDuelProp=EDUEL_BroadDaggerUse)
-    NewSecondaryWeapons(1)=(CWeapon=class'ZestyModWeapon_HuntingKnife',CorrespondingDuelProp=EDUEL_HuntingKnifeUse)
-    NewSecondaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Cudgel',CorrespondingDuelProp=EDUEL_CudgelUse)
-    NewSecondaryWeapons(3)=(CWeapon=class'ZestyModWeapon_Dagesse',CorrespondingDuelProp=EDUEL_DagesseUse)
-    NewSecondaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Saber',CorrespondingDuelProp=EDUEL_SaberUse)
+    NewSecondaryWeapons(0)=(CWeapon=class'ZestyModWeapon_Mace')
+    NewSecondaryWeapons(1)=(CWeapon=class'ZestyModWeapon_HolyWaterSprinkler')
+    NewSecondaryWeapons(2)=(CWeapon=class'ZestyModWeapon_Falchion')
+    NewSecondaryWeapons(3)=(CWeapon=class'ZestyModWeapon_NorseSword')
+    NewSecondaryWeapons(4)=(CWeapon=class'ZestyModWeapon_Hatchet')
+    NewSecondaryWeapons(5)=(CWeapon=class'ZestyModWeapon_WarAxe')
 
     NewTertiaryWeapons.empty;
     NewTertiaryWeapons(0)=(CWeapon=class'ZestyModWeapon_ThrowingKnife')

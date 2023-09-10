@@ -39,7 +39,7 @@ DefaultProperties
     ImpactSounds(ESWINGSOUND_Stab)={(
         light=SoundCue'A_Impacts_Melee.Light_Chop_Small',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.torch_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.torch_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.torch_Dirt',
@@ -50,7 +50,7 @@ DefaultProperties
     ImpactSounds(ESWINGSOUND_StabCombo)={(
         light=SoundCue'A_Impacts_Melee.Light_Chop_Small',
         medium=SoundCue'A_Impacts_Melee.Medium_Chop_Small',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Chop_Small',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Small',
         wood=SoundCue'A_Phys_Mat_Impacts.torch_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.torch_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.torch_Dirt',
@@ -174,8 +174,8 @@ DefaultProperties
 	ReleaseAnimations(5)=(AnimationName=3p_qstaff_shoverelease_new,ComboAnimation=,AssociatedSoundCue=,bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.24,fBlendInTime=0.05,fBlendOutTime=0.05,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true,bUseRMM=true)
 	ReleaseAnimations(6)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
 	ReleaseAnimations(7)=(AnimationName=,ComboAnimation=,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.0,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false)
-	ReleaseAnimations(8)=(AnimationName=3p_qstaff_equipup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_draw',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.6,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
-	ReleaseAnimations(9)=(AnimationName=3p_qstaff_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
+	ReleaseAnimations(8)=(AnimationName=3p_qstaff_equipup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_draw',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.45,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
+	ReleaseAnimations(9)=(AnimationName=3p_qstaff_equipdown,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_sheath',bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.45,fBlendInTime=0.00,fBlendOutTime=0.01,bLastAnimation=false)
 	RecoveryAnimations(0)=(AnimationName=3p_qstaff_slash01recover,ComboAnimation=3p_qstaff_slash011recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.6,fBlendInTime=0.10,fBlendOutTime=0.1,bLastAnimation=true)
 	RecoveryAnimations(1)=(AnimationName=3p_qstaff_slash02recover,ComboAnimation=3p_qstaff_slash021recover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.62,fBlendInTime=0.1,fBlendOutTime=0.1,bLastAnimation=true)
 	RecoveryAnimations(2)=(AnimationName=3p_qstaff_stabrecover,ComboAnimation=3p_qstaff_stabrecover,AssociatedSoundCue=,bFullBody=false,bCombo=false,bLoop=false,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.61,fBlendInTime=0.10,fBlendOutTime=0.1,bLastAnimation=true)

@@ -17,9 +17,9 @@ DefaultProperties
     EffectiveDistance=200.0f
 
     ImpactSounds(ESWINGSOUND_Slash)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_Large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Large',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         dirt=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
@@ -28,9 +28,9 @@ DefaultProperties
         stone=SoundCue'A_Phys_Mat_Impacts.Mace_Stone')}
 
     ImpactSounds(ESWINGSOUND_SlashCombo)={(
-        light=SoundCue'A_Impacts_Melee.Light_Blunt_Average',
-        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Average',
-        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Average',
+        light=SoundCue'A_Impacts_Melee.Light_Blunt_Large',
+        medium=SoundCue'A_Impacts_Melee.Medium_Blunt_Large',
+        heavy=SoundCue'A_Impacts_Melee.Heavy_Blunt_Large',
         wood=SoundCue'A_Phys_Mat_Impacts.Mace_Wood',
         mud=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
         foliage=SoundCue'A_Phys_Mat_Impacts.Mace_Dirt',
@@ -137,25 +137,25 @@ DefaultProperties
      * Formerly in UDKNewWeapon.ini - [AOC.AOCWeapon_PoleHammer]
      */
 	iFeintStaminaCost=16
-	FeintTime=0.3
+	FeintTime=0.315
 	TertiaryFeintTime=0.445
-	ComboFeintTime=0.55
+	ComboFeintTime=0.54
 	fParryNegation=15
-	ParryDrain(0)=28
-	ParryDrain(1)=29
-	ParryDrain(2)=27
+	ParryDrain(0)=29
+	ParryDrain(1)=30
+	ParryDrain(2)=28
 	WeaponFontSymbol="-"
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_polehammer"
 	WeaponSmallPortrait="UI_WeaponImages_SWF.icon_weapon_select_polehammer_png"
-	HorizontalRotateSpeed=51000.0
+	HorizontalRotateSpeed=52000.0
 	WeaponReach=100
-	VerticalRotateSpeed=46500.0
-	AttackHorizRotateSpeed=51000.0
+	VerticalRotateSpeed=47500.0
+	AttackHorizRotateSpeed=52000.0
 	SprintAttackHorizRotateSpeed=20000.0
 	SprintAttackVerticalRotateSpeed=20000.0
 	WindupAnimations(0)=(AnimationName=3p_halberd_slash01downtoup,ComboAnimation=3p_halberd_slash011downtoup,AlternateAnimation=3p_halberd_slash011altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.605,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	WindupAnimations(1)=(AnimationName=3p_halberd_slash02downtoup,ComboAnimation=3p_halberd_slash021downtoup,AlternateAnimation=3p_halberd_slash021altdowntoup,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.605,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
-	WindupAnimations(2)=(AnimationName=3p_halberd_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.665,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
+	WindupAnimations(2)=(AnimationName=3p_halberd_stabdowntoup,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=False,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.66,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	WindupAnimations(3)=(AnimationName=3p_halberd_sattackdowntoup_new,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Footsteps.Paladin_Dirt_Jump',bFullBody=True,bCombo=False,bLoop=False,bForce=false,UniqueShieldSound=none,fModifiedMovement=1.0,fAnimationLength=0.65,fBlendInTime=0.00,fBlendOutTime=0.00,bLastAnimation=false,bUseAltBoneBranch=true,bUseRMM=true)
 	WindupAnimations(4)=(AnimationName=3p_halberd_parryib,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_Parry',bFullBody=False,bCombo=False,bLoop=False,bForce=false,fModifiedMovement=1.0,fAnimationLength=0.5,fBlendInTime=0.10,fBlendOutTime=0.10,bLastAnimation=false)
 	WindupAnimations(5)=(AnimationName=3p_halberd_shovestart,ComboAnimation=,AssociatedSoundCue=SoundCue'A_Combat_Locomotion.doubleaxe_windup',bFullBody=True,bCombo=False,bLoop=False,UniqueShieldSound=none,fModifiedMovement=0.0,fAnimationLength=0.54,fBlendInTime=0.05,fBlendOutTime=0.00,bLastAnimation=false,bUseAltNode=true,bUseAltBoneBranch=true)

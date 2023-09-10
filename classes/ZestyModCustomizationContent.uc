@@ -46,40 +46,27 @@ defaultproperties
 	Characters.Add(class'ZestyModCharacterInfo_Playable_Peasant')
 	Characters.Add(class'ZestyModCharacterInfo_Playable_Skeleton')
 
-	//Characters.Add(class'AOCCharacterInfo_Agatha_Knight_DLC1')
-	//Characters.Add(class'AOCCharacterInfo_Mason_Knight_DLC1')
-
-
-    // 2 placeholders
-    Characters.Add(class'AOCCharacterInfo_Skeleton')
-    Characters.Add(class'AOCCharacterInfo_Skeleton')
+	Characters.Add(class'AOCCharacterInfo_Agatha_Knight_DLC1')
+	Characters.Add(class'AOCCharacterInfo_Mason_Knight_DLC1')
 	
-	//Characters.Add(class'ZestyModCharacterInfo_Mason_Vanguard_DLC1')
-	//Characters.Add(class'ZestyModCharacterInfo_Agatha_Vanguard_DLC1')
+	Characters.Add(class'ZestyModCharacterInfo_Mason_Vanguard_DLC1')
+	Characters.Add(class'ZestyModCharacterInfo_Agatha_Vanguard_DLC1')
 	
 
-    // 2 placeholders
-    Characters.Add(class'AOCCharacterInfo_Skeleton')
-    Characters.Add(class'AOCCharacterInfo_Skeleton')
+	Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Archer')
+	Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Knight')
+	Characters.Add(class'ZestyModCharacterInfo_BARB_Agatha_ManAtArms')
 
-	//Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Archer')
-	//Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Knight')
-	//Characters.Add(class'ZestyModCharacterInfo_BARB_Agatha_ManAtArms')
 
-    //2 placeholders
-    Characters.Add(class'AOCCharacterInfo_Skeleton')
-    Characters.Add(class'AOCCharacterInfo_Skeleton')
+	Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Vanguard')
+	Characters.Add(class'AOCCharacterInfo_BARB_Mason_Archer')
+	Characters.Add(class'ZestyModCharacterInfo_BARB_Mason_Knight')
+	Characters.Add(class'ZestyModCharacterInfo_BARB_Mason_ManAtArms')
 
-	//Characters.Add(class'AOCCharacterInfo_BARB_Agatha_Vanguard')
-	//Characters.Add(class'AOCCharacterInfo_BARB_Mason_Archer')
-	//Characters.Add(class'ZestyModCharacterInfo_BARB_Mason_Knight')
-	//Characters.Add(class'ZestyModCharacterInfo_BARB_Mason_ManAtArms')
 
-    //2 placeholders
+	Characters.Add(class'AOCCharacterInfo_BARB_Mason_Vanguard')
+    //PlaceHolder?
     Characters.Add(class'AOCCharacterInfo_Skeleton')
-    Characters.Add(class'AOCCharacterInfo_Skeleton')
-
-	//Characters.Add(class'AOCCharacterInfo_BARB_Mason_Vanguard')
 	//Characters.Add(class'AOCCharacterInfo_Playable_PeasantRevolt')
 
     Characters.Add(class'ZestyModCharacterInfo_Agatha_King_Warlock')

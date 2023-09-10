@@ -142,7 +142,7 @@ DefaultProperties
 	TertiaryFeintTime=0.45
 	ComboFeintTime=0.55
 	fParryNegation=15
-	ParryDrain(0)=26
+	ParryDrain(0)=28
 	ParryDrain(1)=29
 	ParryDrain(2)=27
 	WeaponFontSymbol="o"

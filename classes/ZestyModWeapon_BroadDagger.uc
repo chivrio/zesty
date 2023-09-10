@@ -144,7 +144,7 @@ DefaultProperties
 	fParryNegation=12
 	ParryDrain(0)=24
 	ParryDrain(1)=24
-	ParryDrain(2)=24
+	ParryDrain(2)=23
 	WeaponFontSymbol="/"
 	WeaponReach=100
 	WeaponLargePortrait="UI_WeaponImages_SWF.weapon_select_broaddagger"
